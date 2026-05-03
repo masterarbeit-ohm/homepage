@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Umfrage für Landwirte – Direktvermarktung und digitale Plattformen. Masterarbeit 2026/2027.">
+  <title>Umfrage Landwirte – RegioFarm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Regio<span>Farm</span></a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="umfrage-bauern.html" aria-current="page">Umfrage Landwirte</a></li>
+        <li><a href="umfrage-konsumenten.html">Umfrage Verbraucher</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- SURVEY PROGRESS BAR -->
+<div class="survey-progress" style="margin: 0; border-radius: 0;">
+  <div class="survey-progress__bar" id="survey-bar" style="width: 0%"></div>
+</div>
+
+<!-- MAIN CONTENT -->
+<section class="section">
+  <div class="container">
+    <div class="form-page">
+
+      <!-- Header -->
+      <div class="form-header">
+        <span class="section-label">Umfrage für Landwirte</span>
+        <h1 style="font-size: clamp(1.6rem, 4vw, 2.5rem);">Wie vermarkten Sie Ihre Produkte?</h1>
+        <div class="meta">
+          <span>⏱ ca. 5 Minuten</span>
+          <span>📋 23 Fragen in 4 Abschnitten</span>
+          <span>🔒 Vollständig anonym</span>
+        </div>
+        <div class="privacy-note">
+          Diese Umfrage ist vollständig anonym. Alle Antworten werden ausschließlich lokal in Ihrem Browser
+          gespeichert (localStorage). Es werden keine Daten an einen Server übertragen. Die Daten werden
+          ausschließlich für wissenschaftliche Zwecke im Rahmen einer Masterarbeit verwendet.
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <form id="bauern-form" novalidate data-script-url="https://script.google.com/macros/s/AKfycbwlLZe8pHIWWn66XcNhS_tCQanaJ1uJzUZ7sXkOPbVsplVSteVd6ecUEcJCoQE4u1Y_xw/exec">
+
+        <!-- ===== SECTION A: Betriebsangaben ===== -->
+        <fieldset>
+          <legend>A – Angaben zu Ihrem Betrieb</legend>
+
+          <div class="form-group">
+            <label class="question" for="a1_bundesland">A1. In welchem Bundesland liegt Ihr Betrieb?</label>
+            <select id="a1_bundesland" name="a1_bundesland" required>
+              <option value="">– Bitte wählen –</option>
+              <option>Baden-Württemberg</option>
+              <option>Bayern</option>
+              <option>Berlin</option>
+              <option>Brandenburg</option>
+              <option>Bremen</option>
+              <option>Hamburg</option>
+              <option>Hessen</option>
+              <option>Mecklenburg-Vorpommern</option>
+              <option>Niedersachsen</option>
+              <option>Nordrhein-Westfalen</option>
+              <option>Rheinland-Pfalz</option>
+              <option>Saarland</option>
+              <option>Sachsen</option>
+              <option>Sachsen-Anhalt</option>
+              <option>Schleswig-Holstein</option>
+              <option>Thüringen</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="question">A2. Wie viele Hektar bewirtschaften Sie?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="a2_flaeche" value="unter_5ha" required> Unter 5 ha</label>
+              <label class="radio-option"><input type="radio" name="a2_flaeche" value="5_20ha"> 5 – 20 ha</label>
+              <label class="radio-option"><input type="radio" name="a2_flaeche" value="20_50ha"> 20 – 50 ha</label>
+              <label class="radio-option"><input type="radio" name="a2_flaeche" value="ueber_50ha"> Über 50 ha</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">A3. Welche Betriebsform trifft am ehesten auf Sie zu?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="a3_betriebsform" value="konventionell" required> Konventionell</label>
+              <label class="radio-option"><input type="radio" name="a3_betriebsform" value="biologisch"> Biologisch</label>
+              <label class="radio-option"><input type="radio" name="a3_betriebsform" value="biodynamisch"> Biodynamisch (z.B. Demeter)</label>
+              <label class="radio-option"><input type="radio" name="a3_betriebsform" value="umstieg"> Im Umstieg auf Bio</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">A4. Wie lange sind Sie schon in der Landwirtschaft tätig?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="a4_erfahrung" value="unter_5" required> Unter 5 Jahre</label>
+              <label class="radio-option"><input type="radio" name="a4_erfahrung" value="5_15"> 5 – 15 Jahre</label>
+              <label class="radio-option"><input type="radio" name="a4_erfahrung" value="ueber_15"> Über 15 Jahre</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">A5. Wie viele Vollzeit-Arbeitskräfte hat Ihr Betrieb?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="a5_mitarbeiter" value="1" required> 1 (ich allein)</label>
+              <label class="radio-option"><input type="radio" name="a5_mitarbeiter" value="2_5"> 2 – 5</label>
+              <label class="radio-option"><input type="radio" name="a5_mitarbeiter" value="6_20"> 6 – 20</label>
+              <label class="radio-option"><input type="radio" name="a5_mitarbeiter" value="mehr_als_20"> Mehr als 20</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- ===== SECTION B: Produktion & Vermarktung ===== -->
+        <fieldset>
+          <legend>B – Produktion und Vermarktung</legend>
+
+          <div class="form-group">
+            <label class="question">B1. Welche Produkte erzeugen Sie? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <div class="checkbox-group">
+              <label class="checkbox-option"><input type="checkbox" name="b1_produkte" value="gemuese"> Gemüse</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_produkte" value="obst"> Obst</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_produkte" value="getreide"> Getreide / Mehl</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_produkte" value="milch"> Milch und Milchprodukte</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_produkte" value="fleisch"> Fleisch und Wurstwaren</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_produkte" value="eier"> Eier</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_produkte" value="honig"> Honig</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_produkte" value="kraeuter"> Kräuter</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_produkte" id="b1_sonstiges_check" value="sonstiges"> Sonstiges</label>
+            </div>
+            <div class="conditional" id="b1_sonstiges_reveal">
+              <input type="text" name="b1_produkte_sonstiges" placeholder="Bitte beschreiben ...">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">B2. Wie verkaufen Sie Ihre Produkte aktuell? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <div class="checkbox-group">
+              <label class="checkbox-option"><input type="checkbox" name="b2_kanaele" value="hofverkauf"> Hofverkauf / Hofladen</label>
+              <label class="checkbox-option"><input type="checkbox" name="b2_kanaele" value="wochenmarkt"> Wochenmarkt</label>
+              <label class="checkbox-option"><input type="checkbox" name="b2_kanaele" value="einzelhandel"> Einzelhandel (Supermarkt / Biomarkt)</label>
+              <label class="checkbox-option"><input type="checkbox" name="b2_kanaele" value="grosshandel"> Großhandel</label>
+              <label class="checkbox-option"><input type="checkbox" name="b2_kanaele" value="abo_kisten"> Abo-Kisten / Gemüsekisten</label>
+              <label class="checkbox-option"><input type="checkbox" name="b2_kanaele" value="online_shop"> Eigener Online-Shop</label>
+              <label class="checkbox-option"><input type="checkbox" name="b2_kanaele" value="gastronomie"> Gastronomie</label>
+              <label class="checkbox-option"><input type="checkbox" name="b2_kanaele" value="sonstiges_kanal"> Sonstiges</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">B3. Wie hoch schätzen Sie den Anteil der Direktvermarktung an Ihrem Gesamtumsatz?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="b3_direktanteil" value="0" required> 0 % (keine Direktvermarktung)</label>
+              <label class="radio-option"><input type="radio" name="b3_direktanteil" value="1_25"> 1 – 25 %</label>
+              <label class="radio-option"><input type="radio" name="b3_direktanteil" value="26_50"> 26 – 50 %</label>
+              <label class="radio-option"><input type="radio" name="b3_direktanteil" value="51_75"> 51 – 75 %</label>
+              <label class="radio-option"><input type="radio" name="b3_direktanteil" value="ueber_75"> Über 75 %</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">B4. Wie zufrieden sind Sie mit Ihren aktuellen Vermarktungswegen?</label>
+            <div class="star-rating" role="group" aria-label="Bewertung 1 bis 5 Sterne">
+              <input type="radio" id="b4_s5" name="b4_zufriedenheit" value="5"><label for="b4_s5" title="5 – Sehr zufrieden">★</label>
+              <input type="radio" id="b4_s4" name="b4_zufriedenheit" value="4"><label for="b4_s4" title="4 – Zufrieden">★</label>
+              <input type="radio" id="b4_s3" name="b4_zufriedenheit" value="3"><label for="b4_s3" title="3 – Neutral">★</label>
+              <input type="radio" id="b4_s2" name="b4_zufriedenheit" value="2"><label for="b4_s2" title="2 – Unzufrieden">★</label>
+              <input type="radio" id="b4_s1" name="b4_zufriedenheit" value="1"><label for="b4_s1" title="1 – Sehr unzufrieden">★</label>
+            </div>
+            <p class="hint" style="margin-top:0.4rem;">1 Stern = sehr unzufrieden, 5 Sterne = sehr zufrieden</p>
+          </div>
+
+          <div class="form-group">
+            <label class="question">B5. Was sind Ihre größten Herausforderungen bei der Vermarktung? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <div class="checkbox-group">
+              <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="zu_wenig_zeit"> Zu wenig Zeit</label>
+              <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="geringe_preise"> Zu geringe Preise</label>
+              <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="mangelnde_nachfrage"> Mangelnde Nachfrage</label>
+              <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="logistik"> Logistik und Lieferung</label>
+              <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="verwaltung"> Verwaltungsaufwand / Bürokratie</label>
+              <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="konkurrenz"> Konkurrenz durch Discounter</label>
+              <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="sonstiges_herausf"> Sonstiges</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">B6. Wie hoch sind Ihre durchschnittlichen Verluste durch nicht verkaufte Waren?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="b6_verluste" value="unter_5" required> Unter 5 %</label>
+              <label class="radio-option"><input type="radio" name="b6_verluste" value="5_15"> 5 – 15 %</label>
+              <label class="radio-option"><input type="radio" name="b6_verluste" value="15_30"> 15 – 30 %</label>
+              <label class="radio-option"><input type="radio" name="b6_verluste" value="ueber_30"> Über 30 %</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- ===== SECTION C: Digitale Plattform ===== -->
+        <fieldset>
+          <legend>C – Digitale Plattform</legend>
+
+          <div class="form-group">
+            <label class="question">C1. Nutzen Sie aktuell digitale Tools zur Vermarktung?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="c1_digital" value="ja_regelmaessig" required> Ja, regelmäßig</label>
+              <label class="radio-option"><input type="radio" name="c1_digital" value="ja_gelegentlich"> Ja, gelegentlich</label>
+              <label class="radio-option"><input type="radio" name="c1_digital" value="nein_interessiert"> Nein, aber ich bin interessiert</label>
+              <label class="radio-option"><input type="radio" name="c1_digital" value="nein_nicht_interessiert"> Nein, und ich bin nicht interessiert</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">C2. Welche digitalen Kanäle nutzen Sie bereits? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <div class="checkbox-group">
+              <label class="checkbox-option"><input type="checkbox" name="c2_digikanaele" value="eigene_website"> Eigene Website</label>
+              <label class="checkbox-option"><input type="checkbox" name="c2_digikanaele" value="instagram"> Instagram</label>
+              <label class="checkbox-option"><input type="checkbox" name="c2_digikanaele" value="facebook"> Facebook</label>
+              <label class="checkbox-option"><input type="checkbox" name="c2_digikanaele" value="whatsapp"> WhatsApp-Gruppen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c2_digikanaele" value="marktplatz"> Online-Marktplatz (z.B. Regionalkiste)</label>
+              <label class="checkbox-option"><input type="checkbox" id="c2_keinen" name="c2_digikanaele" value="keinen"> Keinen</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">C3. Wie wichtig wären Ihnen folgende Funktionen einer Direktvermarktungs-App?</label>
+            <p class="hint">1 = Unwichtig, 5 = Sehr wichtig</p>
+            <div class="matrix-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>1<br><small>Unwichtig</small></th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5<br><small>Sehr wichtig</small></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Direktbestellungen von Kunden</td>
+                    <td><input type="radio" name="c3_direktbestellung" value="1"></td>
+                    <td><input type="radio" name="c3_direktbestellung" value="2"></td>
+                    <td><input type="radio" name="c3_direktbestellung" value="3"></td>
+                    <td><input type="radio" name="c3_direktbestellung" value="4"></td>
+                    <td><input type="radio" name="c3_direktbestellung" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Abo- und Bestellverwaltung</td>
+                    <td><input type="radio" name="c3_aboverwaltung" value="1"></td>
+                    <td><input type="radio" name="c3_aboverwaltung" value="2"></td>
+                    <td><input type="radio" name="c3_aboverwaltung" value="3"></td>
+                    <td><input type="radio" name="c3_aboverwaltung" value="4"></td>
+                    <td><input type="radio" name="c3_aboverwaltung" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Automatisierte Rechnungsstellung</td>
+                    <td><input type="radio" name="c3_rechnung" value="1"></td>
+                    <td><input type="radio" name="c3_rechnung" value="2"></td>
+                    <td><input type="radio" name="c3_rechnung" value="3"></td>
+                    <td><input type="radio" name="c3_rechnung" value="4"></td>
+                    <td><input type="radio" name="c3_rechnung" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Kundenkommunikation (Chat)</td>
+                    <td><input type="radio" name="c3_chat" value="1"></td>
+                    <td><input type="radio" name="c3_chat" value="2"></td>
+                    <td><input type="radio" name="c3_chat" value="3"></td>
+                    <td><input type="radio" name="c3_chat" value="4"></td>
+                    <td><input type="radio" name="c3_chat" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Tourenplanung für Lieferungen</td>
+                    <td><input type="radio" name="c3_tourenplanung" value="1"></td>
+                    <td><input type="radio" name="c3_tourenplanung" value="2"></td>
+                    <td><input type="radio" name="c3_tourenplanung" value="3"></td>
+                    <td><input type="radio" name="c3_tourenplanung" value="4"></td>
+                    <td><input type="radio" name="c3_tourenplanung" value="5"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">C4. Welchen monatlichen Betrag wären Sie bereit, für eine solche App zu bezahlen?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="c4_preis" value="nichts" required> Nichts – ich würde nur eine kostenlose Version nutzen</label>
+              <label class="radio-option"><input type="radio" name="c4_preis" value="bis_10"> Bis 10 € / Monat</label>
+              <label class="radio-option"><input type="radio" name="c4_preis" value="10_25"> 10 – 25 € / Monat</label>
+              <label class="radio-option"><input type="radio" name="c4_preis" value="25_50"> 25 – 50 € / Monat</label>
+              <label class="radio-option"><input type="radio" name="c4_preis" value="ueber_50"> Über 50 € / Monat</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question" for="c5_hindernis">C5. Was wäre für Sie das größte Hindernis bei der Nutzung einer digitalen Plattform?</label>
+            <textarea id="c5_hindernis" name="c5_hindernis" maxlength="500" placeholder="Ihre Gedanken dazu ..."></textarea>
+            <div class="char-counter" id="c5_counter">0 / 500</div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">C6. Würden Sie an einem Pilotprojekt (kostenlose Testphase) teilnehmen?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="c6_pilot" value="ja_gerne" required> Ja, sehr gerne</label>
+              <label class="radio-option"><input type="radio" name="c6_pilot" value="vielleicht"> Vielleicht</label>
+              <label class="radio-option"><input type="radio" name="c6_pilot" value="nein"> Nein</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- ===== SECTION D: Offene Fragen ===== -->
+        <fieldset>
+          <legend>D – Offene Fragen</legend>
+
+          <div class="form-group">
+            <label class="question" for="d1_fehlt">D1. Was fehlt Ihnen heute bei der Direktvermarktung am meisten?</label>
+            <textarea id="d1_fehlt" name="d1_fehlt" placeholder="Bitte beschreiben Sie in eigenen Worten ..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="question" for="d2_anmerkungen">D2. Haben Sie Anmerkungen oder Wünsche an die Forschung? <span class="hint">(Optional)</span></label>
+            <textarea id="d2_anmerkungen" name="d2_anmerkungen" placeholder="Ihre Anmerkungen sind herzlich willkommen ..."></textarea>
+          </div>
+        </fieldset>
+
+        <div style="text-align: center; padding-bottom: 2rem;">
+          <button type="submit" class="btn btn--primary btn--lg">Antworten absenden →</button>
+          <p class="text-muted mt-2">Ihre Antworten werden lokal in Ihrem Browser gespeichert.</p>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- THANK-YOU MODAL -->
+<div class="modal-overlay" id="modal-bauern" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <div class="modal__icon">🎉</div>
+    <h2 class="modal__title" id="modal-title">Vielen Dank!</h2>
+    <p>Ihre Antworten wurden erfolgreich gespeichert.</p>
+    <p data-sheets-status style="display:none; font-size:0.88rem; margin-bottom:0.5rem;"></p>
+    <p class="text-muted" style="font-size:0.85rem;">
+      Bisher eingegangen: <strong><span data-modal-count>1</span> Antworten</strong> (auf diesem Gerät)
+    </p>
+    <div class="modal__actions">
+      <button id="btn-export-bauern" class="btn btn--outline">📥 Backup exportieren (JSON)</button>
+      <a href="index.html" class="btn btn--primary" data-modal-close>← Zurück zur Startseite</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand">RegioFarm</div>
+        <p>Masterarbeit · 2026 / 2027</p>
+        <div class="footer__storage-note">
+          Alle Antworten werden ausschließlich lokal in Ihrem Browser gespeichert. Keine Daten werden übertragen.
+        </div>
+      </div>
+      <div class="footer__links">
+        <a href="index.html">Startseite</a>
+        <a href="umfrage-konsumenten.html">Umfrage Verbraucher</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <div class="footer__copy">&copy; 2026 · Masterarbeit Direktvermarktung</div>
+  </div>
+</footer>
+
+<script src="js/survey.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // nav toggle
+    var btn = document.getElementById('nav-toggle');
+    var nav = document.getElementById('nav-links');
+    if (btn && nav) btn.addEventListener('click', function() { nav.classList.toggle('is-open'); });
+
+    // "Sonstiges" reveal für B1 Produkte
+    initConditional('#b1_sonstiges_check', '#b1_sonstiges_reveal');
+
+    // char counter
+    initCharCounter('c5_hindernis', 'c5_counter', 500);
+
+    // init form
+    initSurveyForm('bauern-form', 'bauern', 'modal-bauern');
+  });
+</script>
+</body>
+</html>
