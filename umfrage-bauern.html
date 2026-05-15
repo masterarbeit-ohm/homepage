@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Umfrage für Landwirte – Direktvermarktung und digitale Plattformen. Masterarbeit 2026/2027.">
-  <title>Umfrage Landwirte – RegioFarm</title>
+  <title>Umfrage Landwirte – ORIGINTERRA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
 <nav class="nav">
   <div class="container">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo">Regio<span>Farm</span></a>
+      <a href="index.html" class="nav__logo">ORIGIN<span>TERRA</span></a>
       <button class="nav__toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -49,9 +49,8 @@
           <span>🔒 Vollständig anonym</span>
         </div>
         <div class="privacy-note">
-          Diese Umfrage ist vollständig anonym. Alle Antworten werden ausschließlich lokal in Ihrem Browser
-          gespeichert (localStorage). Es werden keine Daten an einen Server übertragen. Die Daten werden
-          ausschließlich für wissenschaftliche Zwecke im Rahmen einer Masterarbeit verwendet.
+          Diese Umfrage ist vollständig anonym. Die Daten werden ausschließlich für wissenschaftliche 
+          Zwecke im Rahmen einer Masterarbeit verwendet.
         </div>
       </div>
 
@@ -132,7 +131,7 @@
           <div class="form-group">
             <label class="question">B1. Welche Produkte erzeugen Sie? <span class="hint">(Mehrfachauswahl möglich)</span></label>
             <div class="checkbox-group">
-              <label class="checkbox-option"><input type="checkbox" name="b1_produkte" value="gemuese"> Gemüse</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_produkte" value="gemuese" required> Gemüse</label>
               <label class="checkbox-option"><input type="checkbox" name="b1_produkte" value="obst"> Obst</label>
               <label class="checkbox-option"><input type="checkbox" name="b1_produkte" value="getreide"> Getreide / Mehl</label>
               <label class="checkbox-option"><input type="checkbox" name="b1_produkte" value="milch"> Milch und Milchprodukte</label>
@@ -150,7 +149,7 @@
           <div class="form-group">
             <label class="question">B2. Wie verkaufen Sie Ihre Produkte aktuell? <span class="hint">(Mehrfachauswahl möglich)</span></label>
             <div class="checkbox-group">
-              <label class="checkbox-option"><input type="checkbox" name="b2_kanaele" value="hofverkauf"> Hofverkauf / Hofladen</label>
+              <label class="checkbox-option"><input type="checkbox" name="b2_kanaele" value="hofverkauf" required> Hofverkauf / Hofladen</label>
               <label class="checkbox-option"><input type="checkbox" name="b2_kanaele" value="wochenmarkt"> Wochenmarkt</label>
               <label class="checkbox-option"><input type="checkbox" name="b2_kanaele" value="einzelhandel"> Einzelhandel (Supermarkt / Biomarkt)</label>
               <label class="checkbox-option"><input type="checkbox" name="b2_kanaele" value="grosshandel"> Großhandel</label>
@@ -175,7 +174,7 @@
           <div class="form-group">
             <label class="question">B4. Wie zufrieden sind Sie mit Ihren aktuellen Vermarktungswegen?</label>
             <div class="star-rating" role="group" aria-label="Bewertung 1 bis 5 Sterne">
-              <input type="radio" id="b4_s5" name="b4_zufriedenheit" value="5"><label for="b4_s5" title="5 – Sehr zufrieden">★</label>
+              <input type="radio" id="b4_s5" name="b4_zufriedenheit" value="5" required><label for="b4_s5" title="5 – Sehr zufrieden">★</label>
               <input type="radio" id="b4_s4" name="b4_zufriedenheit" value="4"><label for="b4_s4" title="4 – Zufrieden">★</label>
               <input type="radio" id="b4_s3" name="b4_zufriedenheit" value="3"><label for="b4_s3" title="3 – Neutral">★</label>
               <input type="radio" id="b4_s2" name="b4_zufriedenheit" value="2"><label for="b4_s2" title="2 – Unzufrieden">★</label>
@@ -252,7 +251,7 @@
                 <tbody>
                   <tr>
                     <td>Direktbestellungen von Kunden</td>
-                    <td><input type="radio" name="c3_direktbestellung" value="1"></td>
+                    <td><input type="radio" name="c3_direktbestellung" value="1" required></td>
                     <td><input type="radio" name="c3_direktbestellung" value="2"></td>
                     <td><input type="radio" name="c3_direktbestellung" value="3"></td>
                     <td><input type="radio" name="c3_direktbestellung" value="4"></td>
@@ -260,7 +259,7 @@
                   </tr>
                   <tr>
                     <td>Abo- und Bestellverwaltung</td>
-                    <td><input type="radio" name="c3_aboverwaltung" value="1"></td>
+                    <td><input type="radio" name="c3_aboverwaltung" value="1" required></td>
                     <td><input type="radio" name="c3_aboverwaltung" value="2"></td>
                     <td><input type="radio" name="c3_aboverwaltung" value="3"></td>
                     <td><input type="radio" name="c3_aboverwaltung" value="4"></td>
@@ -268,7 +267,7 @@
                   </tr>
                   <tr>
                     <td>Automatisierte Rechnungsstellung</td>
-                    <td><input type="radio" name="c3_rechnung" value="1"></td>
+                    <td><input type="radio" name="c3_rechnung" value="1" required></td>
                     <td><input type="radio" name="c3_rechnung" value="2"></td>
                     <td><input type="radio" name="c3_rechnung" value="3"></td>
                     <td><input type="radio" name="c3_rechnung" value="4"></td>
@@ -276,7 +275,7 @@
                   </tr>
                   <tr>
                     <td>Kundenkommunikation (Chat)</td>
-                    <td><input type="radio" name="c3_chat" value="1"></td>
+                    <td><input type="radio" name="c3_chat" value="1" required></td>
                     <td><input type="radio" name="c3_chat" value="2"></td>
                     <td><input type="radio" name="c3_chat" value="3"></td>
                     <td><input type="radio" name="c3_chat" value="4"></td>
@@ -284,7 +283,7 @@
                   </tr>
                   <tr>
                     <td>Tourenplanung für Lieferungen</td>
-                    <td><input type="radio" name="c3_tourenplanung" value="1"></td>
+                    <td><input type="radio" name="c3_tourenplanung" value="1" required></td>
                     <td><input type="radio" name="c3_tourenplanung" value="2"></td>
                     <td><input type="radio" name="c3_tourenplanung" value="3"></td>
                     <td><input type="radio" name="c3_tourenplanung" value="4"></td>
@@ -308,7 +307,7 @@
 
           <div class="form-group">
             <label class="question" for="c5_hindernis">C5. Was wäre für Sie das größte Hindernis bei der Nutzung einer digitalen Plattform?</label>
-            <textarea id="c5_hindernis" name="c5_hindernis" maxlength="500" placeholder="Ihre Gedanken dazu ..."></textarea>
+            <textarea id="c5_hindernis" name="c5_hindernis" required maxlength="500" placeholder="Ihre Gedanken dazu ..."></textarea>
             <div class="char-counter" id="c5_counter">0 / 500</div>
           </div>
 
@@ -328,7 +327,7 @@
 
           <div class="form-group">
             <label class="question" for="d1_fehlt">D1. Was fehlt Ihnen heute bei der Direktvermarktung am meisten?</label>
-            <textarea id="d1_fehlt" name="d1_fehlt" placeholder="Bitte beschreiben Sie in eigenen Worten ..."></textarea>
+            <textarea id="d1_fehlt" name="d1_fehlt" required placeholder="Bitte beschreiben Sie in eigenen Worten ..."></textarea>
           </div>
 
           <div class="form-group">
@@ -339,7 +338,6 @@
 
         <div style="text-align: center; padding-bottom: 2rem;">
           <button type="submit" class="btn btn--primary btn--lg">Antworten absenden →</button>
-          <p class="text-muted mt-2">Ihre Antworten werden lokal in Ihrem Browser gespeichert.</p>
         </div>
 
       </form>
@@ -353,13 +351,9 @@
   <div class="modal">
     <div class="modal__icon">🎉</div>
     <h2 class="modal__title" id="modal-title">Vielen Dank!</h2>
-    <p>Ihre Antworten wurden erfolgreich gespeichert.</p>
+    <p>Ihre Antworten wurden erfolgreich übermittelt.</p>
     <p data-sheets-status style="display:none; font-size:0.88rem; margin-bottom:0.5rem;"></p>
-    <p class="text-muted" style="font-size:0.85rem;">
-      Bisher eingegangen: <strong><span data-modal-count>1</span> Antworten</strong> (auf diesem Gerät)
-    </p>
     <div class="modal__actions">
-      <button id="btn-export-bauern" class="btn btn--outline">📥 Backup exportieren (JSON)</button>
       <a href="index.html" class="btn btn--primary" data-modal-close>← Zurück zur Startseite</a>
     </div>
   </div>
@@ -370,16 +364,14 @@
   <div class="container">
     <div class="footer__inner">
       <div>
-        <div class="footer__brand">RegioFarm</div>
+        <div class="footer__brand">ORIGINTERRA</div>
         <p>Masterarbeit · 2026 / 2027</p>
-        <div class="footer__storage-note">
-          Alle Antworten werden ausschließlich lokal in Ihrem Browser gespeichert. Keine Daten werden übertragen.
-        </div>
+
       </div>
       <div class="footer__links">
         <a href="index.html">Startseite</a>
         <a href="umfrage-konsumenten.html">Umfrage Verbraucher</a>
-        <a href="kontakt.html">Kontakt</a>
+        <a href="kontakt.html#kontakt">Kontakt</a>
       </div>
     </div>
     <div class="footer__copy">&copy; 2026 · Masterarbeit Direktvermarktung</div>

@@ -1,4 +1,4 @@
-// Google Apps Script – RegioFarm Umfragen
+// Google Apps Script – ORIGINTERRA Umfragen
 // Anleitung: siehe unten nach dem Code
 
 var SHEET_BAUERN      = 'Bauern-Umfrage';
@@ -69,7 +69,7 @@ function testSetup() {
 ==============================================================
 
 1. Öffne Google Drive → "Neu" → "Google Tabellen"
-   Benenne die Tabelle z.B. "RegioFarm Umfragen"
+   Benenne die Tabelle z.B. "ORIGINTERRA Umfragen"
 
 2. In der Tabelle: Erweiterungen → Apps Script
 
@@ -81,7 +81,7 @@ function testSetup() {
 
 5. Klicke oben rechts auf "Bereitstellen" → "Neue Bereitstellung"
    - Typ: Web-App
-   - Beschreibung: RegioFarm Umfragen v1
+   - Beschreibung: ORIGINTERRA Umfragen v1
    - Ausführen als: Ich (deine Google-Adresse)
    - Zugriff: Jeder (auch anonym)
    → "Bereitstellen" klicken

@@ -145,7 +145,89 @@ function initSurveyProgress(formId) {
   }
   form.addEventListener('change', update);
   form.addEventListener('input', update);
+
+  // Fehler-Markierung beim Ausfüllen entfernen
+  form.addEventListener('change', function(e) {
+    var group = e.target.closest('.form-group');
+    if (group && group.classList.contains('field-error')) {
+      group.classList.remove('field-error');
+      group.querySelectorAll('.validation-msg').forEach(function(m) { m.remove(); });
+    }
+  });
+  form.addEventListener('input', function(e) {
+    var group = e.target.closest('.form-group');
+    if (group && group.classList.contains('field-error')) {
+      group.classList.remove('field-error');
+      group.querySelectorAll('.validation-msg').forEach(function(m) { m.remove(); });
+    }
+  });
+
   update();
+}
+
+/* ── Formular-Validierung ── */
+function validateForm(form) {
+  // Fehler-Markierungen zurücksetzen
+  form.querySelectorAll('.field-error').forEach(function(el) { el.classList.remove('field-error'); });
+  form.querySelectorAll('.validation-msg').forEach(function(el) { el.remove(); });
+
+  var firstError = null;
+
+  function markError(group) {
+    group.classList.add('field-error');
+    var msg = document.createElement('p');
+    msg.className = 'validation-msg';
+    msg.textContent = 'Bitte ausfüllen.';
+    group.appendChild(msg);
+    if (!firstError) firstError = group;
+  }
+
+  // Pflichtfelder prüfen (nur sichtbare — keine versteckten conditionals)
+  function isVisible(el) {
+    var conditional = el.closest('.conditional');
+    return !conditional || conditional.classList.contains('is-visible');
+  }
+
+  // Select und Texteingaben
+  form.querySelectorAll('select[required], input[required]:not([type="radio"]):not([type="checkbox"]), textarea[required]').forEach(function(input) {
+    if (!isVisible(input)) return;
+    if (!input.value.trim()) {
+      var group = input.closest('.form-group');
+      if (group && !group.classList.contains('field-error')) markError(group);
+    }
+  });
+
+  // Radio-Gruppen (nur einmal pro name prüfen)
+  var checkedNames = {};
+  form.querySelectorAll('input[type="radio"][required]').forEach(function(input) {
+    if (checkedNames[input.name] !== undefined) return;
+    if (!isVisible(input)) { checkedNames[input.name] = true; return; }
+    var anyChecked = form.querySelector('input[name="' + input.name + '"]:checked');
+    checkedNames[input.name] = !!anyChecked;
+    if (!anyChecked) {
+      var group = input.closest('.form-group');
+      if (group && !group.classList.contains('field-error')) markError(group);
+    }
+  });
+
+  // Checkbox-Gruppen (mindestens eine muss ausgewählt sein)
+  var checkedCheckboxNames = {};
+  form.querySelectorAll('input[type="checkbox"][required]').forEach(function(input) {
+    if (checkedCheckboxNames[input.name] !== undefined) return;
+    if (!isVisible(input)) { checkedCheckboxNames[input.name] = true; return; }
+    var anyChecked = form.querySelector('input[name="' + input.name + '"]:checked');
+    checkedCheckboxNames[input.name] = !!anyChecked;
+    if (!anyChecked) {
+      var group = input.closest('.form-group');
+      if (group && !group.classList.contains('field-error')) markError(group);
+    }
+  });
+
+  if (firstError) {
+    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return false;
+  }
+  return true;
 }
 
 /* ── Haupt-Init ── */
@@ -160,6 +242,8 @@ function initSurveyForm(formId, surveyId, modalId) {
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
+
+    if (!validateForm(form)) return;
 
     var submitBtn = form.querySelector('[type="submit"]');
     if (submitBtn) {
