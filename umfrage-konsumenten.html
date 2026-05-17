@@ -396,6 +396,34 @@
           </div>
         </fieldset>
 
+        <!-- ===== PROTOTYP TESTER ===== -->
+        <fieldset>
+          <legend>🚀 App-Prototyp testen</legend>
+
+          <div class="form-group">
+            <label class="question">Hätten Sie Interesse, den App-Prototyp frühzeitig zu testen?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="pt_interesse" value="ja" required> Ja, ich möchte Tester werden</label>
+              <label class="radio-option"><input type="radio" name="pt_interesse" value="nein"> Nein, danke</label>
+            </div>
+
+            <div class="conditional" id="pt_reveal_k">
+              <div class="form-group" style="margin-top:1rem;">
+                <label class="question" style="margin-bottom:0.4rem; display:block;">Ihr bevorzugtes System</label>
+                <div class="radio-group radio-group--inline">
+                  <label class="radio-option"><input type="radio" name="pt_system" value="Android"> Android</label>
+                  <label class="radio-option"><input type="radio" name="pt_system" value="iOS"> iOS</label>
+                  <label class="radio-option"><input type="radio" name="pt_system" value="Web"> Web</label>
+                </div>
+              </div>
+              <div class="form-group" style="margin-top:0.75rem;">
+                <label class="question" for="pt_email_k" style="margin-bottom:0.4rem; display:block;">E-Mail-Adresse für Einladung</label>
+                <input type="email" id="pt_email_k" name="pt_email" placeholder="name@beispiel.de">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
         <div style="text-align: center; padding-bottom: 2rem;">
           <button type="submit" class="btn btn--primary btn--lg">Antworten absenden →</button>
         </div>
@@ -451,6 +479,9 @@
 
     // D2 email reveal
     initConditionalByValue('d2_benachrichtigung', 'ja', '#d2_email_reveal');
+
+    // Prototyp-Tester reveal
+    initConditionalByValue('pt_interesse', 'ja', '#pt_reveal_k');
 
     // char counter
     initCharCounter('c5_nutzung', 'c5_counter', 500);

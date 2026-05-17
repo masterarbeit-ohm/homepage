@@ -24,6 +24,7 @@
         <li><a href="index.html" aria-current="page">Startseite</a></li>
         <li><a href="umfrage-bauern.html">Umfrage Landwirte</a></li>
         <li><a href="umfrage-konsumenten.html">Umfrage Verbraucher</a></li>
+
       </ul>
     </div>
   </div>
@@ -41,7 +42,7 @@
       </p>
       <div class="hero__cta">
         <a href="#projekt" class="btn btn--outline-white btn--lg">Zum Projekt</a>
-        <a href="#umfragen" class="btn btn--accent btn--lg">Jetzt mitmachen</a>
+        <a href="#umfragen" class="btn btn--accent btn--lg">Jetzt zum Umfragen</a>
       </div>
     </div>
   </div>
@@ -212,9 +213,6 @@
         <p>Sie sind Landwirt oder bewirtschaften einen Bauernhof? Helfen Sie mit, die Herausforderungen der Direktvermarktung aus erster Hand zu verstehen.</p>
         <p class="text-muted">⏱ ca. 5 Minuten &nbsp;·&nbsp; 23 Fragen</p>
         <a href="umfrage-bauern.html" class="btn btn--primary mt-2">Zur Landwirt-Umfrage →</a>
-        <div class="survey-count">
-          Bisher eingegangen: <strong><span data-survey-counter="bauern">0</span> Antworten</strong>
-        </div>
       </div>
 
       <div class="card card--survey">
@@ -223,14 +221,58 @@
         <p>Sie kaufen Lebensmittel ein? Teilen Sie Ihre Erfahrungen und Wünsche beim Kauf regionaler Produkte direkt vom Bauern.</p>
         <p class="text-muted">⏱ ca. 5 Minuten &nbsp;·&nbsp; 22 Fragen</p>
         <a href="umfrage-konsumenten.html" class="btn btn--primary mt-2">Zur Verbraucher-Umfrage →</a>
-        <div class="survey-count">
-          Bisher eingegangen: <strong><span data-survey-counter="konsumenten">0</span> Antworten</strong>
-        </div>
       </div>
 
     </div>
   </div>
 </section>
+
+<!-- ======================== PROTOTYP TESTEN ======================== -->
+<section class="section section--alt" id="prototyp">
+  <div class="container" style="text-align:center;">
+    <span class="section-label">App-Prototyp</span>
+    <h2>Tester werden</h2>
+    <p style="color:var(--color-text-muted); max-width:560px; margin:0 auto 2rem;">
+      Möchten Sie die App frühzeitig ausprobieren? Tragen Sie sich ein. 
+      Ich melde mich, sobald der Prototyp für Ihr System verfügbar ist.
+    </p>
+    <button id="btn-prototyp" class="btn btn--primary btn--lg">Jetzt für Prototyp anmelden</button>
+  </div>
+</section>
+
+<!-- MODAL: Prototyp anmelden -->
+<div class="modal-overlay" id="modal-prototyp" role="dialog" aria-modal="true" aria-labelledby="modal-prototyp-title">
+  <div class="modal" style="max-width:440px; width:100%;">
+    <div class="modal__icon">📱</div>
+    <h2 class="modal__title" id="modal-prototyp-title">Prototyp testen</h2>
+    <p style="color:var(--color-text-muted); font-size:0.9rem; margin-bottom:1.5rem;">
+      Wählen Sie Ihr System und geben Sie Ihre E-Mail-Adresse ein.
+    </p>
+
+    <form id="prototyp-form">
+      <div class="form-group" style="text-align:left; margin-bottom:1.25rem;">
+        <label class="question" style="margin-bottom:0.5rem; display:block;">System</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="pt_system" value="Android" required> Android</label>
+          <label class="radio-option"><input type="radio" name="pt_system" value="iOS"> iOS</label>
+          <label class="radio-option"><input type="radio" name="pt_system" value="Web"> Web</label>
+        </div>
+      </div>
+
+      <div class="form-group" style="text-align:left; margin-bottom:1.5rem;">
+        <label class="question" for="pt_email" style="margin-bottom:0.4rem; display:block;">E-Mail-Adresse</label>
+        <input type="email" id="pt_email" name="pt_email" required placeholder="name@beispiel.de" style="width:100%;">
+      </div>
+
+      <div id="prototyp-msg" style="display:none; font-size:0.88rem; margin-bottom:1rem;"></div>
+
+      <div class="modal__actions">
+        <button type="submit" id="btn-prototyp-submit" class="btn btn--primary btn--lg">Anmelden</button>
+        <button type="button" class="btn btn--outline" id="btn-prototyp-close">Abbrechen</button>
+      </div>
+    </form>
+  </div>
+</div>
 
 <!-- ======================== SPONSOR TEASER ======================== -->
 <section class="section section--dark">
@@ -279,11 +321,66 @@
 <script src="js/survey.js"></script>
 <script src="js/progress.js"></script>
 <script>
-  // nav toggle (fallback if progress.js not loaded yet)
+  // nav toggle
   (function() {
     var btn = document.getElementById('nav-toggle');
     var nav = document.getElementById('nav-links');
     if (btn && nav) btn.addEventListener('click', function() { nav.classList.toggle('is-open'); });
+  })();
+
+  // Prototyp-Modal
+  (function() {
+    var scriptUrl = 'https://script.google.com/macros/s/AKfycbwlLZe8pHIWWn66XcNhS_tCQanaJ1uJzUZ7sXkOPbVsplVSteVd6ecUEcJCoQE4u1Y_xw/exec';
+    var modal    = document.getElementById('modal-prototyp');
+    var openBtn  = document.getElementById('btn-prototyp');
+    var closeBtn = document.getElementById('btn-prototyp-close');
+    var form     = document.getElementById('prototyp-form');
+    var submitBtn= document.getElementById('btn-prototyp-submit');
+    var msgEl    = document.getElementById('prototyp-msg');
+
+    function openModal() { modal.classList.add('is-open'); }
+    function closeModal() {
+      modal.classList.remove('is-open');
+      form.reset();
+      msgEl.style.display = 'none';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Anmelden';
+    }
+
+    if (openBtn)  openBtn.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var system = form.querySelector('input[name="pt_system"]:checked');
+      var email  = document.getElementById('pt_email').value.trim();
+      if (!system) { msgEl.textContent = 'Bitte wählen Sie ein System.'; msgEl.style.display = 'block'; return; }
+      if (!email)  { msgEl.textContent = 'Bitte geben Sie Ihre E-Mail-Adresse ein.'; msgEl.style.display = 'block'; return; }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Wird gespeichert …';
+
+      var payload = JSON.stringify({
+        surveyId: 'prototyp-tester',
+        response: { pt_system: system.value, pt_email: email, _timestamp: new Date().toISOString() }
+      });
+
+      fetch(scriptUrl, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: payload, redirect: 'follow' })
+        .then(function() {
+          msgEl.innerHTML = '✅ Vielen Dank! Wir melden uns, sobald der Prototyp verfügbar ist.';
+          msgEl.style.color = 'var(--color-primary)';
+          msgEl.style.display = 'block';
+          submitBtn.style.display = 'none';
+          closeBtn.textContent = 'Schließen';
+        })
+        .catch(function() {
+          msgEl.textContent = '⚠️ Fehler beim Senden. Bitte versuchen Sie es erneut.';
+          msgEl.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Anmelden';
+        });
+    });
   })();
 </script>
 </body>
