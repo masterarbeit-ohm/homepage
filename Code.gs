@@ -3,6 +3,7 @@
 
 var SHEET_BAUERN      = 'Bauern-Umfrage';
 var SHEET_KONSUMENTEN = 'Konsumenten-Umfrage';
+var SHEET_TESTER      = 'Prototyp-Tester';
 
 function doPost(e) {
   try {
@@ -11,7 +12,9 @@ function doPost(e) {
     var response = payload.response;
 
     var ss        = SpreadsheetApp.getActiveSpreadsheet();
-    var sheetName = surveyId === 'bauern' ? SHEET_BAUERN : SHEET_KONSUMENTEN;
+    var sheetName = surveyId === 'bauern'           ? SHEET_BAUERN
+                  : surveyId === 'prototyp-tester'  ? SHEET_TESTER
+                  : SHEET_KONSUMENTEN;
     var sheet     = ss.getSheetByName(sheetName) || ss.insertSheet(sheetName);
 
     var keys = Object.keys(response);
