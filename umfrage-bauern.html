@@ -156,7 +156,10 @@
               <label class="checkbox-option"><input type="checkbox" name="b2_kanaele" value="abo_kisten"> Abo-Kisten / Gemüsekisten</label>
               <label class="checkbox-option"><input type="checkbox" name="b2_kanaele" value="online_shop"> Eigener Online-Shop</label>
               <label class="checkbox-option"><input type="checkbox" name="b2_kanaele" value="gastronomie"> Gastronomie</label>
-              <label class="checkbox-option"><input type="checkbox" name="b2_kanaele" value="sonstiges_kanal"> Sonstiges</label>
+              <label class="checkbox-option"><input type="checkbox" name="b2_kanaele_sonstiges_cb" id="b2_sonstiges_cb"> Sonstiges</label>
+            </div>
+            <div class="conditional" id="b2_sonstiges_wrap">
+              <input type="text" name="b2_kanaele_sonstiges" id="b2_kanaele_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
             </div>
           </div>
 
@@ -192,7 +195,10 @@
               <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="logistik"> Logistik und Lieferung</label>
               <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="verwaltung"> Verwaltungsaufwand / Bürokratie</label>
               <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="konkurrenz"> Konkurrenz durch Discounter</label>
-              <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="sonstiges_herausf"> Sonstiges</label>
+              <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen_sonstiges_cb" id="b5_sonstiges_cb"> Sonstiges</label>
+            </div>
+            <div class="conditional" id="b5_sonstiges_wrap">
+              <input type="text" name="b5_herausforderungen_sonstiges" id="b5_herausforderungen_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
             </div>
           </div>
 
@@ -230,6 +236,10 @@
               <label class="checkbox-option"><input type="checkbox" name="c2_digikanaele" value="whatsapp"> WhatsApp-Gruppen</label>
               <label class="checkbox-option"><input type="checkbox" name="c2_digikanaele" value="marktplatz"> Online-Marktplatz (z.B. Regionalkiste)</label>
               <label class="checkbox-option"><input type="checkbox" id="c2_keinen" name="c2_digikanaele" value="keinen"> Keinen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c2_digikanaele_sonstiges_cb" id="c2_sonstiges_cb"> Sonstiges</label>
+            </div>
+            <div class="conditional" id="c2_sonstiges_wrap">
+              <input type="text" name="c2_digikanaele_sonstiges" id="c2_digikanaele_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
             </div>
           </div>
 
@@ -241,53 +251,93 @@
                 <thead>
                   <tr>
                     <th></th>
-                    <th>1<br><small>Unwichtig</small></th>
+                    <th>1</th>
                     <th>2</th>
                     <th>3</th>
                     <th>4</th>
-                    <th>5<br><small>Sehr wichtig</small></th>
+                    <th>5</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Direktbestellungen von Kunden</td>
-                    <td><input type="radio" name="c3_direktbestellung" value="1" required></td>
-                    <td><input type="radio" name="c3_direktbestellung" value="2"></td>
-                    <td><input type="radio" name="c3_direktbestellung" value="3"></td>
-                    <td><input type="radio" name="c3_direktbestellung" value="4"></td>
-                    <td><input type="radio" name="c3_direktbestellung" value="5"></td>
+                    <td>Direktbestellungen von Kundinnen und Kunden erhalten</td>
+                    <td><input type="radio" name="c3_direktbestellungen" value="1" required></td>
+                    <td><input type="radio" name="c3_direktbestellungen" value="2"></td>
+                    <td><input type="radio" name="c3_direktbestellungen" value="3"></td>
+                    <td><input type="radio" name="c3_direktbestellungen" value="4"></td>
+                    <td><input type="radio" name="c3_direktbestellungen" value="5"></td>
                   </tr>
                   <tr>
-                    <td>Abo- und Bestellverwaltung</td>
-                    <td><input type="radio" name="c3_aboverwaltung" value="1" required></td>
-                    <td><input type="radio" name="c3_aboverwaltung" value="2"></td>
-                    <td><input type="radio" name="c3_aboverwaltung" value="3"></td>
-                    <td><input type="radio" name="c3_aboverwaltung" value="4"></td>
-                    <td><input type="radio" name="c3_aboverwaltung" value="5"></td>
+                    <td>Automatische Rechnungen und Zahlungsübersicht</td>
+                    <td><input type="radio" name="c3_rechnungen" value="1" required></td>
+                    <td><input type="radio" name="c3_rechnungen" value="2"></td>
+                    <td><input type="radio" name="c3_rechnungen" value="3"></td>
+                    <td><input type="radio" name="c3_rechnungen" value="4"></td>
+                    <td><input type="radio" name="c3_rechnungen" value="5"></td>
                   </tr>
                   <tr>
-                    <td>Automatisierte Rechnungsstellung</td>
-                    <td><input type="radio" name="c3_rechnung" value="1" required></td>
-                    <td><input type="radio" name="c3_rechnung" value="2"></td>
-                    <td><input type="radio" name="c3_rechnung" value="3"></td>
-                    <td><input type="radio" name="c3_rechnung" value="4"></td>
-                    <td><input type="radio" name="c3_rechnung" value="5"></td>
+                    <td>Einfacher Kontakt sowie Informationen zu Angeboten und Märkten versenden</td>
+                    <td><input type="radio" name="c3_kontakt_info" value="1" required></td>
+                    <td><input type="radio" name="c3_kontakt_info" value="2"></td>
+                    <td><input type="radio" name="c3_kontakt_info" value="3"></td>
+                    <td><input type="radio" name="c3_kontakt_info" value="4"></td>
+                    <td><input type="radio" name="c3_kontakt_info" value="5"></td>
                   </tr>
                   <tr>
-                    <td>Kundenkommunikation (Chat)</td>
-                    <td><input type="radio" name="c3_chat" value="1" required></td>
-                    <td><input type="radio" name="c3_chat" value="2"></td>
-                    <td><input type="radio" name="c3_chat" value="3"></td>
-                    <td><input type="radio" name="c3_chat" value="4"></td>
-                    <td><input type="radio" name="c3_chat" value="5"></td>
+                    <td>Vorbestellungen oder Reservierungen ermöglichen</td>
+                    <td><input type="radio" name="c3_vorbestellungen" value="1" required></td>
+                    <td><input type="radio" name="c3_vorbestellungen" value="2"></td>
+                    <td><input type="radio" name="c3_vorbestellungen" value="3"></td>
+                    <td><input type="radio" name="c3_vorbestellungen" value="4"></td>
+                    <td><input type="radio" name="c3_vorbestellungen" value="5"></td>
                   </tr>
                   <tr>
-                    <td>Tourenplanung für Lieferungen</td>
-                    <td><input type="radio" name="c3_tourenplanung" value="1" required></td>
-                    <td><input type="radio" name="c3_tourenplanung" value="2"></td>
-                    <td><input type="radio" name="c3_tourenplanung" value="3"></td>
-                    <td><input type="radio" name="c3_tourenplanung" value="4"></td>
-                    <td><input type="radio" name="c3_tourenplanung" value="5"></td>
+                    <td>Lieferungen und Abholungen besser organisieren</td>
+                    <td><input type="radio" name="c3_logistik" value="1" required></td>
+                    <td><input type="radio" name="c3_logistik" value="2"></td>
+                    <td><input type="radio" name="c3_logistik" value="3"></td>
+                    <td><input type="radio" name="c3_logistik" value="4"></td>
+                    <td><input type="radio" name="c3_logistik" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Regelmäßige Liefer-Abos (z. B. wöchentlich oder monatlich) anbieten</td>
+                    <td><input type="radio" name="c3_abos" value="1" required></td>
+                    <td><input type="radio" name="c3_abos" value="2"></td>
+                    <td><input type="radio" name="c3_abos" value="3"></td>
+                    <td><input type="radio" name="c3_abos" value="4"></td>
+                    <td><input type="radio" name="c3_abos" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Unterstützung bei Werbung und Sichtbarkeit</td>
+                    <td><input type="radio" name="c3_marketing" value="1" required></td>
+                    <td><input type="radio" name="c3_marketing" value="2"></td>
+                    <td><input type="radio" name="c3_marketing" value="3"></td>
+                    <td><input type="radio" name="c3_marketing" value="4"></td>
+                    <td><input type="radio" name="c3_marketing" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Restwaren oder überschüssige Produkte besser verkaufen</td>
+                    <td><input type="radio" name="c3_restwaren" value="1" required></td>
+                    <td><input type="radio" name="c3_restwaren" value="2"></td>
+                    <td><input type="radio" name="c3_restwaren" value="3"></td>
+                    <td><input type="radio" name="c3_restwaren" value="4"></td>
+                    <td><input type="radio" name="c3_restwaren" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Stammkundinnen und Stammkunden aufbauen und halten</td>
+                    <td><input type="radio" name="c3_stammkunden" value="1" required></td>
+                    <td><input type="radio" name="c3_stammkunden" value="2"></td>
+                    <td><input type="radio" name="c3_stammkunden" value="3"></td>
+                    <td><input type="radio" name="c3_stammkunden" value="4"></td>
+                    <td><input type="radio" name="c3_stammkunden" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Bewertungen und Feedback von Kundinnen und Kunden erhalten</td>
+                    <td><input type="radio" name="c3_bewertungen" value="1" required></td>
+                    <td><input type="radio" name="c3_bewertungen" value="2"></td>
+                    <td><input type="radio" name="c3_bewertungen" value="3"></td>
+                    <td><input type="radio" name="c3_bewertungen" value="4"></td>
+                    <td><input type="radio" name="c3_bewertungen" value="5"></td>
                   </tr>
                 </tbody>
               </table>
@@ -306,17 +356,50 @@
           </div>
 
           <div class="form-group">
-            <label class="question" for="c5_hindernis">C5. Was wäre für Sie das größte Hindernis bei der Nutzung einer digitalen Plattform?</label>
-            <textarea id="c5_hindernis" name="c5_hindernis" required maxlength="500" placeholder="Ihre Gedanken dazu ..."></textarea>
-            <div class="char-counter" id="c5_counter">0 / 500</div>
+            <label class="question">C5. Was wären für Sie mögliche Hindernisse bei der Nutzung einer digitalen Plattform? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <div class="checkbox-group">
+              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="zeitaufwand" required> Zu wenig Zeit für zusätzliche digitale Aufgaben</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="bedienung"> Zu komplizierte Bedienung</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="datenschutz"> Datenschutz- und Sicherheitsbedenken</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="verwaltung"> Sorge vor mehr Büroarbeit und Organisation</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="internet"> Schlechte Internetverbindung auf dem Hof</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="kein_bedarf"> Kein Bedarf an digitalen Lösungen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="kundenkontakt"> Fehlender persönlicher Kundenkontakt</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis_sonstiges_cb" id="c5_sonstiges_cb"> Sonstiges</label>
+            </div>
+            <div class="conditional" id="c5_sonstiges_wrap">
+              <input type="text" name="c5_hindernis_sonstiges" id="c5_hindernis_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+            </div>
           </div>
 
           <div class="form-group">
-            <label class="question">C6. Würden Sie an einem Pilotprojekt (kostenlose Testphase) teilnehmen?</label>
+            <label class="question">C6. Was fehlt Ihnen aktuell bei der Direktvermarktung am meisten? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <div class="checkbox-group">
+              <label class="checkbox-option"><input type="checkbox" name="c6_fehlt" value="mehr_kunden" required> Mehr Kunden aus der Region erreichen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_fehlt" value="logistik"> Unterstützung bei Lieferung und Logistik</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_fehlt" value="sichtbarkeit"> Höhere Sichtbarkeit im Internet und auf digitalen Plattformen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_fehlt" value="faire_preise"> Meine Produkte zu fairen Preisen verkaufen können</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_fehlt" value="digital"> Digitale Lösungen zur Organisation des Verkaufs</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_fehlt" value="personal"> Unterstützung bei Personalmangel und Arbeitsbelastung</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_fehlt" value="vertrauen"> Vertrauen und langfristige Beziehungen zu Kundinnen und Kunden aufbauen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_fehlt_sonstiges_cb" id="c6_sonstiges_cb"> Sonstiges</label>
+            </div>
+            <div class="conditional" id="c6_sonstiges_wrap">
+              <input type="text" name="c6_fehlt_sonstiges" id="c6_fehlt_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question" for="c6_wichtigster">Welcher Punkt ist für Sie am wichtigsten? <span class="hint">(Optional)</span></label>
+            <input type="text" id="c6_wichtigster" name="c6_wichtigster" placeholder="Kurze Antwort …" maxlength="200">
+          </div>
+
+          <div class="form-group">
+            <label class="question">C7. Würden Sie an einem Pilotprojekt (kostenlose Testphase) teilnehmen?</label>
             <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="c6_pilot" value="ja_gerne" required> Ja, sehr gerne</label>
-              <label class="radio-option"><input type="radio" name="c6_pilot" value="vielleicht"> Vielleicht</label>
-              <label class="radio-option"><input type="radio" name="c6_pilot" value="nein"> Nein</label>
+              <label class="radio-option"><input type="radio" name="c7_pilot" value="ja_gerne" required> Ja, sehr gerne</label>
+              <label class="radio-option"><input type="radio" name="c7_pilot" value="vielleicht"> Vielleicht</label>
+              <label class="radio-option"><input type="radio" name="c7_pilot" value="nein"> Nein</label>
             </div>
           </div>
         </fieldset>
@@ -326,12 +409,7 @@
           <legend>D – Offene Fragen</legend>
 
           <div class="form-group">
-            <label class="question" for="d1_fehlt">D1. Was fehlt Ihnen heute bei der Direktvermarktung am meisten?</label>
-            <textarea id="d1_fehlt" name="d1_fehlt" required placeholder="Bitte beschreiben Sie in eigenen Worten ..."></textarea>
-          </div>
-
-          <div class="form-group">
-            <label class="question" for="d2_anmerkungen">D2. Haben Sie Anmerkungen oder Wünsche an die Forschung? <span class="hint">(Optional)</span></label>
+            <label class="question" for="d2_anmerkungen">D1. Haben Sie Anmerkungen oder Wünsche an die Forschung? <span class="hint">(Optional)</span></label>
             <textarea id="d2_anmerkungen" name="d2_anmerkungen" placeholder="Ihre Anmerkungen sind herzlich willkommen ..."></textarea>
           </div>
         </fieldset>
@@ -390,9 +468,41 @@
     // "Sonstiges" reveal für B1 Produkte
     initConditional('#b1_sonstiges_check', '#b1_sonstiges_reveal');
 
+    // B2 Sonstiges reveal
+    initConditional('#b2_sonstiges_cb', '#b2_sonstiges_wrap');
 
-    // char counter
-    initCharCounter('c5_hindernis', 'c5_counter', 500);
+    // B5 Sonstiges reveal
+    initConditional('#b5_sonstiges_cb', '#b5_sonstiges_wrap');
+
+    // C2 Sonstiges reveal
+    initConditional('#c2_sonstiges_cb', '#c2_sonstiges_wrap');
+
+    // C2 "Keinen" ist exklusiv
+    var c2Keinen = document.getElementById('c2_keinen');
+    var c2Others = Array.from(document.querySelectorAll('input[name="c2_digikanaele"]')).filter(function(cb) { return cb !== c2Keinen; });
+    var c2SonstigesCb = document.getElementById('c2_sonstiges_cb');
+    if (c2Keinen) {
+      c2Keinen.addEventListener('change', function() {
+        if (this.checked) {
+          c2Others.forEach(function(cb) { cb.checked = false; });
+          if (c2SonstigesCb) c2SonstigesCb.checked = false;
+          var wrap = document.getElementById('c2_sonstiges_wrap');
+          if (wrap) { wrap.classList.remove('is-visible'); var inp = wrap.querySelector('input'); if (inp) inp.value = ''; }
+          c2Keinen.checked = true;
+        }
+      });
+      c2Others.concat(c2SonstigesCb ? [c2SonstigesCb] : []).forEach(function(cb) {
+        cb.addEventListener('change', function() {
+          if (this.checked) c2Keinen.checked = false;
+        });
+      });
+    }
+
+    // C5 Sonstiges reveal
+    initConditional('#c5_sonstiges_cb', '#c5_sonstiges_wrap');
+
+    // C6 Sonstiges reveal
+    initConditional('#c6_sonstiges_cb', '#c6_sonstiges_wrap');
 
     // init form
     initSurveyForm('bauern-form', 'bauern', 'modal-bauern');

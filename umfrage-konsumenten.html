@@ -236,24 +236,31 @@
           </div>
 
           <div class="form-group">
-            <label class="question">B5. Haben Sie schon einmal eine Abo-Kiste (z.B. von einem Biohof) bezogen?</label>
-            <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="b5_abo" value="ja_aktuell" required> Ja, ich habe aktuell eine</label>
-              <label class="radio-option"><input type="radio" name="b5_abo" value="ja_frueher"> Ja, früher hatte ich eine</label>
-              <label class="radio-option"><input type="radio" name="b5_abo" value="nein_interessiert"> Nein, aber ich bin interessiert</label>
-              <label class="radio-option"><input type="radio" name="b5_abo" value="nein_nicht"> Nein, kein Interesse</label>
-            </div>
-            <!-- Follow-up for ja_aktuell / ja_frueher -->
-            <div class="conditional" id="b5_zufrieden_reveal" style="margin-top: 1rem;">
-              <label class="question" style="font-size:0.9rem;">Wie zufrieden waren / sind Sie mit der Abo-Kiste?</label>
-              <div class="star-rating" role="group" aria-label="Bewertung 1 bis 5 Sterne">
-                <input type="radio" id="b5_s5" name="b5_abo_zufriedenheit" value="5"><label for="b5_s5" title="5 – Sehr zufrieden">★</label>
-                <input type="radio" id="b5_s4" name="b5_abo_zufriedenheit" value="4"><label for="b5_s4" title="4 – Zufrieden">★</label>
-                <input type="radio" id="b5_s3" name="b5_abo_zufriedenheit" value="3"><label for="b5_s3" title="3 – Neutral">★</label>
-                <input type="radio" id="b5_s2" name="b5_abo_zufriedenheit" value="2"><label for="b5_s2" title="2 – Unzufrieden">★</label>
-                <input type="radio" id="b5_s1" name="b5_abo_zufriedenheit" value="1"><label for="b5_s1" title="1 – Sehr unzufrieden">★</label>
-              </div>
-              <p class="hint" style="margin-top:0.4rem;">1 Stern = sehr unzufrieden, 5 Sterne = sehr zufrieden</p>
+            <label class="question">B5. Ich würde regionale Produkte häufiger kaufen, wenn der Einkauf einfacher wäre.</label>
+            <p class="hint">1 = stimme gar nicht zu, 5 = stimme voll zu</p>
+            <div class="matrix-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>1<br><small>gar nicht</small></th>
+                    <th>2</th>
+                    <th>3<br><small>neutral</small></th>
+                    <th>4</th>
+                    <th>5<br><small>voll zu</small></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Einfacherer Einkauf</td>
+                    <td><input type="radio" name="b5_einkauf" value="1" required></td>
+                    <td><input type="radio" name="b5_einkauf" value="2"></td>
+                    <td><input type="radio" name="b5_einkauf" value="3"></td>
+                    <td><input type="radio" name="b5_einkauf" value="4"></td>
+                    <td><input type="radio" name="b5_einkauf" value="5"></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </fieldset>
@@ -355,13 +362,19 @@
           </div>
 
           <div class="form-group">
-            <label class="question">C4. Welches Bestellmodell würden Sie bevorzugen?</label>
-            <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="c4_modell" value="einmalig" required> Einmalige Bestellungen (kein Abo)</label>
-              <label class="radio-option"><input type="radio" name="c4_modell" value="woechentlich"> Wöchentliches Abo</label>
-              <label class="radio-option"><input type="radio" name="c4_modell" value="zweiwoeche"> Zweiwöchentliches Abo</label>
-              <label class="radio-option"><input type="radio" name="c4_modell" value="monatlich"> Monatliches Abo</label>
-              <label class="radio-option"><input type="radio" name="c4_modell" value="flexibel"> Je nach Saison flexibel</label>
+            <label class="question">C4. Welches Modell zum Kauf regionaler Produkte würden Sie bevorzugen? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <div class="checkbox-group">
+              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="abo_lieferung" required> Regelmäßige Lieferung im Abo (z. B. wöchentlich)</label>
+              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="direktkauf_abholung"> Direktkauf und Abholung auf dem Bauernhof</label>
+              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="selbst_auswaehlen"> Produkte direkt auf dem Bauernhof selbst auswählen und pflücken</label>
+              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="online_reservieren"> Produkte online reservieren und später abholen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="sammelbestellung"> Gemeinsame Lieferung mit Nachbarn oder Sammelbestellungen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="naehe_vorschlag"> Automatische Vorschläge von Bauernhöfen und Bauermärkte in meiner Nähe</label>
+              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="saisonbox"> Saisonale Produktboxen mit wechselnden regionalen Produkten</label>
+              <label class="checkbox-option"><input type="checkbox" name="c4_modell_sonstiges_cb" id="c4_sonstiges_cb"> Sonstiges</label>
+            </div>
+            <div class="conditional" id="c4_sonstiges_wrap">
+              <input type="text" name="c4_modell_sonstiges" id="c4_modell_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
             </div>
           </div>
 
@@ -447,12 +460,12 @@
     var nav = document.getElementById('nav-links');
     if (btn && nav) btn.addEventListener('click', function() { nav.classList.toggle('is-open'); });
 
-    // B5 abo follow-up
-    initConditionalByValue('b5_abo', ['ja_aktuell', 'ja_frueher'], '#b5_zufrieden_reveal');
-
     // D2 email reveal
     initConditionalByValue('d2_benachrichtigung', 'ja', '#d2_email_reveal');
 
+
+    // C4 Sonstiges reveal
+    initConditional('#c4_sonstiges_cb', '#c4_sonstiges_wrap');
 
     // char counter
     initCharCounter('c5_nutzung', 'c5_counter', 500);
