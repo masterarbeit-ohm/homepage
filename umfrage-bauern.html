@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Umfrage für Landwirte – Direktvermarktung und digitale Plattformen. Masterarbeit 2026/2027.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://originterra.de/umfrage-bauern.html">
+  <meta property="og:title" content="Umfrage Landwirte – ORIGINTERRA">
+  <meta property="og:description" content="Nehmen Sie an der Umfrage für Landwirte zur digitalen Direktvermarktung teil. Ca. 5 Minuten, vollständig anonym.">
+  <meta property="og:url" content="https://originterra.de/umfrage-bauern.html">
+  <meta property="og:type" content="website">
   <title>Umfrage Landwirte – ORIGINTERRA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -425,6 +431,25 @@
   </div>
 </section>
 
+<!-- DATENSCHUTZ-MODAL -->
+<div class="modal-overlay is-open" id="modal-datenschutz" role="dialog" aria-modal="true" aria-labelledby="ds-title">
+  <div class="modal" style="max-width:560px; text-align:left;">
+    <h2 class="modal__title" id="ds-title" style="text-align:center;">Datenschutzhinweis und Einverständnis</h2>
+    <div style="font-size:0.92rem; line-height:1.7; color:var(--color-text);">
+      <p>Die im Rahmen dieser Umfrage erhobenen Daten werden ausschließlich für wissenschaftliche Zwecke im Rahmen meiner Masterarbeit verwendet.</p>
+      <p>Ziel der Umfrage ist die Untersuchung digitaler Lösungen zur Unterstützung regionaler Direktvermarktung sowie zur Verbesserung der Verbindung zwischen landwirtschaftlichen Betrieben und Verbraucherinnen und Verbrauchern.</p>
+      <p>Die Teilnahme an der Umfrage erfolgt freiwillig und anonym. Es werden keine personenbezogenen Daten ohne ausdrückliche Zustimmung gespeichert oder weitergegeben.</p>
+      <p>Die erhobenen Informationen werden vertraulich behandelt, anonym ausgewertet und ausschließlich für Forschungszwecke genutzt. Eine Weitergabe an Dritte oder Nutzung zu Werbezwecken erfolgt nicht.</p>
+      <p>Durch das Absenden der Umfrage bestätigen Sie, dass Sie die Datenschutzhinweise gelesen haben und mit der Verarbeitung Ihrer Angaben für wissenschaftliche Zwecke einverstanden sind.</p>
+    </div>
+    <p style="font-weight:600; margin-top:1.25rem;">Ich erkläre mich mit den Datenschutzhinweisen einverstanden.</p>
+    <div class="modal__actions" style="flex-direction:row; justify-content:center;">
+      <button id="ds-ja" class="btn btn--primary">Ja, ich stimme zu</button>
+      <button id="ds-nein" class="btn btn--outline">Nein</button>
+    </div>
+  </div>
+</div>
+
 <!-- THANK-YOU MODAL -->
 <div class="modal-overlay" id="modal-bauern" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="modal">
@@ -460,6 +485,15 @@
 <script src="js/survey.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    // Datenschutz-Modal
+    var dsModal = document.getElementById('modal-datenschutz');
+    document.getElementById('ds-ja').addEventListener('click', function() {
+      dsModal.classList.remove('is-open');
+    });
+    document.getElementById('ds-nein').addEventListener('click', function() {
+      window.location.href = 'index.html';
+    });
+
     // nav toggle
     var btn = document.getElementById('nav-toggle');
     var nav = document.getElementById('nav-links');
