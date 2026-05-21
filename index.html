@@ -248,7 +248,7 @@
 
 <!-- MODAL: Prototyp anmelden -->
 <div class="modal-overlay" id="modal-prototyp" role="dialog" aria-modal="true" aria-labelledby="modal-prototyp-title">
-  <div class="modal" style="max-width:440px; width:100%;">
+  <div class="modal" style="max-width:440px; width:100%; max-height:90vh; overflow-y:auto;">
     <div class="modal__icon">📱</div>
     <h2 class="modal__title" id="modal-prototyp-title">Prototyp testen</h2>
     <p style="color:var(--color-text-muted); font-size:0.9rem; margin-bottom:1.5rem;">
@@ -265,9 +265,18 @@
         </div>
       </div>
 
-      <div class="form-group" style="text-align:left; margin-bottom:1.5rem;">
+      <div class="form-group" style="text-align:left; margin-bottom:1.25rem;">
         <label class="question" for="pt_email" style="margin-bottom:0.4rem; display:block;">E-Mail-Adresse</label>
         <input type="email" id="pt_email" name="pt_email" required placeholder="name@beispiel.de" style="width:100%;">
+      </div>
+
+      <div style="background:#f5f7f2; border-radius:8px; padding:0.9rem 1rem; margin-bottom:1.25rem; text-align:left;">
+        <p style="font-size:0.8rem; font-weight:600; margin-bottom:0.4rem; color:var(--color-primary);">Hinweis zur E-Mail-Adresse und Einverständnis</p>
+        <p style="font-size:0.78rem; line-height:1.6; color:var(--color-text-muted); margin:0;">
+          Falls Sie sich freiwillig als Testperson anmelden und Ihre E-Mail-Adresse angeben, wird diese ausschließlich verwendet, um Sie bezüglich des App-Tests oder weiterer Informationen zum Projekt zu kontaktieren.<br><br>
+          Die E-Mail-Adresse wird vertraulich behandelt, nicht an Dritte weitergegeben und nicht zu Werbezwecken genutzt. Nach Abschluss des Projekts werden die Kontaktdaten gelöscht.<br><br>
+          Durch das Absenden Ihrer E-Mail-Adresse erklären Sie sich mit der beschriebenen Verarbeitung Ihrer Daten einverstanden.
+        </p>
       </div>
 
       <div id="prototyp-msg" style="display:none; font-size:0.88rem; margin-bottom:1rem;"></div>

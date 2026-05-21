@@ -23,8 +23,11 @@
       padding: 1.75rem;
       box-shadow: var(--shadow);
     }
-    .contact-info-card + .contact-info-card { margin-top: 1.25rem; }
     .contact-info-card h3 { margin-bottom: 0.5rem; font-size: 1rem; }
+    @media (max-width: 600px) {
+      .contact-grid { grid-template-columns: 1fr !important; }
+      .contact-grid .contact-info-card { grid-column: auto !important; max-width: 100% !important; }
+    }
   </style>
 </head>
 <body>
@@ -52,7 +55,7 @@
     <span class="section-label">Kontakt</span>
     <h1 style="font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 2.5rem;">Kontaktinformationen</h1>
 
-    <div style="max-width: 480px;">
+    <div class="contact-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; max-width:780px;">
 
       <div class="contact-info-card">
         <h3>📧 E-Mail</h3>
@@ -65,6 +68,21 @@
       </div>
 
       <div class="contact-info-card">
+        <h3 style="display:flex; align-items:center; gap:0.5rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true">
+            <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+          </svg>
+          Facebook
+        </h3>
+        <p style="color:var(--color-text-muted); font-size:0.9rem;">
+          Folgen Sie dem Projekt auf Facebook.
+        </p>
+        <a href="https://www.facebook.com/profile.php?id=61589672131113" target="_blank" rel="noopener" class="btn btn--outline mt-2">
+          ORIGINTERRA auf Facebook
+        </a>
+      </div>
+
+      <div class="contact-info-card" style="grid-column: 1 / -1; max-width:380px;">
         <h3 style="display:flex; align-items:center; gap:0.5rem;">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#ig-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <defs>
