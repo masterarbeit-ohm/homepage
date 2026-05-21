@@ -483,9 +483,27 @@
     });
 
     // nav toggle
-    var btn = document.getElementById('nav-toggle');
-    var nav = document.getElementById('nav-links');
-    if (btn && nav) btn.addEventListener('click', function() { nav.classList.toggle('is-open'); });
+    (function() {
+      var btn = document.getElementById('nav-toggle');
+      var nav = document.getElementById('nav-links');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function() {
+        var open = nav.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open);
+      });
+      nav.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          nav.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+      document.addEventListener('click', function(e) {
+        if (!nav.contains(e.target) && !btn.contains(e.target)) {
+          nav.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
 
     // D2 email reveal
     initConditionalByValue('d2_benachrichtigung', 'ja', '#d2_email_reveal');

@@ -40,15 +40,5 @@
 
     observer.observe(circle);
 
-    /* mobile nav toggle */
-    var toggleBtn = document.getElementById('nav-toggle');
-    var navLinks  = document.getElementById('nav-links');
-    if (toggleBtn && navLinks) {
-      toggleBtn.addEventListener('click', function() {
-        navLinks.classList.toggle('is-open');
-        var expanded = navLinks.classList.contains('is-open');
-        toggleBtn.setAttribute('aria-expanded', expanded);
-      });
-    }
   });
 })();
