@@ -193,7 +193,7 @@
           </div>
 
           <div class="form-group">
-            <label class="question">B5. Was sind Ihre größten Herausforderungen bei der Vermarktung? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <label class="question">B5. Was sind Ihre größten Herausforderungen bei der Vermarktung? <span class="hint">(Bitte wählen Sie maximal 3 Antworten)</span></label>
             <div class="checkbox-group">
               <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="zu_wenig_zeit"> Zu wenig Zeit</label>
               <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="geringe_preise"> Zu geringe Preise</label>
@@ -282,7 +282,7 @@
                     <td><input type="radio" name="c3_rechnungen" value="5"></td>
                   </tr>
                   <tr>
-                    <td>Einfacher Kontakt sowie Informationen zu Angeboten und Märkten versenden</td>
+                    <td>Kundinnen und Kunden über Angebote, Märkte und Neuigkeiten informieren</td>
                     <td><input type="radio" name="c3_kontakt_info" value="1" required></td>
                     <td><input type="radio" name="c3_kontakt_info" value="2"></td>
                     <td><input type="radio" name="c3_kontakt_info" value="3"></td>
@@ -330,7 +330,7 @@
                     <td><input type="radio" name="c3_restwaren" value="5"></td>
                   </tr>
                   <tr>
-                    <td>Stammkundinnen und Stammkunden aufbauen und halten</td>
+                    <td>Stammkundinnen und Stammkunden aufbauen und langfristig binden</td>
                     <td><input type="radio" name="c3_stammkunden" value="1" required></td>
                     <td><input type="radio" name="c3_stammkunden" value="2"></td>
                     <td><input type="radio" name="c3_stammkunden" value="3"></td>
@@ -351,7 +351,7 @@
           </div>
 
           <div class="form-group">
-            <label class="question">C4. Welchen monatlichen Betrag wären Sie bereit, für eine solche App zu bezahlen?</label>
+            <label class="question">C4. Welchen monatlichen Betrag wären Sie bereit, für eine App zur Direktvermarktung regionaler Produkte bezahlen?</label>
             <div class="radio-group">
               <label class="radio-option"><input type="radio" name="c4_preis" value="nichts" required> Nichts – ich würde nur eine kostenlose Version nutzen</label>
               <label class="radio-option"><input type="radio" name="c4_preis" value="bis_10"> Bis 10 € / Monat</label>
@@ -362,12 +362,12 @@
           </div>
 
           <div class="form-group">
-            <label class="question">C5. Was wären für Sie mögliche Hindernisse bei der Nutzung einer digitalen Plattform? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <label class="question">C5. Was wären für Sie mögliche Hindernisse bei der Nutzung einer digitalen Plattform? <span class="hint">(Bitte wählen Sie maximal 3 Antworten)</span></label>
             <div class="checkbox-group">
               <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="zeitaufwand" required> Zu wenig Zeit für zusätzliche digitale Aufgaben</label>
               <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="bedienung"> Zu komplizierte Bedienung</label>
               <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="datenschutz"> Datenschutz- und Sicherheitsbedenken</label>
-              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="verwaltung"> Sorge vor mehr Büroarbeit und Organisation</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="verwaltung"> Zusätzlicher Verwaltungs- oder Organisationsaufwand</label>
               <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="internet"> Schlechte Internetverbindung auf dem Hof</label>
               <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="kein_bedarf"> Kein Bedarf an digitalen Lösungen</label>
               <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="kundenkontakt"> Fehlender persönlicher Kundenkontakt</label>
@@ -379,7 +379,7 @@
           </div>
 
           <div class="form-group">
-            <label class="question">C6. Was fehlt Ihnen aktuell bei der Direktvermarktung am meisten? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <label class="question">C6. Was fehlt Ihnen aktuell bei der Direktvermarktung am meisten? <span class="hint">(Bitte wählen Sie maximal 3 Antworten)</span></label>
             <div class="checkbox-group">
               <label class="checkbox-option"><input type="checkbox" name="c6_fehlt" value="mehr_kunden" required> Mehr Kunden aus der Region erreichen</label>
               <label class="checkbox-option"><input type="checkbox" name="c6_fehlt" value="logistik"> Unterstützung bei Lieferung und Logistik</label>
@@ -412,7 +412,7 @@
 
         <!-- ===== SECTION D: Offene Fragen ===== -->
         <fieldset>
-          <legend>D – Offene Fragen</legend>
+          <legend>D – Abschluss</legend>
 
           <div class="form-group">
             <label class="question" for="d2_anmerkungen">D1. Haben Sie Anmerkungen oder Wünsche an die Forschung? <span class="hint">(Optional)</span></label>
@@ -433,7 +433,7 @@
 
 <!-- DATENSCHUTZ-MODAL -->
 <div class="modal-overlay is-open" id="modal-datenschutz" role="dialog" aria-modal="true" aria-labelledby="ds-title">
-  <div class="modal" style="max-width:560px; text-align:left;">
+  <div class="modal" style="max-width:560px; text-align:left; max-height:90vh; overflow-y:auto;">
     <h2 class="modal__title" id="ds-title" style="text-align:center;">Datenschutzhinweis und Einverständnis</h2>
     <div style="font-size:0.92rem; line-height:1.7; color:var(--color-text);">
       <p>Die im Rahmen dieser Umfrage erhobenen Daten werden ausschließlich für wissenschaftliche Zwecke im Rahmen meiner Masterarbeit verwendet.</p>
@@ -537,6 +537,28 @@
 
     // C6 Sonstiges reveal
     initConditional('#c6_sonstiges_cb', '#c6_sonstiges_wrap');
+
+    // Max-3-Auswahl (FIFO) für B5, C5, C6
+    ['b5_herausforderungen', 'c5_hindernis', 'c6_fehlt'].forEach(function(name) {
+      var queue = [];
+      var boxes = Array.from(document.querySelectorAll(
+        'input[name="' + name + '"], input[name="' + name + '_sonstiges_cb"]'
+      ));
+      boxes.forEach(function(cb) {
+        cb.addEventListener('change', function() {
+          if (this.checked) {
+            if (queue.length >= 3) {
+              var prev = queue.pop();
+              prev.checked = false;
+              prev.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+            queue.push(this);
+          } else {
+            queue = queue.filter(function(b) { return b !== cb; });
+          }
+        });
+      });
+    });
 
     // init form
     initSurveyForm('bauern-form', 'bauern', 'modal-bauern');
