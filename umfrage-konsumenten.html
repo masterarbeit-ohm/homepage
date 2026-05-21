@@ -67,7 +67,7 @@
           <legend>A – Allgemeine Angaben</legend>
 
           <div class="form-group">
-            <label class="question" for="a1_bundesland">A1. In welcher Region leben Sie?</label>
+            <label class="question" for="a1_bundesland">A1. In welchem Bundesland leben Sie?</label>
             <select id="a1_bundesland" name="a1_bundesland" required>
               <option value="">– Bitte wählen –</option>
               <option>Baden-Württemberg</option>
@@ -141,16 +141,16 @@
             <div class="checkbox-group">
               <label class="checkbox-option"><input type="checkbox" name="b1_kaufort" value="discounter" required> Discounter (Aldi, Lidl, Netto ...)</label>
               <label class="checkbox-option"><input type="checkbox" name="b1_kaufort" value="supermarkt"> Supermarkt (Rewe, Edeka ...)</label>
-              <label class="checkbox-option"><input type="checkbox" name="b1_kaufort" value="biomarkt"> Biomarkt (Bio Company, Reformhaus ...)</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufort" value="biomarkt"> Biomarkt (Denns, ebl ...)</label>
               <label class="checkbox-option"><input type="checkbox" name="b1_kaufort" value="wochenmarkt"> Wochenmarkt</label>
               <label class="checkbox-option"><input type="checkbox" name="b1_kaufort" value="direktkauf"> Direktkauf beim Bauern / Hofladen</label>
-              <label class="checkbox-option"><input type="checkbox" name="b1_kaufort" value="lieferdienst"> Online-Lieferservice (HelloFresh, Rohkost etc.)</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufort" value="lieferdienst"> Online-Lieferservice / Lebensmittel-Lieferdienst</label>
               <label class="checkbox-option"><input type="checkbox" name="b1_kaufort" value="sonstiges"> Sonstiges</label>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="question">B2. Wie oft kaufen Sie Produkte direkt bei Landwirten (Hofladen, Markt, Abo-Kiste)?</label>
+            <label class="question">B2. Wie oft kaufen Sie Produkte direkt bei Landwirten (Hofladen, Markt)?</label>
             <div class="radio-group">
               <label class="radio-option"><input type="radio" name="b2_haeufigkeit" value="taeglich" required> Täglich</label>
               <label class="radio-option"><input type="radio" name="b2_haeufigkeit" value="mehrmals_woche"> Mehrmals pro Woche</label>
@@ -169,16 +169,16 @@
                 <thead>
                   <tr>
                     <th></th>
-                    <th>1<br><small>Unwichtig</small></th>
+                    <th>1</th>
                     <th>2</th>
                     <th>3</th>
                     <th>4</th>
-                    <th>5<br><small>Sehr wichtig</small></th>
+                    <th>5</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Preis / Günstig</td>
+                    <td>Günstiger Preis</td>
                     <td><input type="radio" name="b3_preis" value="1" required></td>
                     <td><input type="radio" name="b3_preis" value="2"></td>
                     <td><input type="radio" name="b3_preis" value="3"></td>
@@ -242,32 +242,9 @@
           </div>
 
           <div class="form-group">
-            <label class="question">B5. Ich würde regionale Produkte häufiger kaufen, wenn der Einkauf einfacher wäre.</label>
-            <p class="hint">1 = stimme gar nicht zu, 5 = stimme voll zu</p>
-            <div class="matrix-table">
-              <table>
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>1<br><small>gar nicht</small></th>
-                    <th>2</th>
-                    <th>3<br><small>neutral</small></th>
-                    <th>4</th>
-                    <th>5<br><small>voll zu</small></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Einfacherer Einkauf</td>
-                    <td><input type="radio" name="b5_einkauf" value="1" required></td>
-                    <td><input type="radio" name="b5_einkauf" value="2"></td>
-                    <td><input type="radio" name="b5_einkauf" value="3"></td>
-                    <td><input type="radio" name="b5_einkauf" value="4"></td>
-                    <td><input type="radio" name="b5_einkauf" value="5"></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <label class="question" for="b5_erleichterung">B5. Was würde Ihnen den Kauf regionaler Produkte direkt vom Bauern erleichtern oder attraktiver machen? <span class="hint">(Optional)</span></label>
+            <textarea id="b5_erleichterung" name="b5_erleichterung" maxlength="500" placeholder="Ihre Gedanken dazu ..."></textarea>
+            <div class="char-counter" id="b5_counter">0 / 500</div>
           </div>
         </fieldset>
 
@@ -281,7 +258,7 @@
               <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="kein_angebot" required> Zu wenig Angebote in meiner Nähe</label>
               <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="umstaendlich"> Zu umständlich / zu weit weg</label>
               <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="zu_teuer"> Zu teuer im Vergleich zum Supermarkt</label>
-              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="keine_anbieter"> Ich kenne keine Anbieter in meiner Nähe</label>
+              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="keine_anbieter"> Ich weiß nicht, wo ich regionale Produkte direkt kaufen kann</label>
               <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="keine_zeit"> Mir fehlt die Zeit</label>
               <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="kaufe_regelmaessig"> Ich kaufe bereits regelmäßig beim Bauern</label>
             </div>
@@ -306,11 +283,11 @@
                 <thead>
                   <tr>
                     <th></th>
-                    <th>1<br><small>Unwichtig</small></th>
+                    <th>1</th>
                     <th>2</th>
                     <th>3</th>
                     <th>4</th>
-                    <th>5<br><small>Sehr wichtig</small></th>
+                    <th>5</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -362,6 +339,22 @@
                     <td><input type="radio" name="c3_rezepte" value="4"></td>
                     <td><input type="radio" name="c3_rezepte" value="5"></td>
                   </tr>
+                  <tr>
+                    <td>Kontakt zum Bauernhof / direkte Kommunikation</td>
+                    <td><input type="radio" name="c3_kontakt" value="1" required></td>
+                    <td><input type="radio" name="c3_kontakt" value="2"></td>
+                    <td><input type="radio" name="c3_kontakt" value="3"></td>
+                    <td><input type="radio" name="c3_kontakt" value="4"></td>
+                    <td><input type="radio" name="c3_kontakt" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Übersicht über Bauernhöfe und Märkte in der Nähe</td>
+                    <td><input type="radio" name="c3_uebersicht" value="1" required></td>
+                    <td><input type="radio" name="c3_uebersicht" value="2"></td>
+                    <td><input type="radio" name="c3_uebersicht" value="3"></td>
+                    <td><input type="radio" name="c3_uebersicht" value="4"></td>
+                    <td><input type="radio" name="c3_uebersicht" value="5"></td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -375,7 +368,7 @@
               <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="selbst_auswaehlen"> Produkte direkt auf dem Bauernhof selbst auswählen und pflücken</label>
               <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="online_reservieren"> Produkte online reservieren und später abholen</label>
               <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="sammelbestellung"> Gemeinsame Lieferung mit Nachbarn oder Sammelbestellungen</label>
-              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="naehe_vorschlag"> Automatische Vorschläge von Bauernhöfen und Bauermärkte in meiner Nähe</label>
+              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="naehe_vorschlag"> Automatische Vorschläge von Bauernhöfen und Bauernmärkte in meiner Nähe</label>
               <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="saisonbox"> Saisonale Produktboxen mit wechselnden regionalen Produkten</label>
               <label class="checkbox-option"><input type="checkbox" name="c4_modell_sonstiges_cb" id="c4_sonstiges_cb"> Sonstiges</label>
             </div>
@@ -502,6 +495,7 @@
     initConditional('#c4_sonstiges_cb', '#c4_sonstiges_wrap');
 
     // char counter
+    initCharCounter('b5_erleichterung', 'b5_counter', 500);
     initCharCounter('c5_nutzung', 'c5_counter', 500);
 
     // init form
