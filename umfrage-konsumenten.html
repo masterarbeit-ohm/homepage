@@ -30,6 +30,7 @@
         <li><a href="index.html">Startseite</a></li>
         <li><a href="umfrage-bauern.html">Umfrage Landwirte</a></li>
         <li><a href="umfrage-konsumenten.html" aria-current="page">Umfrage Verbraucher</a></li>
+        <li><a href="index.html#prototyp">Prototyp testen</a></li>
       </ul>
     </div>
   </div>
@@ -51,7 +52,7 @@
         <h1 style="font-size: clamp(1.6rem, 4vw, 2.5rem);">Wie kaufen Sie Ihre Lebensmittel?</h1>
         <div class="meta">
           <span>⏱ ca. 5 Minuten</span>
-          <span>📋 22 Fragen in 4 Abschnitten</span>
+          <span>📋 Fragen in 4 Abschnitten</span>
           <span>🔒 Vollständig anonym</span>
         </div>
         <div class="privacy-note">
@@ -253,36 +254,124 @@
           <legend>C – Wahrnehmung und digitale Bereitschaft</legend>
 
           <div class="form-group">
-            <label class="question">C1. Warum kaufen Sie nicht häufiger direkt beim Bauern? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <label class="question">C1. Warum kaufen Sie nicht häufiger direkt beim Bauern oder bei regionalen Verkaufsstellen? <span class="hint">(Mehrfachauswahl möglich)</span></label>
             <div class="checkbox-group">
-              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="kein_angebot" required> Zu wenig Angebote in meiner Nähe</label>
+              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="keine_anbieter" required> Ich kenne keine Anbieter in meiner Nähe</label>
+              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="weiss_nicht_wo"> Ich weiß nicht, wo ich regionale Produkte kaufen kann</label>
+              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="oeffnungszeiten"> Ich kenne die Öffnungszeiten nicht</label>
+              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="verfuegbarkeit"> Ich weiß nicht, welche Produkte aktuell verfügbar sind</label>
+              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="preise_unbekannt"> Ich kenne die Preise vorher nicht</label>
+              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="kein_angebot"> Zu wenig Angebote in meiner Nähe</label>
               <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="umstaendlich"> Zu umständlich / zu weit weg</label>
               <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="zu_teuer"> Zu teuer im Vergleich zum Supermarkt</label>
-              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="keine_anbieter"> Ich weiß nicht, wo ich regionale Produkte direkt kaufen kann</label>
               <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="keine_zeit"> Mir fehlt die Zeit</label>
+              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="unsicher_regional"> Ich bin unsicher, ob die Produkte wirklich regional sind</label>
+              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="unsicher_bio"> Ich bin unsicher, ob die Produkte bio oder nachhaltig produziert wurden</label>
               <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="kaufe_regelmaessig"> Ich kaufe bereits regelmäßig beim Bauern</label>
+              <label class="checkbox-option"><input type="checkbox" name="c1_gruende_sonstiges_cb" id="c1_sonstiges_cb"> Sonstiges</label>
+            </div>
+            <div class="conditional" id="c1_sonstiges_wrap">
+              <input type="text" name="c1_gruende_sonstiges" id="c1_gruende_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
             </div>
           </div>
 
           <div class="form-group">
-            <label class="question">C2. Wie viel mehr wären Sie bereit, für direkt vom Bauern gekaufte Lebensmittel zu zahlen?</label>
+            <label class="question">C2. Wie viel mehr wären Sie bereit, für direkt vom Bauern gekaufte Lebensmittel zu zahlen? <span class="hint">(Eine Antwort möglich)</span></label>
             <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="c2_mehrpreis" value="nichts" required> Gar nichts mehr als im Supermarkt</label>
+              <label class="radio-option"><input type="radio" name="c2_mehrpreis" value="nichts" required> Nicht mehr als im Supermarkt</label>
+              <label class="radio-option"><input type="radio" name="c2_mehrpreis" value="bis_5"> Bis zu 5 % mehr</label>
               <label class="radio-option"><input type="radio" name="c2_mehrpreis" value="bis_10"> Bis zu 10 % mehr</label>
-              <label class="radio-option"><input type="radio" name="c2_mehrpreis" value="10_25"> 10 – 25 % mehr</label>
-              <label class="radio-option"><input type="radio" name="c2_mehrpreis" value="25_50"> 25 – 50 % mehr</label>
-              <label class="radio-option"><input type="radio" name="c2_mehrpreis" value="ueber_50"> Mehr als 50 % mehr</label>
+              <label class="radio-option"><input type="radio" name="c2_mehrpreis" value="bis_20"> Bis zu 20 % mehr</label>
+              <label class="radio-option"><input type="radio" name="c2_mehrpreis" value="ueber_20"> Mehr als 20 %, wenn Qualität, Regionalität oder Produktionsweise überzeugend sind</label>
+              <label class="radio-option"><input type="radio" name="c2_mehrpreis" value="unsicher"> Ich bin unsicher / kommt auf das Produkt an</label>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="question">C3. Wie wichtig wären Ihnen folgende Eigenschaften einer Direktvermarktungs-App?</label>
+            <label class="question">C3. Wie wichtig wären Ihnen folgende Informationen vor dem Besuch eines Bauernhofs, Hofladens oder Marktes?</label>
             <p class="hint">1 = Unwichtig, 5 = Sehr wichtig</p>
             <div class="matrix-table">
               <table>
                 <thead>
                   <tr>
-                    <th></th>
+                    <th>Information</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Standort / Entfernung</td>
+                    <td><input type="radio" name="c3_standort" value="1" required></td>
+                    <td><input type="radio" name="c3_standort" value="2"></td>
+                    <td><input type="radio" name="c3_standort" value="3"></td>
+                    <td><input type="radio" name="c3_standort" value="4"></td>
+                    <td><input type="radio" name="c3_standort" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Öffnungszeiten</td>
+                    <td><input type="radio" name="c3_oeffnungszeiten" value="1" required></td>
+                    <td><input type="radio" name="c3_oeffnungszeiten" value="2"></td>
+                    <td><input type="radio" name="c3_oeffnungszeiten" value="3"></td>
+                    <td><input type="radio" name="c3_oeffnungszeiten" value="4"></td>
+                    <td><input type="radio" name="c3_oeffnungszeiten" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Aktuell verfügbare Produkte</td>
+                    <td><input type="radio" name="c3_verfuegbarkeit" value="1" required></td>
+                    <td><input type="radio" name="c3_verfuegbarkeit" value="2"></td>
+                    <td><input type="radio" name="c3_verfuegbarkeit" value="3"></td>
+                    <td><input type="radio" name="c3_verfuegbarkeit" value="4"></td>
+                    <td><input type="radio" name="c3_verfuegbarkeit" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Preise der Produkte</td>
+                    <td><input type="radio" name="c3_preise" value="1" required></td>
+                    <td><input type="radio" name="c3_preise" value="2"></td>
+                    <td><input type="radio" name="c3_preise" value="3"></td>
+                    <td><input type="radio" name="c3_preise" value="4"></td>
+                    <td><input type="radio" name="c3_preise" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Herkunft der Produkte</td>
+                    <td><input type="radio" name="c3_herkunft" value="1" required></td>
+                    <td><input type="radio" name="c3_herkunft" value="2"></td>
+                    <td><input type="radio" name="c3_herkunft" value="3"></td>
+                    <td><input type="radio" name="c3_herkunft" value="4"></td>
+                    <td><input type="radio" name="c3_herkunft" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Bio-Zertifizierung / Produktionsweise</td>
+                    <td><input type="radio" name="c3_bio" value="1" required></td>
+                    <td><input type="radio" name="c3_bio" value="2"></td>
+                    <td><input type="radio" name="c3_bio" value="3"></td>
+                    <td><input type="radio" name="c3_bio" value="4"></td>
+                    <td><input type="radio" name="c3_bio" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Fotos vom Hof oder Produkt</td>
+                    <td><input type="radio" name="c3_fotos" value="1" required></td>
+                    <td><input type="radio" name="c3_fotos" value="2"></td>
+                    <td><input type="radio" name="c3_fotos" value="3"></td>
+                    <td><input type="radio" name="c3_fotos" value="4"></td>
+                    <td><input type="radio" name="c3_fotos" value="5"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">C4. Wie wichtig wären Ihnen folgende Funktionen einer Direktvermarktungs-App?</label>
+            <p class="hint">1 = Unwichtig, 5 = Sehr wichtig</p>
+            <div class="matrix-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Funktion</th>
                     <th>1</th>
                     <th>2</th>
                     <th>3</th>
@@ -293,67 +382,115 @@
                 <tbody>
                   <tr>
                     <td>Einfache Bestellung per App</td>
-                    <td><input type="radio" name="c3_bestellung" value="1" required></td>
-                    <td><input type="radio" name="c3_bestellung" value="2"></td>
-                    <td><input type="radio" name="c3_bestellung" value="3"></td>
-                    <td><input type="radio" name="c3_bestellung" value="4"></td>
-                    <td><input type="radio" name="c3_bestellung" value="5"></td>
+                    <td><input type="radio" name="c4_bestellung" value="1" required></td>
+                    <td><input type="radio" name="c4_bestellung" value="2"></td>
+                    <td><input type="radio" name="c4_bestellung" value="3"></td>
+                    <td><input type="radio" name="c4_bestellung" value="4"></td>
+                    <td><input type="radio" name="c4_bestellung" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Anzeige von Öffnungszeiten</td>
+                    <td><input type="radio" name="c4_oeffnungszeiten" value="1" required></td>
+                    <td><input type="radio" name="c4_oeffnungszeiten" value="2"></td>
+                    <td><input type="radio" name="c4_oeffnungszeiten" value="3"></td>
+                    <td><input type="radio" name="c4_oeffnungszeiten" value="4"></td>
+                    <td><input type="radio" name="c4_oeffnungszeiten" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Anzeige aktueller Produktverfügbarkeit</td>
+                    <td><input type="radio" name="c4_verfuegbarkeit" value="1" required></td>
+                    <td><input type="radio" name="c4_verfuegbarkeit" value="2"></td>
+                    <td><input type="radio" name="c4_verfuegbarkeit" value="3"></td>
+                    <td><input type="radio" name="c4_verfuegbarkeit" value="4"></td>
+                    <td><input type="radio" name="c4_verfuegbarkeit" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Anzeige von Preisen</td>
+                    <td><input type="radio" name="c4_preise" value="1" required></td>
+                    <td><input type="radio" name="c4_preise" value="2"></td>
+                    <td><input type="radio" name="c4_preise" value="3"></td>
+                    <td><input type="radio" name="c4_preise" value="4"></td>
+                    <td><input type="radio" name="c4_preise" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Karte mit Bauernhöfen, Hofläden und Märkten in der Nähe</td>
+                    <td><input type="radio" name="c4_karte" value="1" required></td>
+                    <td><input type="radio" name="c4_karte" value="2"></td>
+                    <td><input type="radio" name="c4_karte" value="3"></td>
+                    <td><input type="radio" name="c4_karte" value="4"></td>
+                    <td><input type="radio" name="c4_karte" value="5"></td>
                   </tr>
                   <tr>
                     <td>Transparenz über Herkunft der Produkte</td>
-                    <td><input type="radio" name="c3_transparenz" value="1" required></td>
-                    <td><input type="radio" name="c3_transparenz" value="2"></td>
-                    <td><input type="radio" name="c3_transparenz" value="3"></td>
-                    <td><input type="radio" name="c3_transparenz" value="4"></td>
-                    <td><input type="radio" name="c3_transparenz" value="5"></td>
+                    <td><input type="radio" name="c4_herkunft" value="1" required></td>
+                    <td><input type="radio" name="c4_herkunft" value="2"></td>
+                    <td><input type="radio" name="c4_herkunft" value="3"></td>
+                    <td><input type="radio" name="c4_herkunft" value="4"></td>
+                    <td><input type="radio" name="c4_herkunft" value="5"></td>
                   </tr>
                   <tr>
-                    <td>Fotos und Infos zum Bauernhof</td>
-                    <td><input type="radio" name="c3_hofinfos" value="1" required></td>
-                    <td><input type="radio" name="c3_hofinfos" value="2"></td>
-                    <td><input type="radio" name="c3_hofinfos" value="3"></td>
-                    <td><input type="radio" name="c3_hofinfos" value="4"></td>
-                    <td><input type="radio" name="c3_hofinfos" value="5"></td>
+                    <td>Informationen zur Produktionsweise, z. B. bio, konventionell oder nachhaltig</td>
+                    <td><input type="radio" name="c4_produktionsweise" value="1" required></td>
+                    <td><input type="radio" name="c4_produktionsweise" value="2"></td>
+                    <td><input type="radio" name="c4_produktionsweise" value="3"></td>
+                    <td><input type="radio" name="c4_produktionsweise" value="4"></td>
+                    <td><input type="radio" name="c4_produktionsweise" value="5"></td>
                   </tr>
                   <tr>
-                    <td>Flexible Liefermöglichkeiten</td>
-                    <td><input type="radio" name="c3_lieferung" value="1" required></td>
-                    <td><input type="radio" name="c3_lieferung" value="2"></td>
-                    <td><input type="radio" name="c3_lieferung" value="3"></td>
-                    <td><input type="radio" name="c3_lieferung" value="4"></td>
-                    <td><input type="radio" name="c3_lieferung" value="5"></td>
+                    <td>Fotos und Informationen zum Bauernhof</td>
+                    <td><input type="radio" name="c4_hofinfos" value="1" required></td>
+                    <td><input type="radio" name="c4_hofinfos" value="2"></td>
+                    <td><input type="radio" name="c4_hofinfos" value="3"></td>
+                    <td><input type="radio" name="c4_hofinfos" value="4"></td>
+                    <td><input type="radio" name="c4_hofinfos" value="5"></td>
                   </tr>
                   <tr>
-                    <td>Bewertungen anderer Käufer</td>
-                    <td><input type="radio" name="c3_bewertungen" value="1" required></td>
-                    <td><input type="radio" name="c3_bewertungen" value="2"></td>
-                    <td><input type="radio" name="c3_bewertungen" value="3"></td>
-                    <td><input type="radio" name="c3_bewertungen" value="4"></td>
-                    <td><input type="radio" name="c3_bewertungen" value="5"></td>
+                    <td>Möglichkeit, Produkte online zu reservieren</td>
+                    <td><input type="radio" name="c4_reservieren" value="1" required></td>
+                    <td><input type="radio" name="c4_reservieren" value="2"></td>
+                    <td><input type="radio" name="c4_reservieren" value="3"></td>
+                    <td><input type="radio" name="c4_reservieren" value="4"></td>
+                    <td><input type="radio" name="c4_reservieren" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Flexible Liefer- und Abholmöglichkeiten</td>
+                    <td><input type="radio" name="c4_lieferung" value="1" required></td>
+                    <td><input type="radio" name="c4_lieferung" value="2"></td>
+                    <td><input type="radio" name="c4_lieferung" value="3"></td>
+                    <td><input type="radio" name="c4_lieferung" value="4"></td>
+                    <td><input type="radio" name="c4_lieferung" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Benachrichtigung über neue Produkte oder Angebote</td>
+                    <td><input type="radio" name="c4_benachrichtigung" value="1" required></td>
+                    <td><input type="radio" name="c4_benachrichtigung" value="2"></td>
+                    <td><input type="radio" name="c4_benachrichtigung" value="3"></td>
+                    <td><input type="radio" name="c4_benachrichtigung" value="4"></td>
+                    <td><input type="radio" name="c4_benachrichtigung" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Kontaktmöglichkeit zum Bauernhof</td>
+                    <td><input type="radio" name="c4_kontakt" value="1" required></td>
+                    <td><input type="radio" name="c4_kontakt" value="2"></td>
+                    <td><input type="radio" name="c4_kontakt" value="3"></td>
+                    <td><input type="radio" name="c4_kontakt" value="4"></td>
+                    <td><input type="radio" name="c4_kontakt" value="5"></td>
+                  </tr>
+                  <tr>
+                    <td>Bewertungen anderer Käuferinnen und Käufer</td>
+                    <td><input type="radio" name="c4_bewertungen" value="1" required></td>
+                    <td><input type="radio" name="c4_bewertungen" value="2"></td>
+                    <td><input type="radio" name="c4_bewertungen" value="3"></td>
+                    <td><input type="radio" name="c4_bewertungen" value="4"></td>
+                    <td><input type="radio" name="c4_bewertungen" value="5"></td>
                   </tr>
                   <tr>
                     <td>Rezeptvorschläge zum saisonalen Angebot</td>
-                    <td><input type="radio" name="c3_rezepte" value="1" required></td>
-                    <td><input type="radio" name="c3_rezepte" value="2"></td>
-                    <td><input type="radio" name="c3_rezepte" value="3"></td>
-                    <td><input type="radio" name="c3_rezepte" value="4"></td>
-                    <td><input type="radio" name="c3_rezepte" value="5"></td>
-                  </tr>
-                  <tr>
-                    <td>Kontakt zum Bauernhof / direkte Kommunikation</td>
-                    <td><input type="radio" name="c3_kontakt" value="1" required></td>
-                    <td><input type="radio" name="c3_kontakt" value="2"></td>
-                    <td><input type="radio" name="c3_kontakt" value="3"></td>
-                    <td><input type="radio" name="c3_kontakt" value="4"></td>
-                    <td><input type="radio" name="c3_kontakt" value="5"></td>
-                  </tr>
-                  <tr>
-                    <td>Übersicht über Bauernhöfe und Märkte in der Nähe</td>
-                    <td><input type="radio" name="c3_uebersicht" value="1" required></td>
-                    <td><input type="radio" name="c3_uebersicht" value="2"></td>
-                    <td><input type="radio" name="c3_uebersicht" value="3"></td>
-                    <td><input type="radio" name="c3_uebersicht" value="4"></td>
-                    <td><input type="radio" name="c3_uebersicht" value="5"></td>
+                    <td><input type="radio" name="c4_rezepte" value="1" required></td>
+                    <td><input type="radio" name="c4_rezepte" value="2"></td>
+                    <td><input type="radio" name="c4_rezepte" value="3"></td>
+                    <td><input type="radio" name="c4_rezepte" value="4"></td>
+                    <td><input type="radio" name="c4_rezepte" value="5"></td>
                   </tr>
                 </tbody>
               </table>
@@ -361,30 +498,49 @@
           </div>
 
           <div class="form-group">
-            <label class="question">C4. Welches Modell zum Kauf regionaler Produkte würden Sie bevorzugen? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <label class="question">C5. Welches Modell zum Kauf regionaler Produkte würden Sie bevorzugen? <span class="hint">(Mehrfachauswahl möglich)</span></label>
             <div class="checkbox-group">
-              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="abo_lieferung" required> Regelmäßige Lieferung im Abo (z. B. wöchentlich)</label>
-              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="direktkauf_abholung"> Direktkauf und Abholung auf dem Bauernhof</label>
-              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="selbst_auswaehlen"> Produkte direkt auf dem Bauernhof selbst auswählen und pflücken</label>
-              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="online_reservieren"> Produkte online reservieren und später abholen</label>
-              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="sammelbestellung"> Gemeinsame Lieferung mit Nachbarn oder Sammelbestellungen</label>
-              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="naehe_vorschlag"> Automatische Vorschläge von Bauernhöfen und Bauernmärkte in meiner Nähe</label>
-              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="saisonbox"> Saisonale Produktboxen mit wechselnden regionalen Produkten</label>
-              <label class="checkbox-option"><input type="checkbox" name="c4_modell_sonstiges_cb" id="c4_sonstiges_cb"> Sonstiges</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="abo_lieferung" required> Regelmäßige Lieferung im Abo (z. B. wöchentlich)</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="direktkauf_abholung"> Direktkauf und Abholung auf dem Bauernhof</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="selbst_auswaehlen"> Produkte direkt auf dem Bauernhof selbst auswählen und pflücken</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="online_reservieren"> Produkte online reservieren und später abholen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="sammelbestellung"> Gemeinsame Lieferung mit Nachbarn oder Sammelbestellungen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="naehe_vorschlag"> Automatische Vorschläge von Bauernhöfen und Bauernmärkte in meiner Nähe</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="saisonbox"> Saisonale Produktboxen mit wechselnden regionalen Produkten</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_modell_sonstiges_cb" id="c5_sonstiges_cb"> Sonstiges</label>
             </div>
-            <div class="conditional" id="c4_sonstiges_wrap">
-              <input type="text" name="c4_modell_sonstiges" id="c4_modell_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+            <div class="conditional" id="c5_sonstiges_wrap">
+              <input type="text" name="c5_modell_sonstiges" id="c5_modell_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
             </div>
           </div>
 
           <div class="form-group">
-            <label class="question" for="c5_nutzung">C5. Was würde Sie dazu bringen, eine Direktvermarktungs-App regelmäßig zu nutzen? <span class="hint">(Optional)</span></label>
-            <textarea id="c5_nutzung" name="c5_nutzung" maxlength="500" placeholder="Ihre Gedanken dazu ..."></textarea>
-            <div class="char-counter" id="c5_counter">0 / 500</div>
+            <label class="question">C6. Welche Informationen würden Ihr Vertrauen in regionale Produkte erhöhen? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <div class="checkbox-group">
+              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="info_hof" required> Informationen über den Bauernhof</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="herkunft"> Angaben zur Herkunft der Produkte</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="produktionsweise"> Angaben zur Produktionsweise</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="bio_zertifikat"> Bio-Zertifizierung oder Nachhaltigkeitsangaben</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="fotos"> Fotos vom Hof oder von der Produktion</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="bewertungen"> Kundenbewertungen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="preise"> Transparente Preise</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="vorstellung"> Persönliche Vorstellung der Landwirtin/des Landwirts</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="keine"> Keine davon</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen_sonstiges_cb" id="c6_sonstiges_cb"> Sonstiges</label>
+            </div>
+            <div class="conditional" id="c6_sonstiges_wrap">
+              <input type="text" name="c6_vertrauen_sonstiges" id="c6_vertrauen_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question" for="c7_nutzung">C7. Was würde Sie dazu bringen, eine Direktvermarktungs-App regelmäßig zu nutzen? <span class="hint">(Optional)</span></label>
+            <textarea id="c7_nutzung" name="c7_nutzung" maxlength="500" placeholder="Ihre Gedanken dazu ..."></textarea>
+            <div class="char-counter" id="c7_counter">0 / 500</div>
           </div>
         </fieldset>
 
-        <!-- ===== SECTION D: Feedback ===== -->
+        <!-- ===== SECTION D: Abschluss ===== -->
         <fieldset>
           <legend>D – Abschluss</legend>
 
@@ -392,22 +548,7 @@
             <label class="question" for="d1_anmerkungen">D1. Haben Sie weitere Anmerkungen oder Wünsche? <span class="hint">(Optional)</span></label>
             <textarea id="d1_anmerkungen" name="d1_anmerkungen" placeholder="Ihre Anmerkungen sind herzlich willkommen ..."></textarea>
           </div>
-
-          <div class="form-group">
-            <label class="question">D2. Möchten Sie über die Ergebnisse der Studie informiert werden?</label>
-            <div class="radio-group">
-              <label class="radio-option"><input type="radio" id="d2_ja" name="d2_benachrichtigung" value="ja" required> Ja, gerne per E-Mail</label>
-              <label class="radio-option"><input type="radio" name="d2_benachrichtigung" value="nein"> Nein, danke</label>
-            </div>
-            <div class="conditional" id="d2_email_reveal" style="margin-top: 0.75rem;">
-              <label for="d2_email" style="font-size:0.88rem; font-weight:500; margin-bottom:0.35rem; display:block;">
-                Ihre E-Mail-Adresse <span style="color:var(--color-text-muted); font-weight:400;">(wird nur lokal gespeichert, nicht übertragen)</span>
-              </label>
-              <input type="email" id="d2_email" name="d2_email" placeholder="name@beispiel.de">
-            </div>
-          </div>
         </fieldset>
-
 
         <div style="text-align: center; padding-bottom: 2rem;">
           <button type="submit" class="btn btn--primary btn--lg">Antworten absenden →</button>
@@ -458,12 +599,11 @@
       <div>
         <div class="footer__brand">ORIGINTERRA</div>
         <p>Masterarbeit · 2026 / 2027</p>
-
       </div>
       <div class="footer__links">
         <a href="index.html">Startseite</a>
         <a href="umfrage-bauern.html">Umfrage Landwirte</a>
-        <a href="kontakt.html#kontakt">Kontakt</a>
+        <a href="kontakt.html">Kontakt</a>
       </div>
     </div>
     <div class="footer__copy">&copy; 2026 · Masterarbeit Direktvermarktung</div>
@@ -505,18 +645,50 @@
       });
     })();
 
-    // D2 email reveal
-    initConditionalByValue('d2_benachrichtigung', 'ja', '#d2_email_reveal');
+    // Sonstiges-Felder
+    initConditional('#c1_sonstiges_cb', '#c1_sonstiges_wrap');
+    initConditional('#c5_sonstiges_cb', '#c5_sonstiges_wrap');
+    initConditional('#c6_sonstiges_cb', '#c6_sonstiges_wrap');
 
+    // C1: "Ich kaufe bereits regelmäßig" exklusiv (außer Sonstiges)
+    (function() {
+      var regelmaessig = document.querySelector('input[name="c1_gruende"][value="kaufe_regelmaessig"]');
+      var sonstiges    = document.getElementById('c1_sonstiges_cb');
+      var others = Array.from(document.querySelectorAll('input[name="c1_gruende"]')).filter(function(cb) {
+        return cb !== regelmaessig;
+      });
+      if (regelmaessig) {
+        regelmaessig.addEventListener('change', function() {
+          if (this.checked) others.forEach(function(cb) { if (cb !== sonstiges) cb.checked = false; });
+        });
+      }
+      others.forEach(function(cb) {
+        if (cb === sonstiges) return;
+        cb.addEventListener('change', function() { if (this.checked && regelmaessig) regelmaessig.checked = false; });
+      });
+    })();
 
-    // C4 Sonstiges reveal
-    initConditional('#c4_sonstiges_cb', '#c4_sonstiges_wrap');
+    // C6: "Keine davon" exklusiv (außer Sonstiges)
+    (function() {
+      var keine     = document.querySelector('input[name="c6_vertrauen"][value="keine"]');
+      var sonstiges = document.getElementById('c6_sonstiges_cb');
+      var others    = Array.from(document.querySelectorAll('input[name="c6_vertrauen"]')).filter(function(cb) { return cb !== keine; });
+      if (keine) {
+        keine.addEventListener('change', function() {
+          if (this.checked) others.forEach(function(cb) { if (cb !== sonstiges) cb.checked = false; });
+        });
+      }
+      others.forEach(function(cb) {
+        if (cb === sonstiges) return;
+        cb.addEventListener('change', function() { if (this.checked && keine) keine.checked = false; });
+      });
+    })();
 
-    // char counter
+    // Zeichenzähler
     initCharCounter('b5_erleichterung', 'b5_counter', 500);
-    initCharCounter('c5_nutzung', 'c5_counter', 500);
+    initCharCounter('c7_nutzung', 'c7_counter', 500);
 
-    // init form
+    // Formular initialisieren
     initSurveyForm('konsumenten-form', 'konsumenten', 'modal-konsumenten');
   });
 </script>
