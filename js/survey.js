@@ -215,9 +215,18 @@ function validateForm(form) {
   form.querySelectorAll('input[type="checkbox"][required]').forEach(function(input) {
     if (checkedCheckboxNames[input.name] !== undefined) return;
     if (!isVisible(input)) { checkedCheckboxNames[input.name] = true; return; }
-    var anyChecked = form.querySelector('input[name="' + input.name + '"]:checked');
+    var anyChecked = form.querySelector('input[name="' + input.name + '"]:checked') ||
+                     form.querySelector('input[name="' + input.name + '_sonstiges_cb"]:checked');
     checkedCheckboxNames[input.name] = !!anyChecked;
     if (!anyChecked) {
+      var group = input.closest('.form-group');
+      if (group && !group.classList.contains('field-error')) markError(group);
+    }
+  });
+
+  // Sichtbare Sonstiges-Textfelder müssen ausgefüllt sein
+  form.querySelectorAll('.conditional.is-visible input[type="text"], .conditional.is-visible textarea').forEach(function(input) {
+    if (!input.value.trim()) {
       var group = input.closest('.form-group');
       if (group && !group.classList.contains('field-error')) markError(group);
     }

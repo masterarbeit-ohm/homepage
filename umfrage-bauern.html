@@ -197,7 +197,7 @@
             <label class="question">B5. Was sind Ihre größten Herausforderungen bei der Vermarktung Ihrer Produkte? <span class="hint">(Bitte wählen Sie maximal 3 Antworten)</span></label>
             <div class="checkbox-group">
               <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="zu_wenig_zeit"> Zu wenig Zeit für Vermarktung</label>
-              <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="geringe_preise"> Zu niedrige Verkaufspreise</label>
+              <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="geringe_preise"> Schwierigkeit, kostendeckende oder faire Preise zu erzielen</label>
               <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="mangelnde_nachfrage"> Zu wenig Nachfrage</label>
               <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="logistik"> Schwierigkeiten bei Logistik und Lieferung</label>
               <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen" value="verwaltung"> Hoher Verwaltungs- oder Bürokratieaufwand</label>
@@ -211,12 +211,32 @@
           </div>
 
           <div class="form-group">
-            <label class="question">B6. Wie hoch sind Ihre durchschnittlichen Verluste durch nicht verkaufte Waren?</label>
+            <label class="question">B6. Wie hoch schätzen Sie den Anteil Ihrer produzierten Waren, die aufgrund fehlender Nachfrage nicht verkauft werden können?</label>
             <div class="radio-group">
               <label class="radio-option"><input type="radio" name="b6_verluste" value="unter_5" required> Unter 5 %</label>
               <label class="radio-option"><input type="radio" name="b6_verluste" value="5_15"> 5 – 15 %</label>
               <label class="radio-option"><input type="radio" name="b6_verluste" value="15_30"> 15 – 30 %</label>
               <label class="radio-option"><input type="radio" name="b6_verluste" value="ueber_30"> Über 30 %</label>
+              <label class="radio-option"><input type="radio" name="b6_verluste" value="keine_einschaetzung"> Kann ich nicht einschätzen</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">B7. In welchen Zeiten ist der Verkauf Ihrer Produkte besonders schwierig? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <div class="checkbox-group">
+              <label class="checkbox-option"><input type="checkbox" name="b7_schwierige_zeiten" value="fruehling" required> Frühling</label>
+              <label class="checkbox-option"><input type="checkbox" name="b7_schwierige_zeiten" value="sommer"> Sommer</label>
+              <label class="checkbox-option"><input type="checkbox" name="b7_schwierige_zeiten" value="herbst"> Herbst</label>
+              <label class="checkbox-option"><input type="checkbox" name="b7_schwierige_zeiten" value="winter"> Winter</label>
+              <label class="checkbox-option"><input type="checkbox" name="b7_schwierige_zeiten" value="ferienzeiten"> Ferienzeiten</label>
+              <label class="checkbox-option"><input type="checkbox" name="b7_schwierige_zeiten" value="unter_woche"> Unter der Woche</label>
+              <label class="checkbox-option"><input type="checkbox" name="b7_schwierige_zeiten" value="wochenende"> Am Wochenende</label>
+              <label class="checkbox-option"><input type="checkbox" name="b7_schwierige_zeiten" value="je_nach_produkt"> Das ist je nach Produkt unterschiedlich</label>
+              <label class="checkbox-option"><input type="checkbox" name="b7_schwierige_zeiten" value="keine_probleme" id="b7_keine_probleme"> Ich habe keine saisonalen Verkaufsprobleme</label>
+              <label class="checkbox-option"><input type="checkbox" name="b7_schwierige_zeiten_sonstiges_cb" id="b7_sonstiges_cb"> Sonstiges</label>
+            </div>
+            <div class="conditional" id="b7_sonstiges_wrap">
+              <input type="text" name="b7_schwierige_zeiten_sonstiges" id="b7_schwierige_zeiten_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
             </div>
           </div>
         </fieldset>
@@ -252,7 +272,26 @@
           </div>
 
           <div class="form-group">
-            <label class="question">C3. Wie wichtig wären Ihnen folgende Funktionen einer Direktvermarktungs-App?</label>
+            <label class="question">C3. Welche Werkzeuge nutzen Sie aktuell zur Organisation von Bestellungen, Kundendaten oder Abläufen? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <div class="checkbox-group">
+              <label class="checkbox-option"><input type="checkbox" name="c3_werkzeuge" value="telefon" required> Telefon</label>
+              <label class="checkbox-option"><input type="checkbox" name="c3_werkzeuge" value="email"> E-Mail</label>
+              <label class="checkbox-option"><input type="checkbox" name="c3_werkzeuge" value="whatsapp"> WhatsApp / Messenger</label>
+              <label class="checkbox-option"><input type="checkbox" name="c3_werkzeuge" value="excel"> Excel / Tabellen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c3_werkzeuge" value="papier"> Papierlisten / Notizen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c3_werkzeuge" value="kalender"> Kalender / Planungs-App</label>
+              <label class="checkbox-option"><input type="checkbox" name="c3_werkzeuge" value="kassensystem"> Kassensystem / Warenwirtschaftssystem</label>
+              <label class="checkbox-option"><input type="checkbox" name="c3_werkzeuge" value="online_shop"> Online-Shop-System</label>
+              <label class="checkbox-option"><input type="checkbox" name="c3_werkzeuge" value="keine_werkzeuge" id="c3_keine_werkzeuge"> Keine festen Werkzeuge</label>
+              <label class="checkbox-option"><input type="checkbox" name="c3_werkzeuge_sonstiges_cb" id="c3_sonstiges_cb"> Sonstiges</label>
+            </div>
+            <div class="conditional" id="c3_sonstiges_wrap">
+              <input type="text" name="c3_werkzeuge_sonstiges" id="c3_werkzeuge_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">C4. Wie wichtig wären Ihnen folgende Funktionen einer Direktvermarktungs-App?</label>
             <p class="hint">1 = Unwichtig, 5 = Sehr wichtig</p>
             <div class="matrix-table">
               <table>
@@ -269,91 +308,91 @@
                 <tbody>
                   <tr>
                     <td>Direktbestellungen von Kundinnen und Kunden erhalten</td>
-                    <td><input type="radio" name="c3_direktbestellungen" value="1" required></td>
-                    <td><input type="radio" name="c3_direktbestellungen" value="2"></td>
-                    <td><input type="radio" name="c3_direktbestellungen" value="3"></td>
-                    <td><input type="radio" name="c3_direktbestellungen" value="4"></td>
-                    <td><input type="radio" name="c3_direktbestellungen" value="5"></td>
+                    <td><input type="radio" name="c4_direktbestellungen" value="1" required></td>
+                    <td><input type="radio" name="c4_direktbestellungen" value="2"></td>
+                    <td><input type="radio" name="c4_direktbestellungen" value="3"></td>
+                    <td><input type="radio" name="c4_direktbestellungen" value="4"></td>
+                    <td><input type="radio" name="c4_direktbestellungen" value="5"></td>
                   </tr>
                   <tr>
                     <td>Automatische Rechnungen und Zahlungsübersicht</td>
-                    <td><input type="radio" name="c3_rechnungen" value="1" required></td>
-                    <td><input type="radio" name="c3_rechnungen" value="2"></td>
-                    <td><input type="radio" name="c3_rechnungen" value="3"></td>
-                    <td><input type="radio" name="c3_rechnungen" value="4"></td>
-                    <td><input type="radio" name="c3_rechnungen" value="5"></td>
+                    <td><input type="radio" name="c4_rechnungen" value="1" required></td>
+                    <td><input type="radio" name="c4_rechnungen" value="2"></td>
+                    <td><input type="radio" name="c4_rechnungen" value="3"></td>
+                    <td><input type="radio" name="c4_rechnungen" value="4"></td>
+                    <td><input type="radio" name="c4_rechnungen" value="5"></td>
                   </tr>
                   <tr>
                     <td>Kundinnen und Kunden über Angebote, Märkte und Neuigkeiten informieren</td>
-                    <td><input type="radio" name="c3_kontakt_info" value="1" required></td>
-                    <td><input type="radio" name="c3_kontakt_info" value="2"></td>
-                    <td><input type="radio" name="c3_kontakt_info" value="3"></td>
-                    <td><input type="radio" name="c3_kontakt_info" value="4"></td>
-                    <td><input type="radio" name="c3_kontakt_info" value="5"></td>
+                    <td><input type="radio" name="c4_kontakt_info" value="1" required></td>
+                    <td><input type="radio" name="c4_kontakt_info" value="2"></td>
+                    <td><input type="radio" name="c4_kontakt_info" value="3"></td>
+                    <td><input type="radio" name="c4_kontakt_info" value="4"></td>
+                    <td><input type="radio" name="c4_kontakt_info" value="5"></td>
                   </tr>
                   <tr>
                     <td>Vorbestellungen oder Reservierungen ermöglichen</td>
-                    <td><input type="radio" name="c3_vorbestellungen" value="1" required></td>
-                    <td><input type="radio" name="c3_vorbestellungen" value="2"></td>
-                    <td><input type="radio" name="c3_vorbestellungen" value="3"></td>
-                    <td><input type="radio" name="c3_vorbestellungen" value="4"></td>
-                    <td><input type="radio" name="c3_vorbestellungen" value="5"></td>
+                    <td><input type="radio" name="c4_vorbestellungen" value="1" required></td>
+                    <td><input type="radio" name="c4_vorbestellungen" value="2"></td>
+                    <td><input type="radio" name="c4_vorbestellungen" value="3"></td>
+                    <td><input type="radio" name="c4_vorbestellungen" value="4"></td>
+                    <td><input type="radio" name="c4_vorbestellungen" value="5"></td>
                   </tr>
                   <tr>
                     <td>Lieferungen und Abholungen besser organisieren</td>
-                    <td><input type="radio" name="c3_logistik" value="1" required></td>
-                    <td><input type="radio" name="c3_logistik" value="2"></td>
-                    <td><input type="radio" name="c3_logistik" value="3"></td>
-                    <td><input type="radio" name="c3_logistik" value="4"></td>
-                    <td><input type="radio" name="c3_logistik" value="5"></td>
+                    <td><input type="radio" name="c4_logistik" value="1" required></td>
+                    <td><input type="radio" name="c4_logistik" value="2"></td>
+                    <td><input type="radio" name="c4_logistik" value="3"></td>
+                    <td><input type="radio" name="c4_logistik" value="4"></td>
+                    <td><input type="radio" name="c4_logistik" value="5"></td>
                   </tr>
                   <tr>
                     <td>Regelmäßige Liefer-Abos (z. B. wöchentlich oder monatlich) anbieten</td>
-                    <td><input type="radio" name="c3_abos" value="1" required></td>
-                    <td><input type="radio" name="c3_abos" value="2"></td>
-                    <td><input type="radio" name="c3_abos" value="3"></td>
-                    <td><input type="radio" name="c3_abos" value="4"></td>
-                    <td><input type="radio" name="c3_abos" value="5"></td>
+                    <td><input type="radio" name="c4_abos" value="1" required></td>
+                    <td><input type="radio" name="c4_abos" value="2"></td>
+                    <td><input type="radio" name="c4_abos" value="3"></td>
+                    <td><input type="radio" name="c4_abos" value="4"></td>
+                    <td><input type="radio" name="c4_abos" value="5"></td>
                   </tr>
                   <tr>
                     <td>Unterstützung bei Werbung und Sichtbarkeit</td>
-                    <td><input type="radio" name="c3_marketing" value="1" required></td>
-                    <td><input type="radio" name="c3_marketing" value="2"></td>
-                    <td><input type="radio" name="c3_marketing" value="3"></td>
-                    <td><input type="radio" name="c3_marketing" value="4"></td>
-                    <td><input type="radio" name="c3_marketing" value="5"></td>
+                    <td><input type="radio" name="c4_marketing" value="1" required></td>
+                    <td><input type="radio" name="c4_marketing" value="2"></td>
+                    <td><input type="radio" name="c4_marketing" value="3"></td>
+                    <td><input type="radio" name="c4_marketing" value="4"></td>
+                    <td><input type="radio" name="c4_marketing" value="5"></td>
                   </tr>
                   <tr>
                     <td>Restwaren oder überschüssige Produkte besser verkaufen</td>
-                    <td><input type="radio" name="c3_restwaren" value="1" required></td>
-                    <td><input type="radio" name="c3_restwaren" value="2"></td>
-                    <td><input type="radio" name="c3_restwaren" value="3"></td>
-                    <td><input type="radio" name="c3_restwaren" value="4"></td>
-                    <td><input type="radio" name="c3_restwaren" value="5"></td>
+                    <td><input type="radio" name="c4_restwaren" value="1" required></td>
+                    <td><input type="radio" name="c4_restwaren" value="2"></td>
+                    <td><input type="radio" name="c4_restwaren" value="3"></td>
+                    <td><input type="radio" name="c4_restwaren" value="4"></td>
+                    <td><input type="radio" name="c4_restwaren" value="5"></td>
                   </tr>
                   <tr>
                     <td>Stammkundinnen und Stammkunden aufbauen und langfristig binden</td>
-                    <td><input type="radio" name="c3_stammkunden" value="1" required></td>
-                    <td><input type="radio" name="c3_stammkunden" value="2"></td>
-                    <td><input type="radio" name="c3_stammkunden" value="3"></td>
-                    <td><input type="radio" name="c3_stammkunden" value="4"></td>
-                    <td><input type="radio" name="c3_stammkunden" value="5"></td>
+                    <td><input type="radio" name="c4_stammkunden" value="1" required></td>
+                    <td><input type="radio" name="c4_stammkunden" value="2"></td>
+                    <td><input type="radio" name="c4_stammkunden" value="3"></td>
+                    <td><input type="radio" name="c4_stammkunden" value="4"></td>
+                    <td><input type="radio" name="c4_stammkunden" value="5"></td>
                   </tr>
                   <tr>
                     <td>Bewertungen und Feedback von Kundinnen und Kunden erhalten</td>
-                    <td><input type="radio" name="c3_bewertungen" value="1" required></td>
-                    <td><input type="radio" name="c3_bewertungen" value="2"></td>
-                    <td><input type="radio" name="c3_bewertungen" value="3"></td>
-                    <td><input type="radio" name="c3_bewertungen" value="4"></td>
-                    <td><input type="radio" name="c3_bewertungen" value="5"></td>
+                    <td><input type="radio" name="c4_bewertungen" value="1" required></td>
+                    <td><input type="radio" name="c4_bewertungen" value="2"></td>
+                    <td><input type="radio" name="c4_bewertungen" value="3"></td>
+                    <td><input type="radio" name="c4_bewertungen" value="4"></td>
+                    <td><input type="radio" name="c4_bewertungen" value="5"></td>
                   </tr>
                   <tr>
                     <td>B2B-Kontakte zu Restaurants, Hofläden, Einzelhandel oder anderen landwirtschaftlichen Betrieben herstellen</td>
-                    <td><input type="radio" name="c3_b2b" value="1" required></td>
-                    <td><input type="radio" name="c3_b2b" value="2"></td>
-                    <td><input type="radio" name="c3_b2b" value="3"></td>
-                    <td><input type="radio" name="c3_b2b" value="4"></td>
-                    <td><input type="radio" name="c3_b2b" value="5"></td>
+                    <td><input type="radio" name="c4_b2b" value="1" required></td>
+                    <td><input type="radio" name="c4_b2b" value="2"></td>
+                    <td><input type="radio" name="c4_b2b" value="3"></td>
+                    <td><input type="radio" name="c4_b2b" value="4"></td>
+                    <td><input type="radio" name="c4_b2b" value="5"></td>
                   </tr>
                 </tbody>
               </table>
@@ -361,47 +400,70 @@
           </div>
 
           <div class="form-group">
-            <label class="question">C4. Welchen monatlichen Betrag wären Sie bereit, für eine App zur Direktvermarktung regionaler Produkte bezahlen?</label>
+            <label class="question">C5. Welchen monatlichen Betrag wären Sie bereit, für eine App zur Direktvermarktung regionaler Produkte bezahlen?</label>
             <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="c4_preis" value="nichts" required> Nichts – ich würde nur eine kostenlose Version nutzen</label>
-              <label class="radio-option"><input type="radio" name="c4_preis" value="bis_10"> Bis 10 € / Monat</label>
-              <label class="radio-option"><input type="radio" name="c4_preis" value="10_25"> 10 – 25 € / Monat</label>
-              <label class="radio-option"><input type="radio" name="c4_preis" value="25_50"> 25 – 50 € / Monat</label>
-              <label class="radio-option"><input type="radio" name="c4_preis" value="ueber_50"> Über 50 € / Monat</label>
+              <label class="radio-option"><input type="radio" name="c5_preis" value="nichts" required> Nichts – ich würde nur eine kostenlose Version nutzen</label>
+              <label class="radio-option"><input type="radio" name="c5_preis" value="bis_10"> Bis 10 € / Monat</label>
+              <label class="radio-option"><input type="radio" name="c5_preis" value="10_25"> 10 – 25 € / Monat</label>
+              <label class="radio-option"><input type="radio" name="c5_preis" value="25_50"> 25 – 50 € / Monat</label>
+              <label class="radio-option"><input type="radio" name="c5_preis" value="ueber_50"> Über 50 € / Monat</label>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="question">C5. Was wären für Sie mögliche Hindernisse bei der Nutzung einer digitalen Plattform? <span class="hint">(Bitte wählen Sie maximal 3 Antworten)</span></label>
+            <label class="question">C6. Was wären für Sie mögliche Hindernisse bei der Nutzung einer digitalen Plattform? <span class="hint">(Bitte wählen Sie maximal 3 Antworten)</span></label>
             <div class="checkbox-group">
-              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="zeitaufwand" required> Zu wenig Zeit für zusätzliche digitale Aufgaben</label>
-              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="bedienung"> Zu komplizierte Bedienung</label>
-              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="datenschutz"> Datenschutz- und Sicherheitsbedenken</label>
-              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="verwaltung"> Zusätzlicher Verwaltungs- oder Organisationsaufwand</label>
-              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="internet"> Schlechte Internetverbindung auf dem Hof</label>
-              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="kein_bedarf"> Kein Bedarf an digitalen Lösungen</label>
-              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis" value="kundenkontakt"> Fehlender persönlicher Kundenkontakt</label>
-              <label class="checkbox-option"><input type="checkbox" name="c5_hindernis_sonstiges_cb" id="c5_sonstiges_cb"> Sonstiges</label>
-            </div>
-            <div class="conditional" id="c5_sonstiges_wrap">
-              <input type="text" name="c5_hindernis_sonstiges" id="c5_hindernis_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="question">C6. In welchen Bereichen wünschen Sie sich die meiste Unterstützung bei der Direktvermarktung? <span class="hint">(Bitte wählen Sie maximal 3 Antworten)</span></label>
-            <div class="checkbox-group">
-              <label class="checkbox-option"><input type="checkbox" name="c6_fehlt" value="mehr_kunden" required> Mehr Kundinnen und Kunden aus der Region erreichen</label>
-              <label class="checkbox-option"><input type="checkbox" name="c6_fehlt" value="sichtbarkeit"> Bessere Sichtbarkeit im Internet</label>
-              <label class="checkbox-option"><input type="checkbox" name="c6_fehlt" value="digital"> Verkauf und Bestellungen einfacher organisieren</label>
-              <label class="checkbox-option"><input type="checkbox" name="c6_fehlt" value="logistik"> Lieferung und Abholung besser koordinieren</label>
-              <label class="checkbox-option"><input type="checkbox" name="c6_fehlt" value="stammkunden"> Stammkundinnen und Stammkunden aufbauen</label>
-              <label class="checkbox-option"><input type="checkbox" name="c6_fehlt" value="vertrauen"> Vertrauen zu neuen Kundinnen und Kunden stärken</label>
-              <label class="checkbox-option"><input type="checkbox" name="c6_fehlt" value="restwaren"> Restwaren oder überschüssige Produkte besser verkaufen</label>
-              <label class="checkbox-option"><input type="checkbox" name="c6_fehlt_sonstiges_cb" id="c6_sonstiges_cb"> Sonstiges</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_hindernis" value="zeitaufwand" required> Zu wenig Zeit für zusätzliche digitale Aufgaben</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_hindernis" value="bedienung"> Zu komplizierte Bedienung</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_hindernis" value="datenschutz"> Datenschutz- und Sicherheitsbedenken</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_hindernis" value="verwaltung"> Zusätzlicher Verwaltungs- oder Organisationsaufwand</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_hindernis" value="internet"> Schlechte Internetverbindung auf dem Hof</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_hindernis" value="kein_bedarf"> Kein Bedarf an digitalen Lösungen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_hindernis" value="kundenkontakt"> Sorge, dass der persönliche Kundenkontakt verloren geht</label>
+              <label class="checkbox-option"><input type="checkbox" name="c6_hindernis_sonstiges_cb" id="c6_sonstiges_cb"> Sonstiges</label>
             </div>
             <div class="conditional" id="c6_sonstiges_wrap">
-              <input type="text" name="c6_fehlt_sonstiges" id="c6_fehlt_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+              <input type="text" name="c6_hindernis_sonstiges" id="c6_hindernis_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">C7. In welchen Bereichen wünschen Sie sich die meiste Unterstützung bei der Direktvermarktung? <span class="hint">(Bitte wählen Sie maximal 3 Antworten)</span></label>
+            <div class="checkbox-group">
+              <label class="checkbox-option"><input type="checkbox" name="c7_fehlt" value="mehr_kunden" required> Mehr Kundinnen und Kunden aus der Region erreichen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c7_fehlt" value="sichtbarkeit"> Bessere Sichtbarkeit im Internet</label>
+              <label class="checkbox-option"><input type="checkbox" name="c7_fehlt" value="digital"> Verkauf und Bestellungen einfacher organisieren</label>
+              <label class="checkbox-option"><input type="checkbox" name="c7_fehlt" value="logistik"> Lieferung und Abholung besser koordinieren</label>
+              <label class="checkbox-option"><input type="checkbox" name="c7_fehlt" value="stammkunden"> Stammkundinnen und Stammkunden aufbauen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c7_fehlt" value="vertrauen"> Vertrauen zu neuen Kundinnen und Kunden stärken</label>
+              <label class="checkbox-option"><input type="checkbox" name="c7_fehlt" value="restwaren"> Restwaren oder überschüssige Produkte besser verkaufen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c7_fehlt_sonstiges_cb" id="c7_sonstiges_cb"> Sonstiges</label>
+            </div>
+            <div class="conditional" id="c7_sonstiges_wrap">
+              <input type="text" name="c7_fehlt_sonstiges" id="c7_fehlt_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="question">C8. Inwiefern stimmen Sie folgender Aussage zu?<br>
+              <span style="font-weight:400; font-style:italic;">„Ich würde eine digitale Plattform eher nutzen, wenn sie mehrere bisherige Aufgaben wie Produktpräsentation, Kundenkommunikation, Vorbestellungen, Zahlungsübersicht und Organisation in einer Anwendung bündelt.“</span>
+            </label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="c8_buendel" value="voll_zu" required> Stimme voll zu</label>
+              <label class="radio-option"><input type="radio" name="c8_buendel" value="eher_zu"> Stimme eher zu</label>
+              <label class="radio-option"><input type="radio" name="c8_buendel" value="teils_teils"> Teils/teils</label>
+              <label class="radio-option"><input type="radio" name="c8_buendel" value="eher_nicht"> Stimme eher nicht zu</label>
+              <label class="radio-option"><input type="radio" name="c8_buendel" value="gar_nicht"> Stimme gar nicht zu</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">C9. Wie hilfreich wäre eine B2B-Funktion, über die Restaurants, Hofläden oder andere Betriebe direkt Anfragen stellen können?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="c9_b2b" value="sehr_hilfreich" required> Sehr hilfreich</label>
+              <label class="radio-option"><input type="radio" name="c9_b2b" value="eher_hilfreich"> Eher hilfreich</label>
+              <label class="radio-option"><input type="radio" name="c9_b2b" value="teils_teils"> Teils/teils</label>
+              <label class="radio-option"><input type="radio" name="c9_b2b" value="eher_nicht"> Eher nicht hilfreich</label>
+              <label class="radio-option"><input type="radio" name="c9_b2b" value="gar_nicht"> Gar nicht hilfreich</label>
             </div>
           </div>
         </fieldset>
@@ -520,8 +582,50 @@
     // B5 Sonstiges reveal
     initConditional('#b5_sonstiges_cb', '#b5_sonstiges_wrap');
 
+    // B7 Sonstiges reveal
+    initConditional('#b7_sonstiges_cb', '#b7_sonstiges_wrap');
+
+    // B7 "Keine Probleme" ist exklusiv (außer Sonstiges)
+    (function() {
+      var keine = document.getElementById('b7_keine_probleme');
+      var sonstiges = document.getElementById('b7_sonstiges_cb');
+      var others = Array.from(document.querySelectorAll('input[name="b7_schwierige_zeiten"]')).filter(function(cb) { return cb !== keine; });
+      if (keine) {
+        keine.addEventListener('change', function() {
+          if (this.checked) others.forEach(function(cb) { cb.checked = false; });
+        });
+      }
+      others.forEach(function(cb) {
+        cb.addEventListener('change', function() { if (this.checked && keine) keine.checked = false; });
+      });
+      if (sonstiges) {
+        sonstiges.addEventListener('change', function() { if (this.checked && keine) keine.checked = false; });
+      }
+    })();
+
     // C2 Sonstiges reveal
     initConditional('#c2_sonstiges_cb', '#c2_sonstiges_wrap');
+
+    // C3 Sonstiges reveal
+    initConditional('#c3_sonstiges_cb', '#c3_sonstiges_wrap');
+
+    // C3 "Keine festen Werkzeuge" ist exklusiv (außer Sonstiges)
+    (function() {
+      var keine = document.getElementById('c3_keine_werkzeuge');
+      var sonstiges = document.getElementById('c3_sonstiges_cb');
+      var others = Array.from(document.querySelectorAll('input[name="c3_werkzeuge"]')).filter(function(cb) { return cb !== keine; });
+      if (keine) {
+        keine.addEventListener('change', function() {
+          if (this.checked) others.forEach(function(cb) { cb.checked = false; });
+        });
+      }
+      others.forEach(function(cb) {
+        cb.addEventListener('change', function() { if (this.checked && keine) keine.checked = false; });
+      });
+      if (sonstiges) {
+        sonstiges.addEventListener('change', function() { if (this.checked && keine) keine.checked = false; });
+      }
+    })();
 
     // C2 "Keinen" ist exklusiv
     var c2Keinen = document.getElementById('c2_keinen');
@@ -544,14 +648,14 @@
       });
     }
 
-    // C5 Sonstiges reveal
-    initConditional('#c5_sonstiges_cb', '#c5_sonstiges_wrap');
-
     // C6 Sonstiges reveal
     initConditional('#c6_sonstiges_cb', '#c6_sonstiges_wrap');
 
-    // Max-3-Auswahl (FIFO) für B5, C5, C6
-    ['b5_herausforderungen', 'c5_hindernis', 'c6_fehlt'].forEach(function(name) {
+    // C7 Sonstiges reveal
+    initConditional('#c7_sonstiges_cb', '#c7_sonstiges_wrap');
+
+    // Max-3-Auswahl (FIFO) für B5, C6, C7
+    ['b5_herausforderungen', 'c6_hindernis', 'c7_fehlt'].forEach(function(name) {
       var queue = [];
       var boxes = Array.from(document.querySelectorAll(
         'input[name="' + name + '"], input[name="' + name + '_sonstiges_cb"]'
