@@ -370,6 +370,13 @@
     var msgEl    = document.getElementById('prototyp-msg');
 
     function openModal() { modal.classList.add('is-open'); }
+
+    // Modal automatisch öffnen wenn ?testen=1 in der URL
+    if (new URLSearchParams(window.location.search).get('testen') === '1') {
+      openModal();
+      history.replaceState(null, '', window.location.pathname);
+    }
+
     function closeModal() {
       modal.classList.remove('is-open');
       form.reset();

@@ -128,7 +128,7 @@
               <label class="radio-option"><input type="radio" name="a5_bildung" value="realschule"> Mittlere Reife / Realschule</label>
               <label class="radio-option"><input type="radio" name="a5_bildung" value="abitur"> Abitur / Fachabitur</label>
               <label class="radio-option"><input type="radio" name="a5_bildung" value="hochschule"> Hochschulabschluss (Bachelor / Master / Diplom)</label>
-              <label class="radio-option"><input type="radio" name="a5_bildung" value="sonstiges"> Sonstiges</label>
+              <label class="radio-option"><input type="radio" name="a5_bildung" value="sonstiges"> Sonstiger Abschluss / keine Angabe</label>
             </div>
           </div>
         </fieldset>
@@ -239,6 +239,7 @@
               <label class="radio-option"><input type="radio" name="b4_ausgaben" value="200_400"> 200 – 400 €</label>
               <label class="radio-option"><input type="radio" name="b4_ausgaben" value="400_600"> 400 – 600 €</label>
               <label class="radio-option"><input type="radio" name="b4_ausgaben" value="ueber_600"> Über 600 €</label>
+              <label class="radio-option"><input type="radio" name="b4_ausgaben" value="keine_angabe"> Keine Angabe / weiß ich nicht</label>
             </div>
           </div>
 
@@ -266,7 +267,7 @@
               <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="zu_teuer"> Zu teuer im Vergleich zum Supermarkt</label>
               <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="keine_zeit"> Mir fehlt die Zeit</label>
               <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="unsicher_regional"> Ich bin unsicher, ob die Produkte wirklich regional sind</label>
-              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="unsicher_bio"> Ich bin unsicher, ob die Produkte bio oder nachhaltig produziert wurden</label>
+              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="qualitaet_unklar"> Ich kann die Qualität vorher schwer einschätzen</label>
               <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="kaufe_regelmaessig"> Ich kaufe bereits regelmäßig beim Bauern</label>
               <label class="checkbox-option"><input type="checkbox" name="c1_gruende_sonstiges_cb" id="c1_sonstiges_cb"> Sonstiges</label>
             </div>
@@ -498,7 +499,7 @@
           </div>
 
           <div class="form-group">
-            <label class="question">C5. Welches Modell zum Kauf regionaler Produkte würden Sie bevorzugen? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <label class="question">C5. Welche Modelle zum Kauf regionaler Produkte würden Sie bevorzugen? <span class="hint">(Mehrfachauswahl möglich)</span></label>
             <div class="checkbox-group">
               <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="abo_lieferung" required> Regelmäßige Lieferung im Abo (z. B. wöchentlich)</label>
               <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="direktkauf_abholung"> Direktkauf und Abholung auf dem Bauernhof</label>
@@ -581,13 +582,20 @@
 
 <!-- THANK-YOU MODAL -->
 <div class="modal-overlay" id="modal-konsumenten" role="dialog" aria-modal="true" aria-labelledby="modal-title-k">
-  <div class="modal">
+  <div class="modal" style="max-width:480px;">
     <div class="modal__icon">🎉</div>
     <h2 class="modal__title" id="modal-title-k">Vielen Dank!</h2>
     <p>Ihre Antworten wurden erfolgreich übermittelt.</p>
     <p data-sheets-status style="display:none; font-size:0.88rem; margin-bottom:0.5rem;"></p>
-    <div class="modal__actions">
-      <a href="index.html" class="btn btn--primary" data-modal-close>← Zurück zur Startseite</a>
+
+    <hr style="border:none; border-top:1px solid var(--color-border); margin:1.25rem 0;">
+
+    <p style="font-weight:600; margin-bottom:0.35rem; font-size:0.95rem;">Möchten Sie den Prototypen testen?</p>
+    <p style="font-size:0.85rem; color:var(--color-text-muted); margin-bottom:1rem;">Jetzt direkt den Prototypen ausprobieren.</p>
+
+    <div class="modal__actions" style="margin-top:0.5rem;">
+      <a href="index.html?testen=1" class="btn btn--primary">Prototyp testen →</a>
+      <a href="index.html" class="btn btn--outline" data-modal-close>← Zurück zur Startseite</a>
     </div>
   </div>
 </div>
@@ -690,6 +698,7 @@
 
     // Formular initialisieren
     initSurveyForm('konsumenten-form', 'konsumenten', 'modal-konsumenten');
+
   });
 </script>
 </body>
