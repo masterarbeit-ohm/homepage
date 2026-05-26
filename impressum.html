@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Impressum – ORIGINTERRA Masterarbeit Direktvermarktung.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://originterra.de/impressum.html">
+  <title>Impressum – ORIGINTERRA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">ORIGIN<span>TERRA</span></a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="umfrage-bauern.html">Umfrage Landwirte</a></li>
+        <li><a href="umfrage-konsumenten.html">Umfrage Verbraucher</a></li>
+        <li><a href="index.html#prototyp">Prototyp testen</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<section class="section">
+  <div class="container">
+    <div class="form-page">
+
+      <div class="form-header">
+        <span class="section-label">Rechtliches</span>
+        <h1 style="font-size: clamp(1.6rem, 4vw, 2.5rem);">Impressum</h1>
+      </div>
+
+      <div style="max-width: 640px; line-height: 1.8;">
+
+        <h2 style="font-size: 1.1rem; margin-top: 2rem; margin-bottom: 0.5rem;">Angaben gemäß § 5 TMG</h2>
+        <p>
+          Dimitrij Weissbeck<br>
+          E-Mail: <a href="mailto:dimitrij.code@gmail.com">dimitrij.code@gmail.com</a>
+        </p>
+
+        <h2 style="font-size: 1.1rem; margin-top: 2rem; margin-bottom: 0.5rem;">Zweck dieser Website</h2>
+        <p>
+          Diese Website wurde im Rahmen einer Masterarbeit zum Thema digitale Direktvermarktung
+          in der Landwirtschaft erstellt. Sie dient ausschließlich wissenschaftlichen und nicht-kommerziellen Zwecken.
+        </p>
+
+        <h2 style="font-size: 1.1rem; margin-top: 2rem; margin-bottom: 0.5rem;">Verantwortlich für den Inhalt (§ 55 Abs. 2 RStV)</h2>
+        <p>Dimitrij Weissbeck</p>
+
+        <h2 style="font-size: 1.1rem; margin-top: 2rem; margin-bottom: 0.5rem;">Haftungsausschluss</h2>
+        <p>
+          <strong>Haftung für Inhalte:</strong> Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt.
+          Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehme ich keine Gewähr.
+        </p>
+        <p>
+          <strong>Haftung für Links:</strong> Diese Website enthält Links zu externen Webseiten Dritter.
+          Auf deren Inhalte habe ich keinen Einfluss. Für die Inhalte der verlinkten Seiten ist stets
+          der jeweilige Anbieter verantwortlich.
+        </p>
+
+        <h2 style="font-size: 1.1rem; margin-top: 2rem; margin-bottom: 0.5rem;">Urheberrecht</h2>
+        <p>
+          Die auf dieser Website veröffentlichten Inhalte unterliegen dem deutschen Urheberrecht.
+          Eine Vervielfältigung, Bearbeitung oder Verbreitung außerhalb der Grenzen des Urheberrechts
+          bedarf der schriftlichen Zustimmung des Autors.
+        </p>
+
+        <p style="margin-top: 2.5rem; font-size: 0.85rem; color: var(--color-text-muted);">
+          Stand: Mai 2026
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand">ORIGINTERRA</div>
+        <p>Masterarbeit · 2026 / 2027</p>
+      </div>
+      <div class="footer__links">
+        <a href="index.html">Startseite</a>
+        <a href="umfrage-bauern.html">Umfrage Landwirte</a>
+        <a href="umfrage-konsumenten.html">Umfrage Verbraucher</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <div class="footer__copy">
+      &copy; 2026 · Masterarbeit Direktvermarktung ·
+      <a href="impressum.html" style="color: rgba(255,255,255,0.5);" aria-current="page">Impressum</a> ·
+      <a href="datenschutz.html" style="color: rgba(255,255,255,0.5);">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('nav-toggle');
+    var nav = document.getElementById('nav-links');
+    if (!btn || !nav) return;
+    btn.addEventListener('click', function() {
+      var open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open);
+    });
+    nav.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        nav.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!nav.contains(e.target) && !btn.contains(e.target)) {
+        nav.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>
+</body>
+</html>
