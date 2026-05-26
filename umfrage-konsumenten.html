@@ -66,7 +66,7 @@
 
         <!-- ===== SECTION B: Kaufverhalten ===== -->
         <fieldset data-step="1">
-          <legend>B – Ihr Kaufverhalten bei Lebensmitteln</legend>
+          <legend>A – Ihr Kaufverhalten bei Lebensmitteln</legend>
 
           <div class="form-group">
             <label class="question">B1. Wo kaufen Sie Lebensmittel hauptsächlich ein? <span class="hint">(Mehrfachauswahl möglich)</span></label>
@@ -181,7 +181,7 @@
 
         <!-- ===== SECTION C: Wahrnehmung & Bereitschaft ===== -->
         <fieldset data-step="2">
-          <legend>C – Wahrnehmung und digitale Bereitschaft</legend>
+          <legend>B – Wahrnehmung und digitale Bereitschaft</legend>
 
           <div class="form-group">
             <label class="question">C1. Warum kaufen Sie nicht häufiger direkt beim Bauern oder bei regionalen Verkaufsstellen? <span class="hint">(Mehrfachauswahl möglich)</span></label>
@@ -201,7 +201,7 @@
               <label class="checkbox-option"><input type="checkbox" name="c1_gruende_sonstiges_cb" id="c1_sonstiges_cb"> Sonstiges</label>
             </div>
             <div class="conditional" id="c1_sonstiges_wrap">
-              <input type="text" name="c1_gruende_sonstiges" id="c1_gruende_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+              <input type="text" name="c1_gruende_sonstiges" id="c1_gruende_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstiger Grund – bitte beschreiben">
             </div>
           </div>
 
@@ -454,7 +454,7 @@
               <label class="checkbox-option"><input type="checkbox" name="c5_modell_sonstiges_cb" id="c5_sonstiges_cb"> Sonstiges</label>
             </div>
             <div class="conditional" id="c5_sonstiges_wrap">
-              <input type="text" name="c5_modell_sonstiges" id="c5_modell_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+              <input type="text" name="c5_modell_sonstiges" id="c5_modell_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstiges Modell – bitte beschreiben">
             </div>
           </div>
 
@@ -473,7 +473,7 @@
               <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen_sonstiges_cb" id="c6_sonstiges_cb"> Sonstiges</label>
             </div>
             <div class="conditional" id="c6_sonstiges_wrap">
-              <input type="text" name="c6_vertrauen_sonstiges" id="c6_vertrauen_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+              <input type="text" name="c6_vertrauen_sonstiges" id="c6_vertrauen_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstiges Vertrauensmerkmal – bitte beschreiben">
             </div>
           </div>
 
@@ -486,7 +486,7 @@
 
         <!-- ===== SECTION A: Allgemeine Angaben (Schritt 3) ===== -->
         <fieldset data-step="3">
-          <legend>A – Angaben zu Ihrer Person</legend>
+          <legend>C – Angaben zu Ihrer Person</legend>
 
           <div class="form-group">
             <label class="question" for="a1_bundesland">A1. In welchem Bundesland leben Sie?</label>
@@ -629,7 +629,11 @@
         <a href="kontakt.html">Kontakt</a>
       </div>
     </div>
-    <div class="footer__copy">&copy; 2026 · Masterarbeit Direktvermarktung</div>
+    <div class="footer__copy">
+      &copy; 2026 · Masterarbeit Direktvermarktung ·
+      <a href="impressum.html" style="color: rgba(255,255,255,0.5);">Impressum</a> ·
+      <a href="datenschutz.html" style="color: rgba(255,255,255,0.5);">Datenschutz</a>
+    </div>
   </div>
 </footer>
 

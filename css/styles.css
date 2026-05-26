@@ -698,7 +698,7 @@ legend {
 /* ============================================================
    LIKERT SCALE
    ============================================================ */
-.likert-group { display: flex; flex-direction: column; gap: 0.55rem; }
+.likert-group { display: flex; flex-direction: column; gap: 0; }
 
 .likert-scale-legend {
   display: flex;
@@ -706,28 +706,26 @@ legend {
   font-size: 0.72rem;
   color: var(--color-text-muted);
   padding: 0 0.1rem;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.4rem;
 }
 
 .likert-item {
-  background: var(--color-surface);
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 0.75rem 0.9rem;
-  transition: border-color 0.15s;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.12s;
 }
-.likert-item:has(input:checked) { border-color: var(--color-primary-light); }
+.likert-item:last-child { border-bottom: none; }
 
 .likert-item__label {
   display: block;
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--color-text);
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.6rem;
   line-height: 1.4;
 }
 
-.likert-item__scale { display: flex; gap: 0.35rem; }
+.likert-item__scale { display: flex; gap: 0.45rem; }
 
 .likert-btn {
   flex: 1;
@@ -749,26 +747,29 @@ legend {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 2.5rem;
   height: 2.5rem;
-  border-radius: var(--radius-sm);
-  border: 1.5px solid var(--color-border);
-  background: var(--color-surface);
-  font-size: 0.88rem;
+  border-radius: 50%;
+  border: 1.5px solid #D6D3CC;
+  background: transparent;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: var(--color-text-muted);
-  transition: border-color 0.15s, background 0.15s, color 0.15s;
+  color: #9C9488;
+  transition: border-color 0.15s, background 0.15s, color 0.15s, transform 0.1s;
   user-select: none;
 }
 .likert-btn:hover span {
   border-color: var(--color-primary-light);
   background: #F0F7F4;
   color: var(--color-primary);
+  transform: scale(1.08);
 }
 .likert-btn:has(input:checked) span {
   border-color: var(--color-primary);
   background: var(--color-primary);
   color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(45,106,79,0.22);
 }
 .likert-btn:has(input:focus-visible) span {
   box-shadow: 0 0 0 3px rgba(45,106,79,0.25);
@@ -779,14 +780,15 @@ legend {
     display: flex;
     align-items: center;
     gap: 1.25rem;
-    padding: 0.6rem 0.9rem;
+    padding: 0.55rem 0;
   }
   .likert-item__label {
     flex: 0 0 210px;
     margin-bottom: 0;
   }
-  .likert-item__scale { flex: 1; }
-  .likert-scale-legend { padding-left: calc(210px + 1.25rem + 0.9rem); }
+  .likert-item__scale { flex: 1; justify-content: space-between; }
+  .likert-btn { flex: 0 0 auto; }
+  .likert-scale-legend { padding-left: calc(210px + 1.25rem); }
 }
 
 /* ============================================================

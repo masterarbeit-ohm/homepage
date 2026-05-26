@@ -37,9 +37,10 @@
 </nav>
 
 <!-- SURVEY PROGRESS BAR -->
-<div class="survey-progress" style="margin: 0; border-radius: 0;">
+<div class="survey-progress">
   <div class="survey-progress__bar" id="survey-bar" style="width: 0%"></div>
 </div>
+<div class="survey-step-label" id="survey-step-label">Abschnitt 1 von 4</div>
 
 <!-- MAIN CONTENT -->
 <section class="section">
@@ -64,76 +65,9 @@
       <!-- FORM -->
       <form id="bauern-form" novalidate data-script-url="https://script.google.com/macros/s/AKfycbwAtDHv2-eA5K2ZDZ-z5N1Zh4T0NC3UM_M6G3FPkgNTUh3zcCLMxv2lSbOcnrrId6un/exec">
 
-        <!-- ===== SECTION A: Betriebsangaben ===== -->
-        <fieldset>
-          <legend>A – Angaben zu Ihrem Betrieb</legend>
-
-          <div class="form-group">
-            <label class="question" for="a1_bundesland">A1. In welchem Bundesland liegt Ihr Betrieb?</label>
-            <select id="a1_bundesland" name="a1_bundesland" required>
-              <option value="">– Bitte wählen –</option>
-              <option>Baden-Württemberg</option>
-              <option>Bayern</option>
-              <option>Berlin</option>
-              <option>Brandenburg</option>
-              <option>Bremen</option>
-              <option>Hamburg</option>
-              <option>Hessen</option>
-              <option>Mecklenburg-Vorpommern</option>
-              <option>Niedersachsen</option>
-              <option>Nordrhein-Westfalen</option>
-              <option>Rheinland-Pfalz</option>
-              <option>Saarland</option>
-              <option>Sachsen</option>
-              <option>Sachsen-Anhalt</option>
-              <option>Schleswig-Holstein</option>
-              <option>Thüringen</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label class="question">A2. Wie viele Hektar bewirtschaften Sie?</label>
-            <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="a2_flaeche" value="unter_5ha" required> Unter 5 ha</label>
-              <label class="radio-option"><input type="radio" name="a2_flaeche" value="5_20ha"> 5 – 20 ha</label>
-              <label class="radio-option"><input type="radio" name="a2_flaeche" value="20_50ha"> 20 – 50 ha</label>
-              <label class="radio-option"><input type="radio" name="a2_flaeche" value="ueber_50ha"> Über 50 ha</label>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="question">A3. Welche Betriebsform trifft am ehesten auf Sie zu?</label>
-            <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="a3_betriebsform" value="konventionell" required> Konventionell</label>
-              <label class="radio-option"><input type="radio" name="a3_betriebsform" value="biologisch"> Biologisch</label>
-              <label class="radio-option"><input type="radio" name="a3_betriebsform" value="biodynamisch"> Biodynamisch (z.B. Demeter)</label>
-              <label class="radio-option"><input type="radio" name="a3_betriebsform" value="umstieg"> Im Umstieg auf Bio</label>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="question">A4. Wie lange sind Sie schon in der Landwirtschaft tätig?</label>
-            <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="a4_erfahrung" value="unter_5" required> Unter 5 Jahre</label>
-              <label class="radio-option"><input type="radio" name="a4_erfahrung" value="5_15"> 5 – 15 Jahre</label>
-              <label class="radio-option"><input type="radio" name="a4_erfahrung" value="ueber_15"> Über 15 Jahre</label>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="question">A5. Wie viele Vollzeit-Arbeitskräfte hat Ihr Betrieb?</label>
-            <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="a5_mitarbeiter" value="1" required> 1 (ich allein)</label>
-              <label class="radio-option"><input type="radio" name="a5_mitarbeiter" value="2_5"> 2 – 5</label>
-              <label class="radio-option"><input type="radio" name="a5_mitarbeiter" value="6_20"> 6 – 20</label>
-              <label class="radio-option"><input type="radio" name="a5_mitarbeiter" value="mehr_als_20"> Mehr als 20</label>
-            </div>
-          </div>
-        </fieldset>
-
         <!-- ===== SECTION B: Produktion & Vermarktung ===== -->
-        <fieldset>
-          <legend>B – Produktion und Vermarktung</legend>
+        <fieldset data-step="1">
+          <legend>A – Produktion und Vermarktung</legend>
 
           <div class="form-group">
             <label class="question">B1. Welche Produkte erzeugen Sie? <span class="hint">(Mehrfachauswahl möglich)</span></label>
@@ -149,7 +83,7 @@
               <label class="checkbox-option"><input type="checkbox" name="b1_produkte" id="b1_sonstiges_check" value="sonstiges"> Sonstiges</label>
             </div>
             <div class="conditional" id="b1_sonstiges_reveal">
-              <input type="text" name="b1_produkte_sonstiges" placeholder="Bitte beschreiben ...">
+              <input type="text" name="b1_produkte_sonstiges" placeholder="Bitte beschreiben ..." aria-label="Sonstiges Produkt – bitte beschreiben">
             </div>
           </div>
 
@@ -166,7 +100,7 @@
               <label class="checkbox-option"><input type="checkbox" name="b2_kanaele_sonstiges_cb" id="b2_sonstiges_cb"> Sonstiges</label>
             </div>
             <div class="conditional" id="b2_sonstiges_wrap">
-              <input type="text" name="b2_kanaele_sonstiges" id="b2_kanaele_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+              <input type="text" name="b2_kanaele_sonstiges" id="b2_kanaele_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstiger Kanal – bitte beschreiben">
             </div>
           </div>
 
@@ -206,7 +140,7 @@
               <label class="checkbox-option"><input type="checkbox" name="b5_herausforderungen_sonstiges_cb" id="b5_sonstiges_cb"> Sonstiges</label>
             </div>
             <div class="conditional" id="b5_sonstiges_wrap">
-              <input type="text" name="b5_herausforderungen_sonstiges" id="b5_herausforderungen_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+              <input type="text" name="b5_herausforderungen_sonstiges" id="b5_herausforderungen_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstige Herausforderung – bitte beschreiben">
             </div>
           </div>
 
@@ -236,14 +170,14 @@
               <label class="checkbox-option"><input type="checkbox" name="b7_schwierige_zeiten_sonstiges_cb" id="b7_sonstiges_cb"> Sonstiges</label>
             </div>
             <div class="conditional" id="b7_sonstiges_wrap">
-              <input type="text" name="b7_schwierige_zeiten_sonstiges" id="b7_schwierige_zeiten_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+              <input type="text" name="b7_schwierige_zeiten_sonstiges" id="b7_schwierige_zeiten_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstige schwierige Zeit – bitte beschreiben">
             </div>
           </div>
         </fieldset>
 
         <!-- ===== SECTION C: Digitale Plattform ===== -->
-        <fieldset>
-          <legend>C – Digitale Plattform</legend>
+        <fieldset data-step="2">
+          <legend>B – Digitale Plattform</legend>
 
           <div class="form-group">
             <label class="question">C1. Nutzen Sie aktuell digitale Tools zur Vermarktung?</label>
@@ -268,7 +202,7 @@
               <label class="checkbox-option"><input type="checkbox" name="c2_digikanaele_sonstiges_cb" id="c2_sonstiges_cb"> Sonstiges</label>
             </div>
             <div class="conditional" id="c2_sonstiges_wrap">
-              <input type="text" name="c2_digikanaele_sonstiges" id="c2_digikanaele_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+              <input type="text" name="c2_digikanaele_sonstiges" id="c2_digikanaele_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstiger digitaler Kanal – bitte beschreiben">
             </div>
           </div>
 
@@ -287,7 +221,7 @@
               <label class="checkbox-option"><input type="checkbox" name="c3_werkzeuge_sonstiges_cb" id="c3_sonstiges_cb"> Sonstiges</label>
             </div>
             <div class="conditional" id="c3_sonstiges_wrap">
-              <input type="text" name="c3_werkzeuge_sonstiges" id="c3_werkzeuge_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+              <input type="text" name="c3_werkzeuge_sonstiges" id="c3_werkzeuge_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstiges Werkzeug – bitte beschreiben">
             </div>
           </div>
 
@@ -433,7 +367,7 @@
               <label class="checkbox-option"><input type="checkbox" name="c6_hindernis_sonstiges_cb" id="c6_sonstiges_cb"> Sonstiges</label>
             </div>
             <div class="conditional" id="c6_sonstiges_wrap">
-              <input type="text" name="c6_hindernis_sonstiges" id="c6_hindernis_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+              <input type="text" name="c6_hindernis_sonstiges" id="c6_hindernis_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstiges Hindernis – bitte beschreiben">
             </div>
           </div>
 
@@ -450,7 +384,7 @@
               <label class="checkbox-option"><input type="checkbox" name="c7_fehlt_sonstiges_cb" id="c7_sonstiges_cb"> Sonstiges</label>
             </div>
             <div class="conditional" id="c7_sonstiges_wrap">
-              <input type="text" name="c7_fehlt_sonstiges" id="c7_fehlt_sonstiges" placeholder="Bitte beschreiben …" maxlength="200">
+              <input type="text" name="c7_fehlt_sonstiges" id="c7_fehlt_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstiges – bitte beschreiben">
             </div>
           </div>
           <div class="form-group">
@@ -478,8 +412,75 @@
           </div>
         </fieldset>
 
-        <!-- ===== SECTION D: Offene Fragen ===== -->
-        <fieldset>
+        <!-- ===== SECTION A: Betriebsangaben (Schritt 3) ===== -->
+        <fieldset data-step="3">
+          <legend>C – Angaben zu Ihrem Betrieb</legend>
+
+          <div class="form-group">
+            <label class="question" for="a1_bundesland">A1. In welchem Bundesland liegt Ihr Betrieb?</label>
+            <select id="a1_bundesland" name="a1_bundesland" required>
+              <option value="">– Bitte wählen –</option>
+              <option>Baden-Württemberg</option>
+              <option>Bayern</option>
+              <option>Berlin</option>
+              <option>Brandenburg</option>
+              <option>Bremen</option>
+              <option>Hamburg</option>
+              <option>Hessen</option>
+              <option>Mecklenburg-Vorpommern</option>
+              <option>Niedersachsen</option>
+              <option>Nordrhein-Westfalen</option>
+              <option>Rheinland-Pfalz</option>
+              <option>Saarland</option>
+              <option>Sachsen</option>
+              <option>Sachsen-Anhalt</option>
+              <option>Schleswig-Holstein</option>
+              <option>Thüringen</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="question">A2. Wie viele Hektar bewirtschaften Sie?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="a2_flaeche" value="unter_5ha" required> Unter 5 ha</label>
+              <label class="radio-option"><input type="radio" name="a2_flaeche" value="5_20ha"> 5 – 20 ha</label>
+              <label class="radio-option"><input type="radio" name="a2_flaeche" value="20_50ha"> 20 – 50 ha</label>
+              <label class="radio-option"><input type="radio" name="a2_flaeche" value="ueber_50ha"> Über 50 ha</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">A3. Welche Betriebsform trifft am ehesten auf Sie zu?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="a3_betriebsform" value="konventionell" required> Konventionell</label>
+              <label class="radio-option"><input type="radio" name="a3_betriebsform" value="biologisch"> Biologisch</label>
+              <label class="radio-option"><input type="radio" name="a3_betriebsform" value="biodynamisch"> Biodynamisch (z.B. Demeter)</label>
+              <label class="radio-option"><input type="radio" name="a3_betriebsform" value="umstieg"> Im Umstieg auf Bio</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">A4. Wie lange sind Sie schon in der Landwirtschaft tätig?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="a4_erfahrung" value="unter_5" required> Unter 5 Jahre</label>
+              <label class="radio-option"><input type="radio" name="a4_erfahrung" value="5_15"> 5 – 15 Jahre</label>
+              <label class="radio-option"><input type="radio" name="a4_erfahrung" value="ueber_15"> Über 15 Jahre</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">A5. Wie viele Vollzeit-Arbeitskräfte hat Ihr Betrieb?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="a5_mitarbeiter" value="1" required> 1 (ich allein)</label>
+              <label class="radio-option"><input type="radio" name="a5_mitarbeiter" value="2_5"> 2 – 5</label>
+              <label class="radio-option"><input type="radio" name="a5_mitarbeiter" value="6_20"> 6 – 20</label>
+              <label class="radio-option"><input type="radio" name="a5_mitarbeiter" value="mehr_als_20"> Mehr als 20</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- ===== SECTION D: Abschluss ===== -->
+        <fieldset data-step="4">
           <legend>D – Abschluss</legend>
 
           <div class="form-group">
@@ -488,8 +489,10 @@
           </div>
         </fieldset>
 
-        <div style="text-align: center; padding-bottom: 2rem;">
-          <button type="submit" class="btn btn--primary btn--lg">Antworten absenden →</button>
+        <div class="step-nav" id="step-nav">
+          <button type="button" class="btn btn--outline" id="step-back">← Zurück</button>
+          <button type="button" class="btn btn--primary" id="step-next">Weiter →</button>
+          <button type="submit" class="btn btn--primary btn--lg" id="step-submit" style="display:none">Antworten absenden →</button>
         </div>
 
       </form>
@@ -551,7 +554,11 @@
         <a href="kontakt.html#kontakt">Kontakt</a>
       </div>
     </div>
-    <div class="footer__copy">&copy; 2026 · Masterarbeit Direktvermarktung</div>
+    <div class="footer__copy">
+      &copy; 2026 · Masterarbeit Direktvermarktung ·
+      <a href="impressum.html" style="color: rgba(255,255,255,0.5);">Impressum</a> ·
+      <a href="datenschutz.html" style="color: rgba(255,255,255,0.5);">Datenschutz</a>
+    </div>
   </div>
 </footer>
 
@@ -694,7 +701,7 @@
     });
 
     // init form
-    initSurveyForm('bauern-form', 'bauern', 'modal-bauern');
+    initSteppedForm('bauern-form', 'bauern', 'modal-bauern');
 
   });
 </script>
