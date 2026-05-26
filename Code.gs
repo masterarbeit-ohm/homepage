@@ -5,11 +5,44 @@ var SHEET_BAUERN      = 'Bauern-Umfrage';
 var SHEET_KONSUMENTEN = 'Konsumenten-Umfrage';
 var SHEET_TESTER      = 'Prototyp-Tester';
 
+var MAX_PER_HOUR = 120; // max. Einreichungen pro Stunde (global)
+
+function errorResponse(msg) {
+  return ContentService
+    .createTextOutput(JSON.stringify({ success: false, error: msg }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
 function doPost(e) {
   try {
     var payload  = JSON.parse(e.postData.contents);
     var surveyId = payload.surveyId;
     var response = payload.response;
+
+    // 1. Honeypot: Bots füllen dieses Feld – Menschen nicht
+    if (response._hp) {
+      return errorResponse('rejected');
+    }
+
+    // 2. Timestamp-Token: muss zwischen 20 Sek. und 3 Std. alt sein
+    var t   = parseInt(response._t || '0', 10);
+    var age = Date.now() - t;
+    if (!t || age < 20000 || age > 10800000) {
+      return errorResponse('invalid token');
+    }
+
+    // 3. Rate-Limit: max. MAX_PER_HOUR Einreichungen pro Stunde
+    var props   = PropertiesService.getScriptProperties();
+    var hourKey = 'rl_' + new Date().toISOString().slice(0, 13); // z.B. "rl_2026-05-26T14"
+    var count   = parseInt(props.getProperty(hourKey) || '0', 10);
+    if (count >= MAX_PER_HOUR) {
+      return errorResponse('rate limit');
+    }
+    props.setProperty(hourKey, String(count + 1));
+
+    // Interne Felder vor dem Speichern entfernen
+    delete response._hp;
+    delete response._t;
 
     var ss        = SpreadsheetApp.getActiveSpreadsheet();
     var sheetName = surveyId === 'bauern'           ? SHEET_BAUERN

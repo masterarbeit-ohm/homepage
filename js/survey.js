@@ -1,5 +1,47 @@
 /* Survey data engine — localStorage + Google Sheets */
 
+/* ── Sicherheits-Token ins Formular injizieren ── */
+function injectFormTokens(form) {
+  // Timestamp-Token (serverseitig auf Alter geprüft)
+  var t = document.createElement('input');
+  t.type = 'hidden';
+  t.name = '_t';
+  t.value = Date.now().toString();
+  form.appendChild(t);
+
+  // Honeypot: off-screen, tabindex=-1 → Menschen tippen hier nie rein, Bots oft schon
+  var hp = document.createElement('input');
+  hp.type = 'text';
+  hp.name = '_hp';
+  hp.setAttribute('tabindex', '-1');
+  hp.setAttribute('autocomplete', 'off');
+  hp.setAttribute('aria-hidden', 'true');
+  hp.className = 'hp-field';
+  form.appendChild(hp);
+}
+
+/* ── Duplikat-Guard: warnt wenn Umfrage bereits ausgefüllt ── */
+function initDuplicateGuard(surveyId, formId) {
+  var key  = 'survey_done_' + surveyId;
+  var form = document.getElementById(formId);
+  if (!form || !localStorage.getItem(key)) return;
+
+  var banner = document.createElement('div');
+  banner.className = 'already-submitted-notice';
+  banner.innerHTML =
+    '<strong>Hinweis:</strong> Sie haben diese Umfrage auf diesem Gerät bereits abgeschlossen. ' +
+    'Ihre Antworten wurden gespeichert. ' +
+    '<button type="button" class="btn btn--sm btn--outline" id="duplicate-proceed-btn">' +
+    'Trotzdem erneut ausfüllen</button>';
+  form.parentNode.insertBefore(banner, form);
+  form.hidden = true;
+
+  document.getElementById('duplicate-proceed-btn').addEventListener('click', function() {
+    banner.remove();
+    form.hidden = false;
+  });
+}
+
 /* ── Formulardaten sammeln ── */
 function collectFormData(formElement) {
   var data = {};
@@ -239,6 +281,168 @@ function validateForm(form) {
   return true;
 }
 
+/* ── Abschnitts-Validierung (für mehrstufige Formulare) ── */
+function validateSection(form, section) {
+  section.querySelectorAll('.field-error').forEach(function(el) { el.classList.remove('field-error'); });
+  section.querySelectorAll('.validation-msg').forEach(function(el) { el.remove(); });
+
+  var firstError = null;
+  function markError(group) {
+    group.classList.add('field-error');
+    var msg = document.createElement('p');
+    msg.className = 'validation-msg';
+    msg.textContent = 'Bitte ausfüllen.';
+    group.appendChild(msg);
+    if (!firstError) firstError = group;
+  }
+  function isVisible(el) {
+    var c = el.closest('.conditional');
+    return !c || c.classList.contains('is-visible');
+  }
+
+  section.querySelectorAll('select[required], input[required]:not([type="radio"]):not([type="checkbox"]), textarea[required]').forEach(function(input) {
+    if (!isVisible(input)) return;
+    if (!input.value.trim()) {
+      var group = input.closest('.form-group');
+      if (group && !group.classList.contains('field-error')) markError(group);
+    }
+  });
+
+  var checkedNames = {};
+  section.querySelectorAll('input[type="radio"][required]').forEach(function(input) {
+    if (checkedNames[input.name] !== undefined) return;
+    if (!isVisible(input)) { checkedNames[input.name] = true; return; }
+    var anyChecked = form.querySelector('input[name="' + input.name + '"]:checked');
+    checkedNames[input.name] = !!anyChecked;
+    if (!anyChecked) {
+      var group = input.closest('.form-group');
+      if (group && !group.classList.contains('field-error')) markError(group);
+    }
+  });
+
+  var checkedCbNames = {};
+  section.querySelectorAll('input[type="checkbox"][required]').forEach(function(input) {
+    if (checkedCbNames[input.name] !== undefined) return;
+    if (!isVisible(input)) { checkedCbNames[input.name] = true; return; }
+    var anyChecked = form.querySelector('input[name="' + input.name + '"]:checked') ||
+                     form.querySelector('input[name="' + input.name + '_sonstiges_cb"]:checked');
+    checkedCbNames[input.name] = !!anyChecked;
+    if (!anyChecked) {
+      var group = input.closest('.form-group');
+      if (group && !group.classList.contains('field-error')) markError(group);
+    }
+  });
+
+  section.querySelectorAll('.conditional.is-visible input[type="text"], .conditional.is-visible textarea').forEach(function(input) {
+    if (!input.value.trim()) {
+      var group = input.closest('.form-group');
+      if (group && !group.classList.contains('field-error')) markError(group);
+    }
+  });
+
+  if (firstError) { firstError.scrollIntoView({ behavior: 'smooth', block: 'center' }); return false; }
+  return true;
+}
+
+/* ── Mehrstufiges Formular ── */
+function initSteppedForm(formId, surveyId, modalId) {
+  var form  = document.getElementById(formId);
+  var modal = document.getElementById(modalId);
+  if (!form) return;
+
+  var scriptUrl  = form.getAttribute('data-script-url') || '';
+
+  injectFormTokens(form);
+  initDuplicateGuard(surveyId, formId);
+  var steps      = Array.from(form.querySelectorAll('fieldset[data-step]'));
+  var totalSteps = steps.length;
+  var current    = 0;
+
+  var bar       = document.querySelector('.survey-progress__bar');
+  var stepLabel = document.getElementById('survey-step-label');
+  var backBtn   = document.getElementById('step-back');
+  var nextBtn   = document.getElementById('step-next');
+  var submitBtn = document.getElementById('step-submit');
+
+  form.addEventListener('change', function(e) {
+    var g = e.target.closest('.form-group');
+    if (g && g.classList.contains('field-error')) {
+      g.classList.remove('field-error');
+      g.querySelectorAll('.validation-msg').forEach(function(m) { m.remove(); });
+    }
+  });
+  form.addEventListener('input', function(e) {
+    var g = e.target.closest('.form-group');
+    if (g && g.classList.contains('field-error')) {
+      g.classList.remove('field-error');
+      g.querySelectorAll('.validation-msg').forEach(function(m) { m.remove(); });
+    }
+  });
+
+  function showStep(index) {
+    steps.forEach(function(s, i) { s.hidden = i !== index; });
+    current = index;
+    var pct = Math.round((index / totalSteps) * 100);
+    if (bar)       bar.style.width = pct + '%';
+    if (stepLabel) stepLabel.textContent = 'Abschnitt ' + (index + 1) + ' von ' + totalSteps;
+    if (backBtn)   backBtn.style.display   = index === 0 ? 'none' : '';
+    if (nextBtn)   nextBtn.style.display   = index < totalSteps - 1 ? '' : 'none';
+    if (submitBtn) submitBtn.style.display = index === totalSteps - 1 ? '' : 'none';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  showStep(0);
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      if (validateSection(form, steps[current])) showStep(current + 1);
+    });
+  }
+  if (backBtn) {
+    backBtn.addEventListener('click', function() { showStep(current - 1); });
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!validateSection(form, steps[current])) return;
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Wird gespeichert …'; }
+
+    var result = saveSurveyResponse(surveyId, form, scriptUrl);
+
+    function showModal(status) {
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Antworten absenden →'; }
+      if (modal) {
+        var statusEl = modal.querySelector('[data-sheets-status]');
+        if (statusEl) {
+          if (status === 'ok')       statusEl.innerHTML = '✅ Antwort in Google Sheets gespeichert.';
+          else if (status === 'skip') statusEl.innerHTML = '💾 Lokal gespeichert (Google Sheets nicht konfiguriert).';
+          else                        statusEl.innerHTML = '⚠️ Lokal gespeichert – Google Sheets konnte nicht erreicht werden.';
+          statusEl.style.display = 'block';
+        }
+        modal.classList.add('is-open');
+      }
+      localStorage.setItem('survey_done_' + surveyId, Date.now().toString());
+      form.reset();
+      document.querySelectorAll('.conditional').forEach(function(el) { el.classList.remove('is-visible'); });
+      // Timestamp-Token erneuern für den Fall eines erneuten Ausfüllens
+      var tField = form.querySelector('input[name="_t"]');
+      if (tField) tField.value = Date.now().toString();
+      showStep(0);
+    }
+
+    result.sheetsPromise
+      .then(function(res) { showModal(res && res.skipped ? 'skip' : 'ok'); })
+      .catch(function()   { showModal('error'); });
+  });
+
+  var exportBtn = document.getElementById('btn-export-' + surveyId);
+  if (exportBtn) exportBtn.addEventListener('click', function() { exportAsJSON(surveyId); });
+  var closeBtn = modal && modal.querySelector('[data-modal-close]');
+  if (closeBtn) closeBtn.addEventListener('click', function() { modal.classList.remove('is-open'); });
+
+  updateCounterElements();
+}
+
 /* ── Haupt-Init ── */
 function initSurveyForm(formId, surveyId, modalId) {
   var form = document.getElementById(formId);
@@ -247,6 +451,8 @@ function initSurveyForm(formId, surveyId, modalId) {
 
   var scriptUrl = form.getAttribute('data-script-url') || '';
 
+  injectFormTokens(form);
+  initDuplicateGuard(surveyId, formId);
   initSurveyProgress(formId);
 
   form.addEventListener('submit', function(e) {
@@ -276,7 +482,11 @@ function initSurveyForm(formId, surveyId, modalId) {
         }
         modal.classList.add('is-open');
       }
+      localStorage.setItem('survey_done_' + surveyId, Date.now().toString());
       form.reset();
+      // Timestamp-Token erneuern
+      var tField = form.querySelector('input[name="_t"]');
+      if (tField) tField.value = Date.now().toString();
       document.querySelectorAll('.conditional').forEach(function(el) { el.classList.remove('is-visible'); });
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
