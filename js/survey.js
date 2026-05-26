@@ -389,6 +389,13 @@ function initSteppedForm(formId, surveyId, modalId) {
     if (nextBtn)   nextBtn.style.display   = index < totalSteps - 1 ? '' : 'none';
     if (submitBtn) submitBtn.style.display = index === totalSteps - 1 ? '' : 'none';
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Focus first interactive element after scroll animation settles
+    setTimeout(function() {
+      var first = steps[index].querySelector(
+        'input:not([type="hidden"]):not([tabindex="-1"]), select, textarea'
+      );
+      if (first) first.focus({ preventScroll: true });
+    }, 350);
   }
 
   showStep(0);
