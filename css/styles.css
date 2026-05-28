@@ -320,6 +320,8 @@ p:last-child { margin-bottom: 0; }
 .hero__mockup img {
   width: 100%;
   height: auto;
+  max-height: calc(100vh - var(--nav-height) - 4rem);
+  object-fit: contain;
   display: block;
   filter: drop-shadow(0 24px 48px rgba(0,0,0,0.35));
 }
