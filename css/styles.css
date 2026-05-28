@@ -144,7 +144,7 @@ p:last-child { margin-bottom: 0; }
   justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem 1.75rem;
-  border-radius: var(--radius-sm);
+  border-radius: 100px;
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 600;
@@ -188,6 +188,7 @@ p:last-child { margin-bottom: 0; }
 .btn--lg { padding: 1rem 2.25rem; font-size: 1.05rem; }
 .btn--sm { padding: 0.5rem 1rem; font-size: 0.85rem; }
 .btn--full { width: 100%; }
+.btn--pill { border-radius: 100px; }
 
 /* ============================================================
    NAVIGATION
@@ -427,6 +428,12 @@ p:last-child { margin-bottom: 0; }
 .stepper__step.is-done  .stepper__label  { color: var(--color-primary); }
 .stepper__step.is-active .stepper__label { color: var(--color-text); }
 .stepper__note { font-size: 0.8rem; color: var(--color-text-muted); margin-top: 0.15rem; }
+
+.stepper__upcoming { margin-top: 1.25rem; }
+.stepper__upcoming-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.5rem; }
+.stepper__upcoming-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.3rem; }
+.stepper__upcoming-list li { font-size: 0.85rem; color: var(--color-text-muted); padding-left: 1.25rem; position: relative; }
+.stepper__upcoming-list li::before { content: ''; position: absolute; left: 0.3rem; top: 0.55em; width: 6px; height: 6px; border-radius: 50%; border: 1.5px solid var(--color-border); }
 
 /* radial progress circle */
 .progress-circle-wrap {
