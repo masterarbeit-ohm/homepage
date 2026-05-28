@@ -14,8 +14,8 @@
   --color-text-muted:    #6B7280;
   --color-border:        #E5E0D5;
   --color-success:       #2D6A4F;
-  --font-heading:        'Playfair Display', Georgia, serif;
-  --font-body:           'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading:        'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body:           'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --radius:              12px;
   --radius-sm:           8px;
   --shadow:              0 2px 16px rgba(0,0,0,0.08);
@@ -301,10 +301,31 @@ p:last-child { margin-bottom: 0; }
   pointer-events: none;
 }
 
-.hero__content {
+.hero__inner {
   position: relative;
   z-index: 1;
-  max-width: 700px;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.hero__content {
+  flex: 1;
+  min-width: 0;
+}
+.hero__mockup {
+  flex-shrink: 0;
+  width: 270px;
+}
+.hero__mockup img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 24px 48px rgba(0,0,0,0.35));
+}
+@media (max-width: 860px) {
+  .hero__inner { flex-direction: column; text-align: center; }
+  .hero__cta { justify-content: center; }
+  .hero__mockup { width: 220px; }
 }
 .hero__label {
   display: inline-block;
