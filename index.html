@@ -67,12 +67,12 @@
           Ziel ist eine App, die regionale Direktvermarktung sichtbarer, einfacher und fairer macht.
         </p>
         <div class="hero__cta">
-          <a href="#projekt" class="btn btn--outline-white btn--lg">Zum Projekt</a>
-          <a href="#umfragen" class="btn btn--accent btn--lg">Zu den Umfragen</a>
+          <a href="#umfragen" class="btn btn--accent btn--lg">Zu den Umfragen →</a>
+          <a href="#prototyp" class="btn btn--outline-white btn--lg">Prototyp testen</a>
         </div>
       </div>
       <div class="hero__mockup">
-        <img src="images/image.png" alt="App-Prototyp: Kartenansicht mit nahegelegenen Höfen und Produktliste">
+        <img src="images/image.png" alt="App-Prototyp: Kartenansicht mit nahegelegenen Höfen und Produktliste" loading="eager" fetchpriority="high" decoding="async">
       </div>
     </div>
   </div>
@@ -84,7 +84,7 @@
     <span class="section-label">Die Idee</span>
     <h2>Direktvermarktung soll nicht kompliziert sein.</h2>
     <p style="max-width:680px; color:var(--color-text-muted); font-size:1.1rem; line-height:1.8;">
-      Viele regionale Produkte sind hochwertig, aber online schwer auffindbar.
+      Viele regionale Produkte sind hochwertig, aber schwer auffindbar.
       ORIGINTERRA untersucht, wie eine digitale Plattform Landwirten mehr Sichtbarkeit geben
       und Verbrauchern den Zugang zu regionalen Lebensmitteln erleichtern kann.
     </p>
@@ -92,7 +92,7 @@
 </section>
 
 <!-- ======================== PROJEKT ======================== -->
-<section class="section" id="projekt">
+<section class="section section--alt" id="projekt">
   <div class="container">
     <span class="section-label">Das Projekt</span>
     <h2>Warum diese Forschung wichtig ist</h2>
@@ -108,7 +108,7 @@
       <div class="card">
         <span class="card__icon">🌾</span>
         <h3 class="card__title">Das Problem</h3>
-        <p>Kleine Landwirte haben meist nur eine geringe Reichweite und verfügen oft weder über feste Verkaufsstandorte noch über eine etablierte Marke. Dadurch fällt es ihnen schwer, langfristiges Vertrauen bei Kunden aufzubauen. Gleichzeitig geht der Mehrwert regionaler Produktion verloren – sowohl für die Bauern als auch für die Verbraucher.</p>
+        <p>Kleine Landwirte haben meist nur eine geringe Reichweite und verfügen oft weder über feste Verkaufsstandorte noch über eine etablierte Marke. Dadurch fällt es ihnen schwer, langfristiges Vertrauen bei Kunden aufzubauen. Gleichzeitig geht der Mehrwert regionaler Produktion verloren – sowohl für die Landwirte als auch für die Verbraucher.</p>
       </div>
       <div class="card">
         <span class="card__icon">📱</span>
@@ -245,7 +245,6 @@
     <h2>Zwei Zielgruppen. Ein gemeinsames Ziel.</h2>
     <h3 class="card__title">An welcher Umfrage möchten Sie teilnehmen?</h3>
     <p style="max-width:620px; color:var(--color-text-muted);">
-      An welcher Umfrage möchten Sie teilnehmen?
       Beide Umfragen dauern etwa 10&nbsp;Minuten. Alle Antworten werden anonym erhoben 
       und ausschließlich für Forschungszwecke verwendet.
     </p>
@@ -263,7 +262,7 @@
       <div class="card card--survey">
         <span class="card__icon">🛒</span>
         <h3 class="card__title">Umfrage für Verbraucher</h3>
-        <p>Sie kaufen Lebensmittel ein? Teilen Sie Ihre Erfahrungen und Wünsche beim Kauf regionaler Produkte direkt vom Bauern.</p>
+        <p>Sie kaufen Lebensmittel ein? Teilen Sie Ihre Erfahrungen und Wünsche beim Kauf regionaler Produkte direkt vom Landwirt.</p>
         <p class="text-muted">⏱ ca. 10 Minuten &nbsp;·&nbsp; 18 Fragen</p>
         <a href="umfrage-konsumenten.html" class="btn btn--primary mt-2">Zur Verbraucher-Umfrage →</a>
       </div>
@@ -274,11 +273,11 @@
 
 <!-- ======================== PROTOTYP TESTEN ======================== -->
 <section class="section section--alt" id="prototyp">
-  <div class="container" style="text-align:center;">
+  <div class="container">
     <span class="section-label">App-Prototyp</span>
     <h2>Tester werden</h2>
-    <p style="color:var(--color-text-muted); max-width:560px; margin:0 auto 2rem;">
-      Möchten Sie die App frühzeitig ausprobieren? Tragen Sie sich ein. 
+    <p style="color:var(--color-text-muted); max-width:560px;">
+      Möchten Sie die App frühzeitig ausprobieren? Tragen Sie sich ein.
       Ich melde mich, sobald der Prototyp für Ihr System verfügbar ist.
     </p>
     <button id="btn-prototyp" class="btn btn--primary btn--lg">Jetzt für Prototyp anmelden</button>
@@ -447,7 +446,7 @@
 
       fetch(scriptUrl, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: payload, redirect: 'follow' })
         .then(function() {
-          msgEl.innerHTML = '✅ Vielen Dank! Wir melden uns, sobald der Prototyp verfügbar ist.';
+          msgEl.innerHTML = '✅ Vielen Dank! Ich melde mich, sobald der Prototyp verfügbar ist.';
           msgEl.style.color = 'var(--color-primary)';
           msgEl.style.display = 'block';
           submitBtn.style.display = 'none';
