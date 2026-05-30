@@ -7,7 +7,7 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://originterra.de/umfrage-konsumenten.html">
   <meta property="og:title" content="Umfrage Verbraucher – ORIGINTERRA">
-  <meta property="og:description" content="Nehmen Sie an der Umfrage für Verbraucher zum Kauf regionaler Produkte teil. Ca. 5 Minuten, vollständig anonym.">
+  <meta property="og:description" content="Nehmen Sie an der Umfrage für Verbraucher zum Kauf regionaler Produkte teil. Ca. 10 Minuten, vollständig anonym.">
   <meta property="og:url" content="https://originterra.de/umfrage-konsumenten.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://originterra.de/images/og-image.svg">
@@ -45,7 +45,7 @@
 <div class="survey-progress">
   <div class="survey-progress__bar" id="survey-bar" style="width: 0%"></div>
 </div>
-<div class="survey-step-label" id="survey-step-label">Abschnitt 1 von 4</div>
+<div class="survey-step-label" id="survey-step-label">Abschnitt 1 von 6</div>
 
 <!-- MAIN CONTENT -->
 <section class="section">
@@ -57,8 +57,8 @@
         <span class="section-label">Umfrage für Verbraucher</span>
         <h1 style="font-size: clamp(1.6rem, 4vw, 2.5rem);">Wie kaufen Sie Ihre Lebensmittel?</h1>
         <div class="meta">
-          <span>⏱ ca. 5 Minuten</span>
-          <span>📋 Fragen in 4 Abschnitten</span>
+          <span>⏱ ca. 10 Minuten</span>
+          <span>📋 Fragen in 6 Abschnitten</span>
           <span>🔒 Vollständig anonym</span>
         </div>
         <div class="privacy-note">
@@ -69,248 +69,372 @@
       <!-- FORM -->
       <form id="konsumenten-form" novalidate data-script-url="https://script.google.com/macros/s/AKfycbwAtDHv2-eA5K2ZDZ-z5N1Zh4T0NC3UM_M6G3FPkgNTUh3zcCLMxv2lSbOcnrrId6un/exec">
 
-        <!-- ===== SECTION B: Kaufverhalten ===== -->
+        <!-- ===== SECTION A: Kaufverhalten ===== -->
         <fieldset data-step="1">
-          <legend>A – Ihr Kaufverhalten bei Lebensmitteln</legend>
+          <legend>A – Kaufverhalten bei Lebensmitteln</legend>
 
           <div class="form-group">
             <label class="question">A1. Wo kaufen Sie Lebensmittel hauptsächlich ein? <span class="hint">(Mehrfachauswahl möglich)</span></label>
             <div class="checkbox-group">
-              <label class="checkbox-option"><input type="checkbox" name="b1_kaufort" value="discounter" required> Discounter (Aldi, Lidl, Netto ...)</label>
-              <label class="checkbox-option"><input type="checkbox" name="b1_kaufort" value="supermarkt"> Supermarkt (Rewe, Edeka ...)</label>
-              <label class="checkbox-option"><input type="checkbox" name="b1_kaufort" value="biomarkt"> Biomarkt (Denns, ebl ...)</label>
-              <label class="checkbox-option"><input type="checkbox" name="b1_kaufort" value="wochenmarkt"> Wochenmarkt</label>
-              <label class="checkbox-option"><input type="checkbox" name="b1_kaufort" value="direktkauf"> Direktkauf beim Bauern / Hofladen</label>
-              <label class="checkbox-option"><input type="checkbox" name="b1_kaufort" value="lieferdienst"> Online-Lieferservice / Lebensmittel-Lieferdienst</label>
-              <label class="checkbox-option"><input type="checkbox" name="b1_kaufort" value="sonstiges"> Sonstiges</label>
+              <label class="checkbox-option"><input type="checkbox" name="a1_kaufort" value="discounter" required> Discounter, z. B. Aldi, Lidl, Netto</label>
+              <label class="checkbox-option"><input type="checkbox" name="a1_kaufort" value="supermarkt"> Supermarkt, z. B. Rewe, Edeka</label>
+              <label class="checkbox-option"><input type="checkbox" name="a1_kaufort" value="biomarkt"> Biomarkt</label>
+              <label class="checkbox-option"><input type="checkbox" name="a1_kaufort" value="wochenmarkt"> Wochenmarkt</label>
+              <label class="checkbox-option"><input type="checkbox" name="a1_kaufort" value="direktkauf"> Direkt beim Bauern / Hofladen</label>
+              <label class="checkbox-option"><input type="checkbox" name="a1_kaufort" value="automat"> Verkaufsautomat regionaler Anbieter</label>
+              <label class="checkbox-option"><input type="checkbox" name="a1_kaufort" value="lieferdienst"> Online-Lieferservice / Lebensmittel-Lieferdienst</label>
+              <label class="checkbox-option"><input type="checkbox" name="a1_kaufort" value="abo_kiste"> Abo-Kiste / Gemüsekiste</label>
+              <label class="checkbox-option"><input type="checkbox" name="a1_kaufort_sonstiges_cb" id="a1_sonstiges_cb"> Sonstiges</label>
+            </div>
+            <div class="conditional" id="a1_sonstiges_wrap">
+              <input type="text" name="a1_kaufort_sonstiges" id="a1_kaufort_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstiger Kaufort – bitte beschreiben">
             </div>
           </div>
 
           <div class="form-group">
-            <label class="question">A2. Wie oft kaufen Sie Produkte direkt bei Landwirten (Hofladen, Markt)?</label>
+            <label class="question">A2. Wie oft kaufen Sie Produkte direkt bei Landwirtinnen oder Landwirten, z. B. Hofladen, Markt oder Verkaufsautomat?</label>
             <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="b2_haeufigkeit" value="taeglich" required> Täglich</label>
-              <label class="radio-option"><input type="radio" name="b2_haeufigkeit" value="mehrmals_woche"> Mehrmals pro Woche</label>
-              <label class="radio-option"><input type="radio" name="b2_haeufigkeit" value="einmal_woche"> Einmal pro Woche</label>
-              <label class="radio-option"><input type="radio" name="b2_haeufigkeit" value="einmal_monat"> Einmal im Monat</label>
-              <label class="radio-option"><input type="radio" name="b2_haeufigkeit" value="seltener"> Seltener als einmal im Monat</label>
-              <label class="radio-option"><input type="radio" name="b2_haeufigkeit" value="nie"> Nie</label>
+              <label class="radio-option"><input type="radio" name="a2_haeufigkeit" value="mehrmals_woche" required> Mehrmals pro Woche</label>
+              <label class="radio-option"><input type="radio" name="a2_haeufigkeit" value="einmal_woche"> Einmal pro Woche</label>
+              <label class="radio-option"><input type="radio" name="a2_haeufigkeit" value="mehrmals_monat"> Mehrmals im Monat</label>
+              <label class="radio-option"><input type="radio" name="a2_haeufigkeit" value="einmal_monat"> Einmal im Monat</label>
+              <label class="radio-option"><input type="radio" name="a2_haeufigkeit" value="seltener"> Seltener als einmal im Monat</label>
+              <label class="radio-option"><input type="radio" name="a2_haeufigkeit" value="nie"> Nie</label>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="question">A3. Was ist Ihnen beim Kauf von Lebensmitteln am wichtigsten?</label>
+            <label class="question">A3. Was ist Ihnen beim Kauf von Lebensmitteln wichtig?</label>
             <div class="likert-group">
               <div class="likert-scale-legend" aria-hidden="true"><span>1 = Unwichtig</span><span>5 = Sehr wichtig</span></div>
               <div class="likert-item">
                 <span class="likert-item__label">Günstiger Preis</span>
                 <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="b3_preis" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_preis" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_preis" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_preis" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_preis" value="5"><span>5</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_preis" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_preis" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_preis" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_preis" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_preis" value="5"><span>5</span></label>
                 </div>
               </div>
               <div class="likert-item">
                 <span class="likert-item__label">Frische</span>
                 <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="b3_frische" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_frische" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_frische" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_frische" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_frische" value="5"><span>5</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_frische" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_frische" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_frische" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_frische" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_frische" value="5"><span>5</span></label>
                 </div>
               </div>
               <div class="likert-item">
                 <span class="likert-item__label">Regionalität</span>
                 <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="b3_regionalitaet" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_regionalitaet" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_regionalitaet" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_regionalitaet" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_regionalitaet" value="5"><span>5</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_regionalitaet" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_regionalitaet" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_regionalitaet" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_regionalitaet" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_regionalitaet" value="5"><span>5</span></label>
                 </div>
               </div>
               <div class="likert-item">
                 <span class="likert-item__label">Bio-Zertifizierung</span>
                 <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="b3_bio" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_bio" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_bio" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_bio" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_bio" value="5"><span>5</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_bio" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_bio" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_bio" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_bio" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_bio" value="5"><span>5</span></label>
                 </div>
               </div>
               <div class="likert-item">
                 <span class="likert-item__label">Bequemlichkeit des Einkaufs</span>
                 <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="b3_bequemlichkeit" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_bequemlichkeit" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_bequemlichkeit" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_bequemlichkeit" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_bequemlichkeit" value="5"><span>5</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_bequemlichkeit" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_bequemlichkeit" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_bequemlichkeit" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_bequemlichkeit" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_bequemlichkeit" value="5"><span>5</span></label>
                 </div>
               </div>
               <div class="likert-item">
                 <span class="likert-item__label">Tierwohl</span>
                 <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="b3_tierwohl" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_tierwohl" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_tierwohl" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_tierwohl" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="b3_tierwohl" value="5"><span>5</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_tierwohl" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_tierwohl" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_tierwohl" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_tierwohl" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_tierwohl" value="5"><span>5</span></label>
+                </div>
+              </div>
+              <div class="likert-item">
+                <span class="likert-item__label">Transparente Herkunft</span>
+                <div class="likert-item__scale">
+                  <label class="likert-btn"><input type="radio" name="a3_transparenz" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_transparenz" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_transparenz" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_transparenz" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_transparenz" value="5"><span>5</span></label>
+                </div>
+              </div>
+              <div class="likert-item">
+                <span class="likert-item__label">Nachhaltige Produktionsweise</span>
+                <div class="likert-item__scale">
+                  <label class="likert-btn"><input type="radio" name="a3_nachhaltigkeit" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_nachhaltigkeit" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_nachhaltigkeit" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_nachhaltigkeit" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_nachhaltigkeit" value="5"><span>5</span></label>
+                </div>
+              </div>
+              <div class="likert-item">
+                <span class="likert-item__label">Persönlicher Kontakt zum Erzeugerbetrieb</span>
+                <div class="likert-item__scale">
+                  <label class="likert-btn"><input type="radio" name="a3_kontakt_erzeuger" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_kontakt_erzeuger" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_kontakt_erzeuger" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_kontakt_erzeuger" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="a3_kontakt_erzeuger" value="5"><span>5</span></label>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="question">A4. Wie viel geben Sie monatlich für Lebensmittel aus?</label>
+            <label class="question">A4. Wie viel geben Sie ungefähr monatlich für Lebensmittel aus?</label>
             <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="b4_ausgaben" value="unter_100" required> Unter 100 €</label>
-              <label class="radio-option"><input type="radio" name="b4_ausgaben" value="100_200"> 100 – 200 €</label>
-              <label class="radio-option"><input type="radio" name="b4_ausgaben" value="200_400"> 200 – 400 €</label>
-              <label class="radio-option"><input type="radio" name="b4_ausgaben" value="400_600"> 400 – 600 €</label>
-              <label class="radio-option"><input type="radio" name="b4_ausgaben" value="ueber_600"> Über 600 €</label>
-              <label class="radio-option"><input type="radio" name="b4_ausgaben" value="keine_angabe"> Keine Angabe / weiß ich nicht</label>
+              <label class="radio-option"><input type="radio" name="a4_ausgaben" value="unter_100" required> Unter 100 €</label>
+              <label class="radio-option"><input type="radio" name="a4_ausgaben" value="100_200"> 100 – 200 €</label>
+              <label class="radio-option"><input type="radio" name="a4_ausgaben" value="201_400"> 201 – 400 €</label>
+              <label class="radio-option"><input type="radio" name="a4_ausgaben" value="401_600"> 401 – 600 €</label>
+              <label class="radio-option"><input type="radio" name="a4_ausgaben" value="ueber_600"> Über 600 €</label>
+              <label class="radio-option"><input type="radio" name="a4_ausgaben" value="keine_angabe"> Keine Angabe / weiß ich nicht</label>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="question" for="b5_erleichterung">A5. Was würde Ihnen den Kauf regionaler Produkte direkt vom Bauern erleichtern oder attraktiver machen? <span class="hint">(Optional)</span></label>
-            <textarea id="b5_erleichterung" name="b5_erleichterung" maxlength="500" placeholder="Ihre Gedanken dazu ..."></textarea>
-            <div class="char-counter" id="b5_counter">0 / 500</div>
+            <label class="question" for="a5_erleichterung">A5. Was würde Ihnen den Kauf regionaler Produkte direkt vom Bauern oder von regionalen Betrieben erleichtern oder attraktiver machen? <span class="hint">(Optional)</span></label>
+            <textarea id="a5_erleichterung" name="a5_erleichterung" maxlength="500" placeholder="Ihre Gedanken dazu ..."></textarea>
+            <div class="char-counter" id="a5_counter">0 / 500</div>
           </div>
         </fieldset>
 
-        <!-- ===== SECTION C: Wahrnehmung & Bereitschaft ===== -->
+        <!-- ===== SECTION B: Informationsdefizite ===== -->
         <fieldset data-step="2">
-          <legend>B – Wahrnehmung und digitale Bereitschaft</legend>
+          <legend>B – Informationsdefizite und Kaufbarrieren</legend>
 
           <div class="form-group">
             <label class="question">B1. Warum kaufen Sie nicht häufiger direkt beim Bauern oder bei regionalen Verkaufsstellen? <span class="hint">(Mehrfachauswahl möglich)</span></label>
             <div class="checkbox-group">
-              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="keine_anbieter" required> Ich kenne keine Anbieter in meiner Nähe</label>
-              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="weiss_nicht_wo"> Ich weiß nicht, wo ich regionale Produkte kaufen kann</label>
-              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="oeffnungszeiten"> Ich kenne die Öffnungszeiten nicht</label>
-              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="verfuegbarkeit"> Ich weiß nicht, welche Produkte aktuell verfügbar sind</label>
-              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="preise_unbekannt"> Ich kenne die Preise vorher nicht</label>
-              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="kein_angebot"> Zu wenig Angebote in meiner Nähe</label>
-              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="umstaendlich"> Zu umständlich / zu weit weg</label>
-              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="zu_teuer"> Zu teuer im Vergleich zum Supermarkt</label>
-              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="keine_zeit"> Mir fehlt die Zeit</label>
-              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="unsicher_regional"> Ich bin unsicher, ob die Produkte wirklich regional sind</label>
-              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="qualitaet_unklar"> Ich kann die Qualität vorher schwer einschätzen</label>
-              <label class="checkbox-option"><input type="checkbox" name="c1_gruende" value="kaufe_regelmaessig"> Ich kaufe bereits regelmäßig beim Bauern</label>
-              <label class="checkbox-option"><input type="checkbox" name="c1_gruende_sonstiges_cb" id="c1_sonstiges_cb"> Sonstiges</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="keine_anbieter" required> Ich kenne keine Anbieter in meiner Nähe</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="weiss_nicht_wo"> Ich weiß nicht, wo ich regionale Produkte kaufen kann</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="oeffnungszeiten"> Ich kenne die Öffnungszeiten nicht</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="verfuegbarkeit"> Ich weiß nicht, welche Produkte aktuell verfügbar sind</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="preise_unbekannt"> Ich kenne die Preise vorher nicht</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="produktionsweise"> Ich weiß zu wenig über die Produktionsweise</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="unsicher_regional"> Ich bin unsicher, ob die Produkte wirklich regional sind</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="qualitaet_unklar"> Ich kann die Qualität vorher schwer einschätzen</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="kein_angebot"> Zu wenig Angebote in meiner Nähe</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="umstaendlich"> Zu umständlich / zu weit weg</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="zu_teuer"> Zu teuer im Vergleich zum Supermarkt</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="keine_zeit"> Mir fehlt die Zeit</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="kaufe_regelmaessig" id="b1_regelmaessig"> Ich kaufe bereits regelmäßig regional oder direkt beim Bauern</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende_sonstiges_cb" id="b1_sonstiges_cb"> Sonstiges</label>
             </div>
-            <div class="conditional" id="c1_sonstiges_wrap">
-              <input type="text" name="c1_gruende_sonstiges" id="c1_gruende_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstiger Grund – bitte beschreiben">
+            <div class="conditional" id="b1_sonstiges_wrap">
+              <input type="text" name="b1_kaufgruende_sonstiges" id="b1_kaufgruende_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstiger Grund – bitte beschreiben">
             </div>
           </div>
 
           <div class="form-group">
-            <label class="question">B2. Wie viel mehr wären Sie bereit, für direkt vom Bauern gekaufte Lebensmittel zu zahlen? <span class="hint">(Eine Antwort möglich)</span></label>
+            <label class="question">B2. Inwiefern stimmen Sie folgender Aussage zu?<br>
+              <span style="font-weight:400; font-style:italic;">„Fehlende Informationen zu Verkaufsorten, Öffnungszeiten, Produkten, Preisen und Produktionsweise erschweren mir den Kauf regionaler Lebensmittel."</span>
+            </label>
             <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="c2_mehrpreis" value="nichts" required> Nicht mehr als im Supermarkt</label>
-              <label class="radio-option"><input type="radio" name="c2_mehrpreis" value="bis_5"> Bis zu 5 % mehr</label>
-              <label class="radio-option"><input type="radio" name="c2_mehrpreis" value="bis_10"> Bis zu 10 % mehr</label>
-              <label class="radio-option"><input type="radio" name="c2_mehrpreis" value="bis_20"> Bis zu 20 % mehr</label>
-              <label class="radio-option"><input type="radio" name="c2_mehrpreis" value="ueber_20"> Mehr als 20 %, abhängig von Qualität, Regionalität und Produktionsweise</label>
-              <label class="radio-option"><input type="radio" name="c2_mehrpreis" value="unsicher"> Ich bin unsicher / kommt auf das Produkt an</label>
+              <label class="radio-option"><input type="radio" name="b2_info_barriere" value="voll_zu" required> Stimme voll zu</label>
+              <label class="radio-option"><input type="radio" name="b2_info_barriere" value="eher_zu"> Stimme eher zu</label>
+              <label class="radio-option"><input type="radio" name="b2_info_barriere" value="teils_teils"> Teils/teils</label>
+              <label class="radio-option"><input type="radio" name="b2_info_barriere" value="eher_nicht"> Stimme eher nicht zu</label>
+              <label class="radio-option"><input type="radio" name="b2_info_barriere" value="gar_nicht"> Stimme gar nicht zu</label>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="question">B3. Wie wichtig wären Ihnen folgende Informationen vor dem Besuch eines Bauernhofs, Hofladens oder Marktes?</label>
+            <label class="question">B3. Inwiefern stimmen Sie folgender Aussage zu?<br>
+              <span style="font-weight:400; font-style:italic;">„Ich würde häufiger regionale Lebensmittel direkt kaufen, wenn ich leichter Informationen zu Verkaufsorten, Öffnungszeiten, Produkten und Preisen finden könnte."</span>
+            </label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="b3_mehr_kaufen" value="voll_zu" required> Stimme voll zu</label>
+              <label class="radio-option"><input type="radio" name="b3_mehr_kaufen" value="eher_zu"> Stimme eher zu</label>
+              <label class="radio-option"><input type="radio" name="b3_mehr_kaufen" value="teils_teils"> Teils/teils</label>
+              <label class="radio-option"><input type="radio" name="b3_mehr_kaufen" value="eher_nicht"> Stimme eher nicht zu</label>
+              <label class="radio-option"><input type="radio" name="b3_mehr_kaufen" value="gar_nicht"> Stimme gar nicht zu</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">B4. Wie wichtig wären Ihnen folgende Informationen vor dem Besuch eines Bauernhofs, Hofladens, Marktes oder Verkaufsautomaten?</label>
             <div class="likert-group">
               <div class="likert-scale-legend" aria-hidden="true"><span>1 = Unwichtig</span><span>5 = Sehr wichtig</span></div>
               <div class="likert-item">
                 <span class="likert-item__label">Standort / Entfernung</span>
                 <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c3_standort" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_standort" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_standort" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_standort" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_standort" value="5"><span>5</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_standort" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_standort" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_standort" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_standort" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_standort" value="5"><span>5</span></label>
                 </div>
               </div>
               <div class="likert-item">
                 <span class="likert-item__label">Öffnungszeiten</span>
                 <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c3_oeffnungszeiten" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_oeffnungszeiten" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_oeffnungszeiten" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_oeffnungszeiten" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_oeffnungszeiten" value="5"><span>5</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_oeffnungszeiten" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_oeffnungszeiten" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_oeffnungszeiten" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_oeffnungszeiten" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_oeffnungszeiten" value="5"><span>5</span></label>
                 </div>
               </div>
               <div class="likert-item">
                 <span class="likert-item__label">Aktuell verfügbare Produkte</span>
                 <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c3_verfuegbarkeit" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_verfuegbarkeit" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_verfuegbarkeit" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_verfuegbarkeit" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_verfuegbarkeit" value="5"><span>5</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_verfuegbarkeit" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_verfuegbarkeit" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_verfuegbarkeit" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_verfuegbarkeit" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_verfuegbarkeit" value="5"><span>5</span></label>
                 </div>
               </div>
               <div class="likert-item">
                 <span class="likert-item__label">Preise der Produkte</span>
                 <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c3_preise" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_preise" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_preise" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_preise" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_preise" value="5"><span>5</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_preise" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_preise" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_preise" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_preise" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_preise" value="5"><span>5</span></label>
                 </div>
               </div>
               <div class="likert-item">
                 <span class="likert-item__label">Herkunft der Produkte</span>
                 <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c3_herkunft" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_herkunft" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_herkunft" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_herkunft" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_herkunft" value="5"><span>5</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_herkunft" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_herkunft" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_herkunft" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_herkunft" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_herkunft" value="5"><span>5</span></label>
                 </div>
               </div>
               <div class="likert-item">
-                <span class="likert-item__label">Bio-Zertifizierung / Produktionsweise</span>
+                <span class="likert-item__label">Produktionsweise, z. B. bio, konventionell, nachhaltig</span>
                 <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c3_bio" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_bio" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_bio" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_bio" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_bio" value="5"><span>5</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_produktionsweise" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_produktionsweise" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_produktionsweise" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_produktionsweise" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_produktionsweise" value="5"><span>5</span></label>
                 </div>
               </div>
               <div class="likert-item">
-                <span class="likert-item__label">Fotos vom Hof oder Produkt</span>
+                <span class="likert-item__label">Informationen zum Bauernhof</span>
                 <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c3_fotos" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_fotos" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_fotos" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_fotos" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c3_fotos" value="5"><span>5</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_hofinfo" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_hofinfo" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_hofinfo" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_hofinfo" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_hofinfo" value="5"><span>5</span></label>
+                </div>
+              </div>
+              <div class="likert-item">
+                <span class="likert-item__label">Fotos vom Hof oder von Produkten</span>
+                <div class="likert-item__scale">
+                  <label class="likert-btn"><input type="radio" name="b4_fotos" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_fotos" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_fotos" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_fotos" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_fotos" value="5"><span>5</span></label>
+                </div>
+              </div>
+              <div class="likert-item">
+                <span class="likert-item__label">Bewertungen anderer Kundinnen und Kunden</span>
+                <div class="likert-item__scale">
+                  <label class="likert-btn"><input type="radio" name="b4_bewertungen" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_bewertungen" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_bewertungen" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_bewertungen" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_bewertungen" value="5"><span>5</span></label>
+                </div>
+              </div>
+              <div class="likert-item">
+                <span class="likert-item__label">Kontaktmöglichkeit zum Anbieter</span>
+                <div class="likert-item__scale">
+                  <label class="likert-btn"><input type="radio" name="b4_kontakt" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_kontakt" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_kontakt" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_kontakt" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="b4_kontakt" value="5"><span>5</span></label>
                 </div>
               </div>
             </div>
           </div>
+        </fieldset>
+
+        <!-- ===== SECTION C: Digitale Plattform ===== -->
+        <fieldset data-step="3">
+          <legend>C – Digitale Plattform und Sichtbarkeit regionaler Produkte</legend>
 
           <div class="form-group">
-            <label class="question">B4. Wie wichtig wären Ihnen folgende Funktionen einer Direktvermarktungs-App?</label>
+            <label class="question">C1. Inwiefern stimmen Sie folgender Aussage zu?<br>
+              <span style="font-weight:400; font-style:italic;">„Eine digitale Plattform würde mir helfen, regionale Anbieter in meiner Nähe leichter zu finden."</span>
+            </label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="c1_plattform_finden" value="voll_zu" required> Stimme voll zu</label>
+              <label class="radio-option"><input type="radio" name="c1_plattform_finden" value="eher_zu"> Stimme eher zu</label>
+              <label class="radio-option"><input type="radio" name="c1_plattform_finden" value="teils_teils"> Teils/teils</label>
+              <label class="radio-option"><input type="radio" name="c1_plattform_finden" value="eher_nicht"> Stimme eher nicht zu</label>
+              <label class="radio-option"><input type="radio" name="c1_plattform_finden" value="gar_nicht"> Stimme gar nicht zu</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">C2. Inwiefern stimmen Sie folgender Aussage zu?<br>
+              <span style="font-weight:400; font-style:italic;">„Eine digitale Plattform könnte regionale Produkte für mich sichtbarer und leichter zugänglich machen."</span>
+            </label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="c2_plattform_sichtbar" value="voll_zu" required> Stimme voll zu</label>
+              <label class="radio-option"><input type="radio" name="c2_plattform_sichtbar" value="eher_zu"> Stimme eher zu</label>
+              <label class="radio-option"><input type="radio" name="c2_plattform_sichtbar" value="teils_teils"> Teils/teils</label>
+              <label class="radio-option"><input type="radio" name="c2_plattform_sichtbar" value="eher_nicht"> Stimme eher nicht zu</label>
+              <label class="radio-option"><input type="radio" name="c2_plattform_sichtbar" value="gar_nicht"> Stimme gar nicht zu</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">C3. Inwiefern stimmen Sie folgender Aussage zu?<br>
+              <span style="font-weight:400; font-style:italic;">„Eine direkte Kontaktmöglichkeit zum Bauernhof würde den Kauf regionaler Produkte für mich erleichtern."</span>
+            </label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="c3_kontakt_erleichtert" value="voll_zu" required> Stimme voll zu</label>
+              <label class="radio-option"><input type="radio" name="c3_kontakt_erleichtert" value="eher_zu"> Stimme eher zu</label>
+              <label class="radio-option"><input type="radio" name="c3_kontakt_erleichtert" value="teils_teils"> Teils/teils</label>
+              <label class="radio-option"><input type="radio" name="c3_kontakt_erleichtert" value="eher_nicht"> Stimme eher nicht zu</label>
+              <label class="radio-option"><input type="radio" name="c3_kontakt_erleichtert" value="gar_nicht"> Stimme gar nicht zu</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">C4. Wie wichtig wären Ihnen folgende Funktionen einer Direktvermarktungs-App?</label>
             <div class="likert-group">
               <div class="likert-scale-legend" aria-hidden="true"><span>1 = Unwichtig</span><span>5 = Sehr wichtig</span></div>
               <div class="likert-item">
-                <span class="likert-item__label">Einfache Bestellung per App</span>
+                <span class="likert-item__label">Karte mit Bauernhöfen, Hofläden, Märkten und Verkaufsautomaten in der Nähe</span>
                 <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c4_bestellung" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_bestellung" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_bestellung" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_bestellung" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_bestellung" value="5"><span>5</span></label>
+                  <label class="likert-btn"><input type="radio" name="c4_karte" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="c4_karte" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="c4_karte" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="c4_karte" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="c4_karte" value="5"><span>5</span></label>
                 </div>
               </div>
               <div class="likert-item">
@@ -344,17 +468,7 @@
                 </div>
               </div>
               <div class="likert-item">
-                <span class="likert-item__label">Karte mit Bauernhöfen, Hofläden und Märkten in der Nähe</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c4_karte" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_karte" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_karte" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_karte" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_karte" value="5"><span>5</span></label>
-                </div>
-              </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Transparenz über Herkunft der Produkte</span>
+                <span class="likert-item__label">Informationen zur Herkunft der Produkte</span>
                 <div class="likert-item__scale">
                   <label class="likert-btn"><input type="radio" name="c4_herkunft" value="1" required><span>1</span></label>
                   <label class="likert-btn"><input type="radio" name="c4_herkunft" value="2"><span>2</span></label>
@@ -364,7 +478,7 @@
                 </div>
               </div>
               <div class="likert-item">
-                <span class="likert-item__label">Informationen zur Produktionsweise, z. B. bio, konventionell oder nachhaltig</span>
+                <span class="likert-item__label">Informationen zur Produktionsweise, z. B. bio, konventionell, nachhaltig</span>
                 <div class="likert-item__scale">
                   <label class="likert-btn"><input type="radio" name="c4_produktionsweise" value="1" required><span>1</span></label>
                   <label class="likert-btn"><input type="radio" name="c4_produktionsweise" value="2"><span>2</span></label>
@@ -384,7 +498,17 @@
                 </div>
               </div>
               <div class="likert-item">
-                <span class="likert-item__label">Möglichkeit, Produkte online zu reservieren</span>
+                <span class="likert-item__label">Einfache Bestellung per App</span>
+                <div class="likert-item__scale">
+                  <label class="likert-btn"><input type="radio" name="c4_bestellung" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="c4_bestellung" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="c4_bestellung" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="c4_bestellung" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="c4_bestellung" value="5"><span>5</span></label>
+                </div>
+              </div>
+              <div class="likert-item">
+                <span class="likert-item__label">Produkte online reservieren</span>
                 <div class="likert-item__scale">
                   <label class="likert-btn"><input type="radio" name="c4_reservieren" value="1" required><span>1</span></label>
                   <label class="likert-btn"><input type="radio" name="c4_reservieren" value="2"><span>2</span></label>
@@ -394,7 +518,17 @@
                 </div>
               </div>
               <div class="likert-item">
-                <span class="likert-item__label">Flexible Liefer- und Abholmöglichkeiten</span>
+                <span class="likert-item__label">Flexible Abholmöglichkeiten</span>
+                <div class="likert-item__scale">
+                  <label class="likert-btn"><input type="radio" name="c4_abholung" value="1" required><span>1</span></label>
+                  <label class="likert-btn"><input type="radio" name="c4_abholung" value="2"><span>2</span></label>
+                  <label class="likert-btn"><input type="radio" name="c4_abholung" value="3"><span>3</span></label>
+                  <label class="likert-btn"><input type="radio" name="c4_abholung" value="4"><span>4</span></label>
+                  <label class="likert-btn"><input type="radio" name="c4_abholung" value="5"><span>5</span></label>
+                </div>
+              </div>
+              <div class="likert-item">
+                <span class="likert-item__label">Flexible Liefermöglichkeiten</span>
                 <div class="likert-item__scale">
                   <label class="likert-btn"><input type="radio" name="c4_lieferung" value="1" required><span>1</span></label>
                   <label class="likert-btn"><input type="radio" name="c4_lieferung" value="2"><span>2</span></label>
@@ -447,15 +581,18 @@
           </div>
 
           <div class="form-group">
-            <label class="question">B5. Welche Modelle zum Kauf regionaler Produkte würden Sie bevorzugen? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <label class="question">C5. Welche Modelle zum Kauf regionaler Produkte würden Sie bevorzugen? <span class="hint">(Mehrfachauswahl möglich)</span></label>
             <div class="checkbox-group">
-              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="abo_lieferung" required> Regelmäßige Lieferung im Abo (z. B. wöchentlich)</label>
-              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="direktkauf_abholung"> Direktkauf und Abholung auf dem Bauernhof</label>
-              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="selbst_auswaehlen"> Produkte direkt auf dem Bauernhof selbst auswählen und pflücken</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="direktkauf_abholung" required> Direktkauf und Abholung auf dem Bauernhof</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="hofladen"> Einkauf im Hofladen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="wochenmarkt"> Einkauf auf dem Wochenmarkt</label>
               <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="online_reservieren"> Produkte online reservieren und später abholen</label>
-              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="sammelbestellung"> Gemeinsame Lieferung mit Nachbarn oder Sammelbestellungen</label>
-              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="naehe_vorschlag"> Automatische Vorschläge von Bauernhöfen und Bauernmärkten in meiner Nähe</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="lieferung"> Lieferung nach Hause</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="abo_lieferung"> Regelmäßige Lieferung im Abo, z. B. wöchentlich</label>
               <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="saisonbox"> Saisonale Produktboxen mit wechselnden regionalen Produkten</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="sammelbestellung"> Gemeinsame Lieferung mit Nachbarn oder Sammelbestellungen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="selbst_auswaehlen"> Produkte direkt auf dem Bauernhof selbst auswählen oder pflücken</label>
+              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="naehe_vorschlag"> Automatische Vorschläge von Bauernhöfen und Märkten in meiner Nähe</label>
               <label class="checkbox-option"><input type="checkbox" name="c5_modell_sonstiges_cb" id="c5_sonstiges_cb"> Sonstiges</label>
             </div>
             <div class="conditional" id="c5_sonstiges_wrap">
@@ -464,38 +601,113 @@
           </div>
 
           <div class="form-group">
-            <label class="question">B6. Welche Informationen würden Ihr Vertrauen in regionale Produkte erhöhen? <span class="hint">(Mehrfachauswahl möglich)</span></label>
-            <div class="checkbox-group">
-              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="info_hof" required> Informationen über den Bauernhof</label>
-              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="herkunft"> Angaben zur Herkunft der Produkte</label>
-              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="produktionsweise"> Angaben zur Produktionsweise</label>
-              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="bio_zertifikat"> Bio-Zertifizierung oder Nachhaltigkeitsangaben</label>
-              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="fotos"> Fotos vom Hof oder von der Produktion</label>
-              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="bewertungen"> Kundenbewertungen</label>
-              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="preise"> Transparente Preise</label>
-              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="vorstellung"> Persönliche Vorstellung der Landwirtin/des Landwirts</label>
-              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen" value="keine"> Keine davon</label>
-              <label class="checkbox-option"><input type="checkbox" name="c6_vertrauen_sonstiges_cb" id="c6_sonstiges_cb"> Sonstiges</label>
-            </div>
-            <div class="conditional" id="c6_sonstiges_wrap">
-              <input type="text" name="c6_vertrauen_sonstiges" id="c6_vertrauen_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstiges Vertrauensmerkmal – bitte beschreiben">
+            <label class="question">C6. Wie wahrscheinlich wäre es, dass Sie eine digitale Plattform für regionale Lebensmittel regelmäßig nutzen würden?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="c6_plattform_wahrscheinlich" value="sehr_wahrscheinlich" required> Sehr wahrscheinlich</label>
+              <label class="radio-option"><input type="radio" name="c6_plattform_wahrscheinlich" value="eher_wahrscheinlich"> Eher wahrscheinlich</label>
+              <label class="radio-option"><input type="radio" name="c6_plattform_wahrscheinlich" value="teils_teils"> Teils/teils</label>
+              <label class="radio-option"><input type="radio" name="c6_plattform_wahrscheinlich" value="eher_unwahrscheinlich"> Eher unwahrscheinlich</label>
+              <label class="radio-option"><input type="radio" name="c6_plattform_wahrscheinlich" value="sehr_unwahrscheinlich"> Sehr unwahrscheinlich</label>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="question" for="c7_nutzung">B7. Was würde Sie dazu bringen, eine Direktvermarktungs-App regelmäßig zu nutzen? <span class="hint">(Optional)</span></label>
+            <label class="question" for="c7_nutzung">C7. Was würde Sie dazu bringen, eine Direktvermarktungs-App regelmäßig zu nutzen? <span class="hint">(Optional)</span></label>
             <textarea id="c7_nutzung" name="c7_nutzung" maxlength="500" placeholder="Ihre Gedanken dazu ..."></textarea>
             <div class="char-counter" id="c7_counter">0 / 500</div>
           </div>
         </fieldset>
 
-        <!-- ===== SECTION A: Allgemeine Angaben (Schritt 3) ===== -->
-        <fieldset data-step="3">
-          <legend>C – Angaben zu Ihrer Person</legend>
+        <!-- ===== SECTION D: Vertrauen und Transparenz ===== -->
+        <fieldset data-step="4">
+          <legend>D – Vertrauen und Transparenz</legend>
 
           <div class="form-group">
-            <label class="question" for="a1_bundesland">C1. In welchem Bundesland leben Sie?</label>
-            <select id="a1_bundesland" name="a1_bundesland" required>
+            <label class="question">D1. Inwiefern stimmen Sie folgender Aussage zu?<br>
+              <span style="font-weight:400; font-style:italic;">„Transparente Informationen über Herkunft, Preis, Qualität und Produktionsweise erhöhen mein Vertrauen in regionale Lebensmittel."</span>
+            </label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="d1_transparenz_vertrauen" value="voll_zu" required> Stimme voll zu</label>
+              <label class="radio-option"><input type="radio" name="d1_transparenz_vertrauen" value="eher_zu"> Stimme eher zu</label>
+              <label class="radio-option"><input type="radio" name="d1_transparenz_vertrauen" value="teils_teils"> Teils/teils</label>
+              <label class="radio-option"><input type="radio" name="d1_transparenz_vertrauen" value="eher_nicht"> Stimme eher nicht zu</label>
+              <label class="radio-option"><input type="radio" name="d1_transparenz_vertrauen" value="gar_nicht"> Stimme gar nicht zu</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">D2. Welche Informationen würden Ihr Vertrauen in regionale Produkte erhöhen? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <div class="checkbox-group">
+              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="info_hof" required> Informationen über den Bauernhof</label>
+              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="herkunft"> Angaben zur Herkunft der Produkte</label>
+              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="produktionsweise"> Angaben zur Produktionsweise</label>
+              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="bio_zertifikat"> Bio-Zertifizierung oder Nachhaltigkeitsangaben</label>
+              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="tierwohl"> Informationen zu Tierwohl</label>
+              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="fotos"> Fotos vom Hof oder von der Produktion</label>
+              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="bewertungen"> Kundenbewertungen</label>
+              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="preise"> Transparente Preise</label>
+              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="vorstellung"> Persönliche Vorstellung der Landwirtin oder des Landwirts</label>
+              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="kontakt"> Möglichkeit zur direkten Kontaktaufnahme</label>
+              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="keine" id="d2_keine"> Keine davon</label>
+              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen_sonstiges_cb" id="d2_sonstiges_cb"> Sonstiges</label>
+            </div>
+            <div class="conditional" id="d2_sonstiges_wrap">
+              <input type="text" name="d2_vertrauen_sonstiges" id="d2_vertrauen_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstiges – bitte beschreiben">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">D3. Inwiefern stimmen Sie folgender Aussage zu?<br>
+              <span style="font-weight:400; font-style:italic;">„Ich bin eher bereit, für regionale Lebensmittel mehr zu zahlen, wenn Herkunft, Qualität und Produktionsweise transparent dargestellt werden."</span>
+            </label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="d3_mehr_zahlen" value="voll_zu" required> Stimme voll zu</label>
+              <label class="radio-option"><input type="radio" name="d3_mehr_zahlen" value="eher_zu"> Stimme eher zu</label>
+              <label class="radio-option"><input type="radio" name="d3_mehr_zahlen" value="teils_teils"> Teils/teils</label>
+              <label class="radio-option"><input type="radio" name="d3_mehr_zahlen" value="eher_nicht"> Stimme eher nicht zu</label>
+              <label class="radio-option"><input type="radio" name="d3_mehr_zahlen" value="gar_nicht"> Stimme gar nicht zu</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">D4. Wie viel mehr wären Sie grundsätzlich bereit, für direkt vom Bauern gekaufte Lebensmittel zu zahlen?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="d4_mehrpreis" value="nichts" required> Nicht mehr als im Supermarkt</label>
+              <label class="radio-option"><input type="radio" name="d4_mehrpreis" value="bis_5"> Bis zu 5 % mehr</label>
+              <label class="radio-option"><input type="radio" name="d4_mehrpreis" value="bis_10"> Bis zu 10 % mehr</label>
+              <label class="radio-option"><input type="radio" name="d4_mehrpreis" value="bis_20"> Bis zu 20 % mehr</label>
+              <label class="radio-option"><input type="radio" name="d4_mehrpreis" value="ueber_20"> Mehr als 20 %, abhängig von Qualität, Regionalität und Produktionsweise</label>
+              <label class="radio-option"><input type="radio" name="d4_mehrpreis" value="unsicher"> Ich bin unsicher / kommt auf das Produkt an</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">D5. Welche Faktoren würden Ihr Vertrauen eher verringern? <span class="hint">(Mehrfachauswahl möglich)</span></label>
+            <div class="checkbox-group">
+              <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="keine_herkunft" required> Keine Informationen zur Herkunft</label>
+              <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="unklare_preise"> Keine oder unklare Preise</label>
+              <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="keine_produktionsweise"> Keine Informationen zur Produktionsweise</label>
+              <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="keine_aktualitaet"> Fehlende Aktualität der Produktinformationen</label>
+              <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="schlechte_bewertungen"> Schlechte oder fehlende Bewertungen</label>
+              <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="unprofessionell"> Unprofessionelle Darstellung</label>
+              <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="kein_kontakt"> Keine Kontaktmöglichkeit</label>
+              <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="preisunterschied"> Zu starke Preisunterschiede zum Supermarkt</label>
+              <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="keine" id="d5_keine"> Keine davon</label>
+              <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern_sonstiges_cb" id="d5_sonstiges_cb"> Sonstiges</label>
+            </div>
+            <div class="conditional" id="d5_sonstiges_wrap">
+              <input type="text" name="d5_vertrauen_verringern_sonstiges" id="d5_vertrauen_verringern_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstiges – bitte beschreiben">
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- ===== SECTION E: Angaben zur Person ===== -->
+        <fieldset data-step="5">
+          <legend>E – Angaben zur Person</legend>
+
+          <div class="form-group">
+            <label class="question" for="e1_bundesland">E1. In welchem Bundesland leben Sie?</label>
+            <select id="e1_bundesland" name="e1_bundesland" required>
               <option value="">– Bitte wählen –</option>
               <option>Baden-Württemberg</option>
               <option>Bayern</option>
@@ -513,60 +725,66 @@
               <option>Sachsen-Anhalt</option>
               <option>Schleswig-Holstein</option>
               <option>Thüringen</option>
+              <option value="keine_angabe">Keine Angabe</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label class="question">C2. In welchem Umfeld leben Sie?</label>
+            <label class="question">E2. In welchem Umfeld leben Sie?</label>
             <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="a2_umfeld" value="grossstadt" required> Großstadt (über 100.000 Einwohner)</label>
-              <label class="radio-option"><input type="radio" name="a2_umfeld" value="mittelstadt"> Mittelstadt (20.000 – 100.000 Einwohner)</label>
-              <label class="radio-option"><input type="radio" name="a2_umfeld" value="kleinstadt"> Kleinstadt (unter 20.000 Einwohner)</label>
-              <label class="radio-option"><input type="radio" name="a2_umfeld" value="laendlich"> Ländliche Gemeinde / Dorf</label>
+              <label class="radio-option"><input type="radio" name="e2_umfeld" value="grossstadt" required> Großstadt, über 100.000 Einwohner</label>
+              <label class="radio-option"><input type="radio" name="e2_umfeld" value="mittelstadt"> Mittelstadt, 20.000 – 100.000 Einwohner</label>
+              <label class="radio-option"><input type="radio" name="e2_umfeld" value="kleinstadt"> Kleinstadt, unter 20.000 Einwohner</label>
+              <label class="radio-option"><input type="radio" name="e2_umfeld" value="laendlich"> Ländliche Gemeinde / Dorf</label>
+              <label class="radio-option"><input type="radio" name="e2_umfeld" value="keine_angabe"> Keine Angabe</label>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="question">C3. Wie alt sind Sie?</label>
+            <label class="question">E3. Wie alt sind Sie?</label>
             <div class="radio-group radio-group--inline">
-              <label class="radio-option"><input type="radio" name="a3_alter" value="unter_25" required> Unter 25</label>
-              <label class="radio-option"><input type="radio" name="a3_alter" value="25_35"> 25 – 35</label>
-              <label class="radio-option"><input type="radio" name="a3_alter" value="36_50"> 36 – 50</label>
-              <label class="radio-option"><input type="radio" name="a3_alter" value="51_65"> 51 – 65</label>
-              <label class="radio-option"><input type="radio" name="a3_alter" value="ueber_65"> Über 65</label>
+              <label class="radio-option"><input type="radio" name="e3_alter" value="unter_25" required> Unter 25</label>
+              <label class="radio-option"><input type="radio" name="e3_alter" value="25_35"> 25 – 35</label>
+              <label class="radio-option"><input type="radio" name="e3_alter" value="36_50"> 36 – 50</label>
+              <label class="radio-option"><input type="radio" name="e3_alter" value="51_65"> 51 – 65</label>
+              <label class="radio-option"><input type="radio" name="e3_alter" value="ueber_65"> Über 65</label>
+              <label class="radio-option"><input type="radio" name="e3_alter" value="keine_angabe"> Keine Angabe</label>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="question">C4. Wie ist Ihr Haushalt zusammengesetzt?</label>
+            <label class="question">E4. Wie ist Ihr Haushalt zusammengesetzt?</label>
             <div class="radio-group radio-group--inline">
-              <label class="radio-option"><input type="radio" name="a4_haushalt" value="allein" required> Ich lebe allein</label>
-              <label class="radio-option"><input type="radio" name="a4_haushalt" value="2_personen"> 2 Personen</label>
-              <label class="radio-option"><input type="radio" name="a4_haushalt" value="3_4_personen"> 3 – 4 Personen</label>
-              <label class="radio-option"><input type="radio" name="a4_haushalt" value="5_plus"> 5 oder mehr Personen</label>
+              <label class="radio-option"><input type="radio" name="e4_haushalt" value="allein" required> Ich lebe allein</label>
+              <label class="radio-option"><input type="radio" name="e4_haushalt" value="2_personen"> 2 Personen</label>
+              <label class="radio-option"><input type="radio" name="e4_haushalt" value="3_4_personen"> 3 – 4 Personen</label>
+              <label class="radio-option"><input type="radio" name="e4_haushalt" value="5_plus"> 5 oder mehr Personen</label>
+              <label class="radio-option"><input type="radio" name="e4_haushalt" value="keine_angabe"> Keine Angabe</label>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="question">C5. Welchen höchsten Bildungsabschluss haben Sie?</label>
+            <label class="question">E5. Welchen höchsten Bildungsabschluss haben Sie?</label>
             <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="a5_bildung" value="hauptschule" required> Hauptschulabschluss</label>
-              <label class="radio-option"><input type="radio" name="a5_bildung" value="realschule"> Mittlere Reife / Realschule</label>
-              <label class="radio-option"><input type="radio" name="a5_bildung" value="abitur"> Abitur / Fachabitur</label>
-              <label class="radio-option"><input type="radio" name="a5_bildung" value="hochschule"> Hochschulabschluss (Bachelor / Master / Diplom)</label>
-              <label class="radio-option"><input type="radio" name="a5_bildung" value="sonstiges"> Sonstiger Abschluss / keine Angabe</label>
+              <label class="radio-option"><input type="radio" name="e5_bildung" value="hauptschule" required> Hauptschulabschluss</label>
+              <label class="radio-option"><input type="radio" name="e5_bildung" value="realschule"> Mittlere Reife / Realschule</label>
+              <label class="radio-option"><input type="radio" name="e5_bildung" value="abitur"> Abitur / Fachabitur</label>
+              <label class="radio-option"><input type="radio" name="e5_bildung" value="berufsausbildung"> Berufsausbildung</label>
+              <label class="radio-option"><input type="radio" name="e5_bildung" value="hochschule"> Hochschulabschluss, z. B. Bachelor, Master, Diplom</label>
+              <label class="radio-option"><input type="radio" name="e5_bildung" value="sonstiges"> Sonstiger Abschluss</label>
+              <label class="radio-option"><input type="radio" name="e5_bildung" value="keine_angabe"> Keine Angabe</label>
             </div>
           </div>
         </fieldset>
 
-        <!-- ===== SECTION D: Abschluss ===== -->
-        <fieldset data-step="4">
-          <legend>D – Abschluss</legend>
+        <!-- ===== SECTION F: Abschluss ===== -->
+        <fieldset data-step="6">
+          <legend>F – Abschluss</legend>
 
           <div class="form-group">
-            <label class="question" for="d1_anmerkungen">D1. Haben Sie weitere Anmerkungen oder Wünsche? <span class="hint">(Optional)</span></label>
-            <textarea id="d1_anmerkungen" name="d1_anmerkungen" placeholder="Ihre Anmerkungen sind herzlich willkommen ..." maxlength="600"></textarea>
-            <div class="char-counter" id="d1_counter">0 / 600</div>
+            <label class="question" for="f1_anmerkungen">F1. Haben Sie weitere Anmerkungen, Wünsche oder Verbesserungsvorschläge zum Kauf regionaler Lebensmittel? <span class="hint">(Optional)</span></label>
+            <textarea id="f1_anmerkungen" name="f1_anmerkungen" placeholder="Ihre Anmerkungen sind herzlich willkommen ..." maxlength="600"></textarea>
+            <div class="char-counter" id="f1_counter">0 / 600</div>
           </div>
         </fieldset>
 
@@ -695,15 +913,17 @@
     })();
 
     // Sonstiges-Felder
-    initConditional('#c1_sonstiges_cb', '#c1_sonstiges_wrap');
+    initConditional('#a1_sonstiges_cb', '#a1_sonstiges_wrap');
+    initConditional('#b1_sonstiges_cb', '#b1_sonstiges_wrap');
     initConditional('#c5_sonstiges_cb', '#c5_sonstiges_wrap');
-    initConditional('#c6_sonstiges_cb', '#c6_sonstiges_wrap');
+    initConditional('#d2_sonstiges_cb', '#d2_sonstiges_wrap');
+    initConditional('#d5_sonstiges_cb', '#d5_sonstiges_wrap');
 
-    // C1: "Ich kaufe bereits regelmäßig" exklusiv (außer Sonstiges)
+    // B1: "Ich kaufe bereits regelmäßig" exklusiv
     (function() {
-      var regelmaessig = document.querySelector('input[name="c1_gruende"][value="kaufe_regelmaessig"]');
-      var sonstiges    = document.getElementById('c1_sonstiges_cb');
-      var others = Array.from(document.querySelectorAll('input[name="c1_gruende"]')).filter(function(cb) {
+      var regelmaessig = document.getElementById('b1_regelmaessig');
+      var sonstiges    = document.getElementById('b1_sonstiges_cb');
+      var others = Array.from(document.querySelectorAll('input[name="b1_kaufgruende"]')).filter(function(cb) {
         return cb !== regelmaessig;
       });
       if (regelmaessig) {
@@ -717,11 +937,27 @@
       });
     })();
 
-    // C6: "Keine davon" exklusiv (außer Sonstiges)
+    // D2: "Keine davon" exklusiv
     (function() {
-      var keine     = document.querySelector('input[name="c6_vertrauen"][value="keine"]');
-      var sonstiges = document.getElementById('c6_sonstiges_cb');
-      var others    = Array.from(document.querySelectorAll('input[name="c6_vertrauen"]')).filter(function(cb) { return cb !== keine; });
+      var keine     = document.getElementById('d2_keine');
+      var sonstiges = document.getElementById('d2_sonstiges_cb');
+      var others    = Array.from(document.querySelectorAll('input[name="d2_vertrauen"]')).filter(function(cb) { return cb !== keine; });
+      if (keine) {
+        keine.addEventListener('change', function() {
+          if (this.checked) others.forEach(function(cb) { if (cb !== sonstiges) cb.checked = false; });
+        });
+      }
+      others.forEach(function(cb) {
+        if (cb === sonstiges) return;
+        cb.addEventListener('change', function() { if (this.checked && keine) keine.checked = false; });
+      });
+    })();
+
+    // D5: "Keine davon" exklusiv
+    (function() {
+      var keine     = document.getElementById('d5_keine');
+      var sonstiges = document.getElementById('d5_sonstiges_cb');
+      var others    = Array.from(document.querySelectorAll('input[name="d5_vertrauen_verringern"]')).filter(function(cb) { return cb !== keine; });
       if (keine) {
         keine.addEventListener('change', function() {
           if (this.checked) others.forEach(function(cb) { if (cb !== sonstiges) cb.checked = false; });
@@ -734,9 +970,9 @@
     })();
 
     // Zeichenzähler
-    initCharCounter('b5_erleichterung', 'b5_counter', 500);
+    initCharCounter('a5_erleichterung', 'a5_counter', 500);
     initCharCounter('c7_nutzung', 'c7_counter', 500);
-    initCharCounter('d1_anmerkungen', 'd1_counter', 600);
+    initCharCounter('f1_anmerkungen', 'f1_counter', 600);
 
     // Mehrstufiges Formular initialisieren
     initSteppedForm('konsumenten-form', 'konsumenten', 'modal-konsumenten');
