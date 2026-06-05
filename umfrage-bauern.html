@@ -175,7 +175,7 @@
 
           <div class="form-group">
             <label class="question">B2. Inwiefern stimmen Sie folgender Aussage zu?<br>
-              <span style="font-weight:400; font-style:italic;">„Günstige Angebote von Supermärkten und Discountern erschweren meine Preisgestaltung."</span>
+              <span style="font-weight:400; font-style:italic;">„Es ist schwierig, kostendeckende oder faire Preise gegenüber Supermärkten und Discountern durchzusetzen."</span>
             </label>
             <div class="radio-group">
               <label class="radio-option"><input type="radio" name="b2_preisgestaltung" value="5" required> Stimme voll zu</label>
@@ -187,7 +187,7 @@
           </div>
 
           <div class="form-group">
-            <label class="question">B3. Inwiefern stimmen Sie folgender Aussage zu?<br>
+            <label class="question">B3. Inwiefern stimmen Sie folgender Aussage zu? DELETE<br>
               <span style="font-weight:400; font-style:italic;">„Es ist für mich schwierig, kostendeckende oder faire Preise zu erzielen."</span>
             </label>
             <div class="radio-group">
@@ -200,7 +200,7 @@
           </div>
 
           <div class="form-group">
-            <label class="question">B4. Wie hoch schätzen Sie den Anteil Ihrer produzierten Waren, die wegen fehlender Nachfrage nicht verkauft werden können?</label>
+            <label class="question">DELETE B4. Wie hoch schätzen Sie den Anteil Ihrer produzierten Waren, die wegen fehlender Nachfrage nicht verkauft werden können?</label>
             <div class="radio-group">
               <label class="radio-option"><input type="radio" name="b4_verluste" value="unter_5" required> Unter 5 %</label>
               <label class="radio-option"><input type="radio" name="b4_verluste" value="5_15"> 5 – 15 %</label>
@@ -212,7 +212,7 @@
           </div>
 
           <div class="form-group">
-            <label class="question">B5. Wie häufig müssen Sie Produkte rabattieren, weiterverarbeiten, verschenken, verfüttern oder entsorgen, weil sie nicht rechtzeitig verkauft werden?</label>
+            <label class="question">B5. Wie häufig bleiben Produkte übrig, die rabattiert, weiterverarbeitet, verschenkt, verfüttert oder entsorgt werden müssen?</label>
             <div class="radio-group">
               <label class="radio-option"><input type="radio" name="b5_rabattierung" value="sehr_haeufig" required> Sehr häufig</label>
               <label class="radio-option"><input type="radio" name="b5_rabattierung" value="haeufig"> Häufig</label>
@@ -439,23 +439,13 @@
             <div class="likert-group">
               <div class="likert-scale-legend" aria-hidden="true"><span>1 = Gar nicht wichtig</span><span>5 = Sehr wichtig</span></div>
               <div class="likert-item">
-                <span class="likert-item__label">Einfache Bedienung</span>
+                <span class="likert-item__label">Einfache Bedienung und wenig zusätzlicher Aufwand</span>
                 <div class="likert-item__scale">
                   <label class="likert-btn"><input type="radio" name="d3_bedienung" value="1" required><span>1</span></label>
                   <label class="likert-btn"><input type="radio" name="d3_bedienung" value="2"><span>2</span></label>
                   <label class="likert-btn"><input type="radio" name="d3_bedienung" value="3"><span>3</span></label>
                   <label class="likert-btn"><input type="radio" name="d3_bedienung" value="4"><span>4</span></label>
                   <label class="likert-btn"><input type="radio" name="d3_bedienung" value="5"><span>5</span></label>
-                </div>
-              </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Wenig zusätzlicher Aufwand</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="d3_aufwand" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_aufwand" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_aufwand" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_aufwand" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_aufwand" value="5"><span>5</span></label>
                 </div>
               </div>
               <div class="likert-item">
@@ -506,7 +496,7 @@
             <div class="likert-group">
               <div class="likert-scale-legend" aria-hidden="true"><span>1 = Unwichtig</span><span>5 = Sehr wichtig</span></div>
               <div class="likert-item">
-                <span class="likert-item__label">Direktbestellungen von Kundinnen und Kunden erhalten</span>
+                <span class="likert-item__label">Direktbestellungen, Vorbestellungen oder Reservierungen erhalten</span>
                 <div class="likert-item__scale">
                   <label class="likert-btn"><input type="radio" name="d4_direktbestellungen" value="1" required><span>1</span></label>
                   <label class="likert-btn"><input type="radio" name="d4_direktbestellungen" value="2"><span>2</span></label>
@@ -516,23 +506,13 @@
                 </div>
               </div>
               <div class="likert-item">
-                <span class="likert-item__label">Produktverfügbarkeit einfach aktualisieren</span>
+                <span class="likert-item__label">Produktverfügbarkeit, Preise und Angebote einfach aktualisieren</span>
                 <div class="likert-item__scale">
                   <label class="likert-btn"><input type="radio" name="d4_verfuegbarkeit" value="1" required><span>1</span></label>
                   <label class="likert-btn"><input type="radio" name="d4_verfuegbarkeit" value="2"><span>2</span></label>
                   <label class="likert-btn"><input type="radio" name="d4_verfuegbarkeit" value="3"><span>3</span></label>
                   <label class="likert-btn"><input type="radio" name="d4_verfuegbarkeit" value="4"><span>4</span></label>
                   <label class="likert-btn"><input type="radio" name="d4_verfuegbarkeit" value="5"><span>5</span></label>
-                </div>
-              </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Preise und Angebote anzeigen</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="d4_preise" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_preise" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_preise" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_preise" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_preise" value="5"><span>5</span></label>
                 </div>
               </div>
               <div class="likert-item">
@@ -546,17 +526,7 @@
                 </div>
               </div>
               <div class="likert-item">
-                <span class="likert-item__label">Vorbestellungen oder Reservierungen ermöglichen</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="d4_vorbestellungen" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_vorbestellungen" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_vorbestellungen" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_vorbestellungen" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_vorbestellungen" value="5"><span>5</span></label>
-                </div>
-              </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Lieferungen und Abholungen organisieren</span>
+                <span class="likert-item__label">Lieferungen, Abholungen oder Liefer-Abos organisieren</span>
                 <div class="likert-item__scale">
                   <label class="likert-btn"><input type="radio" name="d4_logistik" value="1" required><span>1</span></label>
                   <label class="likert-btn"><input type="radio" name="d4_logistik" value="2"><span>2</span></label>
@@ -566,17 +536,7 @@
                 </div>
               </div>
               <div class="likert-item">
-                <span class="likert-item__label">Regelmäßige Liefer-Abos anbieten</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="d4_abos" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_abos" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_abos" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_abos" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_abos" value="5"><span>5</span></label>
-                </div>
-              </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Automatische Rechnungen und Zahlungsübersicht</span>
+                <span class="likert-item__label">Rechnungen, Zahlungen oder Bestellungen verwalten</span>
                 <div class="likert-item__scale">
                   <label class="likert-btn"><input type="radio" name="d4_rechnungen" value="1" required><span>1</span></label>
                   <label class="likert-btn"><input type="radio" name="d4_rechnungen" value="2"><span>2</span></label>
@@ -642,14 +602,12 @@
             <label class="question">D5. Was wären mögliche Hindernisse bei der Nutzung einer digitalen Plattform? <span class="hint">(Bitte wählen Sie maximal 3 Antworten)</span></label>
             <div class="checkbox-group">
               <label class="checkbox-option"><input type="checkbox" name="d5_hindernis" value="zeitaufwand"> Zu wenig Zeit für zusätzliche digitale Aufgaben</label>
-              <label class="checkbox-option"><input type="checkbox" name="d5_hindernis" value="bedienung"> Zu komplizierte Bedienung</label>
-              <label class="checkbox-option"><input type="checkbox" name="d5_hindernis" value="verwaltung"> Zusätzlicher Verwaltungs- oder Organisationsaufwand</label>
+              <label class="checkbox-option"><input type="checkbox" name="d5_hindernis" value="bedienung"> Zu komplizierte Bedienung oder Unsicherheit im Umgang mit digitalen Anwendungen</label>
               <label class="checkbox-option"><input type="checkbox" name="d5_hindernis" value="datenschutz"> Datenschutz- und Sicherheitsbedenken</label>
               <label class="checkbox-option"><input type="checkbox" name="d5_hindernis" value="internet"> Schlechte Internetverbindung auf dem Hof</label>
               <label class="checkbox-option"><input type="checkbox" name="d5_hindernis" value="kosten"> Kosten der Plattform</label>
-              <label class="checkbox-option"><input type="checkbox" name="d5_hindernis" value="kein_bedarf"> Kein Bedarf an digitalen Lösungen</label>
               <label class="checkbox-option"><input type="checkbox" name="d5_hindernis" value="kundenkontakt"> Sorge, dass der persönliche Kundenkontakt verloren geht</label>
-              <label class="checkbox-option"><input type="checkbox" name="d5_hindernis" value="unsicherheit"> Unsicherheit im Umgang mit digitalen Anwendungen</label>
+              <label class="checkbox-option"><input type="checkbox" name="d5_hindernis" value="kein_bedarf"> Kein Bedarf an digitalen Lösungen</label>
               <label class="checkbox-option"><input type="checkbox" name="d5_hindernis_sonstiges_cb" id="d5_sonstiges_cb"> Sonstiges</label>
             </div>
             <div class="conditional" id="d5_sonstiges_wrap">
@@ -711,12 +669,10 @@
           <div class="form-group">
             <label class="question">E3. Welche weiteren Funktionen einer B2B-Plattform wären für Sie hilfreich? <span class="hint">(Bitte wählen Sie maximal 3 Antworten)</span></label>
             <div class="checkbox-group">
-              <label class="checkbox-option"><input type="checkbox" name="e3_b2b_funktionen" value="benachrichtigung"> Automatische Benachrichtigung bei neuen Anfragen</label>
-              <label class="checkbox-option"><input type="checkbox" name="e3_b2b_funktionen" value="mengen"> Anzeige verfügbarer Mengen und saisonaler Verfügbarkeiten</label>
-              <label class="checkbox-option"><input type="checkbox" name="e3_b2b_funktionen" value="mindestmengen"> Mindestbestellmengen und Lieferbedingungen festlegen</label>
+              <label class="checkbox-option"><input type="checkbox" name="e3_b2b_funktionen" value="benachrichtigung"> Anfragen und Nachrichten direkt erhalten</label>
+              <label class="checkbox-option"><input type="checkbox" name="e3_b2b_funktionen" value="mengen"> Verfügbare Mengen und saisonale Verfügbarkeiten anzeigen</label>
+              <label class="checkbox-option"><input type="checkbox" name="e3_b2b_funktionen" value="mindestmengen"> Mindestbestellmengen, Lieferbedingungen oder wiederkehrende Bestellungen verwalten</label>
               <label class="checkbox-option"><input type="checkbox" name="e3_b2b_funktionen" value="sonderangebote"> Sonderangebote oder Restmengen gezielt anbieten</label>
-              <label class="checkbox-option"><input type="checkbox" name="e3_b2b_funktionen" value="wiederkehrend"> Wiederkehrende Bestellungen verwalten</label>
-              <label class="checkbox-option"><input type="checkbox" name="e3_b2b_funktionen" value="nachrichten"> Nachrichtenfunktion für direkte Absprachen</label>
               <label class="checkbox-option"><input type="checkbox" name="e3_b2b_funktionen" value="rechnung"> Rechnung, Lieferschein oder Zahlungsübersicht</label>
               <label class="checkbox-option"><input type="checkbox" name="e3_b2b_funktionen" value="keine" id="e3_keine_cb"> Keine weiteren Funktionen notwendig</label>
               <label class="checkbox-option"><input type="checkbox" name="e3_b2b_funktionen_sonstiges_cb" id="e3_sonstiges_cb"> Sonstiges</label>
