@@ -226,18 +226,15 @@
           <div class="form-group">
             <label class="question">B1. Warum kaufen Sie nicht häufiger direkt beim Bauern oder bei regionalen Verkaufsstellen? <span class="hint">(Mehrfachauswahl möglich)</span></label>
             <div class="checkbox-group">
-              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="keine_anbieter" required> Ich kenne keine Anbieter in meiner Nähe</label>
-              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="weiss_nicht_wo"> Ich weiß nicht, wo ich regionale Produkte kaufen kann</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="keine_anbieter" required> Keine Anbieter oder Verkaufsstellen in meiner Nähe</label>
               <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="oeffnungszeiten"> Ich kenne die Öffnungszeiten nicht</label>
               <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="verfuegbarkeit"> Ich weiß nicht, welche Produkte aktuell verfügbar sind</label>
               <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="preise_unbekannt"> Ich kenne die Preise vorher nicht</label>
-              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="produktionsweise"> Ich weiß zu wenig über die Produktionsweise</label>
-              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="unsicher_regional"> Ich bin unsicher, ob die Produkte wirklich regional sind</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="produktionsweise"> Unsicherheit über die tatsächliche Herkunft / Regionalität</label>
               <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="qualitaet_unklar"> Ich kann die Qualität vorher schwer einschätzen</label>
               <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="kein_angebot"> Zu wenig Angebote in meiner Nähe</label>
-              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="umstaendlich"> Zu umständlich / zu weit weg</label>
+              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="umstaendlich"> Zu umständlich oder zeitaufwendig</label>
               <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="zu_teuer"> Zu teuer im Vergleich zum Supermarkt</label>
-              <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="keine_zeit"> Mir fehlt die Zeit</label>
               <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende" value="kaufe_regelmaessig" id="b1_regelmaessig"> Ich kaufe bereits regelmäßig regional oder direkt beim Bauern</label>
               <label class="checkbox-option"><input type="checkbox" name="b1_kaufgruende_sonstiges_cb" id="b1_sonstiges_cb"> Sonstiges</label>
             </div>
@@ -337,23 +334,13 @@
                 </div>
               </div>
               <div class="likert-item">
-                <span class="likert-item__label">Informationen zum Bauernhof</span>
+                <span class="likert-item__label">Hofprofil mit Fotos und Produktinfos</span>
                 <div class="likert-item__scale">
                   <label class="likert-btn"><input type="radio" name="b4_hofinfo" value="1" required><span>1</span></label>
                   <label class="likert-btn"><input type="radio" name="b4_hofinfo" value="2"><span>2</span></label>
                   <label class="likert-btn"><input type="radio" name="b4_hofinfo" value="3"><span>3</span></label>
                   <label class="likert-btn"><input type="radio" name="b4_hofinfo" value="4"><span>4</span></label>
                   <label class="likert-btn"><input type="radio" name="b4_hofinfo" value="5"><span>5</span></label>
-                </div>
-              </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Fotos vom Hof oder von Produkten</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="b4_fotos" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_fotos" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_fotos" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_fotos" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_fotos" value="5"><span>5</span></label>
                 </div>
               </div>
               <div class="likert-item">
@@ -468,33 +455,13 @@
                 </div>
               </div>
               <div class="likert-item">
-                <span class="likert-item__label">Informationen zur Herkunft der Produkte</span>
+                <span class="likert-item__label">Informationen zu Herkunft, Produktionsweise und Bauernhof</span>
                 <div class="likert-item__scale">
                   <label class="likert-btn"><input type="radio" name="c4_herkunft" value="1" required><span>1</span></label>
                   <label class="likert-btn"><input type="radio" name="c4_herkunft" value="2"><span>2</span></label>
                   <label class="likert-btn"><input type="radio" name="c4_herkunft" value="3"><span>3</span></label>
                   <label class="likert-btn"><input type="radio" name="c4_herkunft" value="4"><span>4</span></label>
                   <label class="likert-btn"><input type="radio" name="c4_herkunft" value="5"><span>5</span></label>
-                </div>
-              </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Informationen zur Produktionsweise, z. B. bio, konventionell, nachhaltig</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c4_produktionsweise" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_produktionsweise" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_produktionsweise" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_produktionsweise" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_produktionsweise" value="5"><span>5</span></label>
-                </div>
-              </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Fotos und Informationen zum Bauernhof</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c4_hofinfos" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_hofinfos" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_hofinfos" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_hofinfos" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_hofinfos" value="5"><span>5</span></label>
                 </div>
               </div>
               <div class="likert-item">
@@ -589,10 +556,7 @@
               <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="online_reservieren"> Produkte online reservieren und später abholen</label>
               <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="lieferung"> Lieferung nach Hause</label>
               <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="abo_lieferung"> Regelmäßige Lieferung im Abo, z. B. wöchentlich</label>
-              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="saisonbox"> Saisonale Produktboxen mit wechselnden regionalen Produkten</label>
               <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="sammelbestellung"> Gemeinsame Lieferung mit Nachbarn oder Sammelbestellungen</label>
-              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="selbst_auswaehlen"> Produkte direkt auf dem Bauernhof selbst auswählen oder pflücken</label>
-              <label class="checkbox-option"><input type="checkbox" name="c5_modell" value="naehe_vorschlag"> Automatische Vorschläge von Bauernhöfen und Märkten in meiner Nähe</label>
               <label class="checkbox-option"><input type="checkbox" name="c5_modell_sonstiges_cb" id="c5_sonstiges_cb"> Sonstiges</label>
             </div>
             <div class="conditional" id="c5_sonstiges_wrap">
@@ -639,11 +603,9 @@
             <label class="question">D2. Welche Informationen würden Ihr Vertrauen in regionale Produkte erhöhen? <span class="hint">(Mehrfachauswahl möglich)</span></label>
             <div class="checkbox-group">
               <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="info_hof" required> Informationen über den Bauernhof</label>
-              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="herkunft"> Angaben zur Herkunft der Produkte</label>
-              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="produktionsweise"> Angaben zur Produktionsweise</label>
-              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="bio_zertifikat"> Bio-Zertifizierung oder Nachhaltigkeitsangaben</label>
+              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="herkunft"> Angaben zu Herkunft, Regionalität und Produktionsweise</label>
               <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="tierwohl"> Informationen zu Tierwohl</label>
-              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="fotos"> Fotos vom Hof oder von der Produktion</label>
+              <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="fotos"> Fotos vom Hof, den Produkten oder der Produktion</label>
               <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="bewertungen"> Kundenbewertungen</label>
               <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="preise"> Transparente Preise</label>
               <label class="checkbox-option"><input type="checkbox" name="d2_vertrauen" value="vorstellung"> Persönliche Vorstellung der Landwirtin oder des Landwirts</label>
@@ -686,12 +648,11 @@
             <div class="checkbox-group">
               <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="keine_herkunft" required> Keine Informationen zur Herkunft</label>
               <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="unklare_preise"> Keine oder unklare Preise</label>
-              <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="keine_produktionsweise"> Keine Informationen zur Produktionsweise</label>
-              <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="keine_aktualitaet"> Fehlende Aktualität der Produktinformationen</label>
+              <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="keine_produktionsweise"> Unklare, fehlende oder veraltete Produktinformationen</label>
               <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="schlechte_bewertungen"> Schlechte oder fehlende Bewertungen</label>
-              <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="unprofessionell"> Unprofessionelle Darstellung</label>
+              <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="unprofessionell"> Unprofessionelle oder wenig vertrauenswürdige Präsentation des Anbieters</label>
               <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="kein_kontakt"> Keine Kontaktmöglichkeit</label>
-              <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="preisunterschied"> Zu starke Preisunterschiede zum Supermarkt</label>
+              <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="preisunterschied"> Nicht nachvollziehbare Preisunterschiede zum Supermarkt</label>
               <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern" value="keine" id="d5_keine"> Keine davon</label>
               <label class="checkbox-option"><input type="checkbox" name="d5_vertrauen_verringern_sonstiges_cb" id="d5_sonstiges_cb"> Sonstiges</label>
             </div>
