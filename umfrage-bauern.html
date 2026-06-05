@@ -55,12 +55,10 @@
       <!-- Header -->
       <div class="form-header">
         <span class="section-label">Umfrage für Landwirte</span>
-        <h1 style="font-size: clamp(1.6rem, 4vw, 2.5rem);">Wie vermarkten Sie Ihre Produkte?</h1>
-        <div class="meta">
-          <span>⏱ ca. 10 Minuten</span>
-          <span>📋 32 Fragen in 7 Abschnitten</span>
-          <span>🔒 Vollständig anonym</span>
-        </div>
+        <h1 style="font-size: clamp(1.6rem, 4vw, 2.5rem);">Helfen Sie mit, Direktvermarktung für landwirtschaftliche Betriebe einfacher zu machen</h1>
+        <p style="font-size:1rem; color:var(--color-text-muted); margin-bottom:0.75rem;">
+          Die Umfrage dauert ca. 7–10 Minuten und hilft dabei, digitale Lösungen für regionale Betriebe praxisnah zu entwickeln.
+        </p>
         <div class="privacy-note">
           Diese Umfrage ist vollständig anonym. Die Daten werden ausschließlich für wissenschaftliche
           Zwecke im Rahmen einer Masterarbeit verwendet.
@@ -138,7 +136,7 @@
           </div>
 
           <div class="form-group">
-            <label class="question">A5. Was sind aktuell Ihre größten Herausforderungen bei der Vermarktung Ihrer Produkte? <span class="hint">(Bitte wählen Sie maximal 3 Antworten)</span></label>
+            <label class="question">A5. Was sind aktuell Ihre größten Herausforderungen bei der Vermarktung Ihrer Produkte? <span class="hint">(Wählen Sie bitte die 3 wichtigsten Punkte aus)</span></label>
             <div class="checkbox-group">
               <label class="checkbox-option"><input type="checkbox" name="a5_herausforderungen" value="zu_wenig_zeit"> Zu wenig Zeit für Vermarktung</label>
               <label class="checkbox-option"><input type="checkbox" name="a5_herausforderungen" value="geringe_preise"> Schwierigkeit, faire Preise gegenüber Supermärkten oder Discountern durchzusetzen</label>
@@ -278,7 +276,7 @@
           </div>
 
           <div class="form-group">
-            <label class="question">C4. Welche Unterstützung wäre für Ihre Direktvermarktung besonders hilfreich? <span class="hint">(Bitte wählen Sie maximal 3 Antworten)</span></label>
+            <label class="question">C4. Welche Unterstützung wäre für Ihre Direktvermarktung besonders hilfreich? <span class="hint">(Wählen Sie bitte die 3 wichtigsten Punkte aus)</span></label>
             <div class="checkbox-group">
               <label class="checkbox-option"><input type="checkbox" name="c4_unterstuetzung" value="mehr_kunden"> Mehr Kundinnen und Kunden aus der Region erreichen</label>
               <label class="checkbox-option"><input type="checkbox" name="c4_unterstuetzung" value="sichtbarkeit"> Bessere Sichtbarkeit im Internet</label>
@@ -471,7 +469,7 @@
           </div>
 
           <div class="form-group">
-            <label class="question">D5. Was wären mögliche Hindernisse bei der Nutzung einer digitalen Plattform? <span class="hint">(Bitte wählen Sie maximal 3 Antworten)</span></label>
+            <label class="question">D5. Was wären mögliche Hindernisse bei der Nutzung einer digitalen Plattform? <span class="hint">(Wählen Sie bitte die 3 wichtigsten Punkte aus)</span></label>
             <div class="checkbox-group">
               <label class="checkbox-option"><input type="checkbox" name="d5_hindernis" value="zeitaufwand"> Zu wenig Zeit für zusätzliche digitale Aufgaben</label>
               <label class="checkbox-option"><input type="checkbox" name="d5_hindernis" value="bedienung"> Zu komplizierte Bedienung oder Unsicherheit im Umgang mit digitalen Anwendungen</label>
@@ -499,15 +497,24 @@
           </div>
 
           <div class="form-group">
-            <label class="question">D7. Welchen monatlichen Betrag wären Sie bereit, für eine hilfreiche Plattform zu bezahlen?</label>
+            <label class="question">D7. Angenommen, die Plattform spart Ihnen Zeit oder bringt neue Kundinnen und Kunden: Wären Sie grundsätzlich bereit, dafür monatlich zu bezahlen?</label>
             <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="d7_preis" value="nichts" required> Nichts – ich würde nur eine kostenlose Version nutzen</label>
-              <label class="radio-option"><input type="radio" name="d7_preis" value="bis_10"> Bis 10 € pro Monat</label>
-              <label class="radio-option"><input type="radio" name="d7_preis" value="10_25"> 10 – 25 € pro Monat</label>
-              <label class="radio-option"><input type="radio" name="d7_preis" value="26_50"> 26 – 50 € pro Monat</label>
-              <label class="radio-option"><input type="radio" name="d7_preis" value="ueber_50"> Über 50 € pro Monat</label>
-              <label class="radio-option"><input type="radio" name="d7_preis" value="kommt_auf_nutzen"> Kommt auf den Nutzen und Funktionsumfang an</label>
-              <label class="radio-option"><input type="radio" name="d7_preis" value="keine_einschaetzung"> Kann ich nicht einschätzen</label>
+              <label class="radio-option"><input type="radio" name="d7_zahlungsbereitschaft" value="ja" required id="d7_ja"> Ja</label>
+              <label class="radio-option"><input type="radio" name="d7_zahlungsbereitschaft" value="vielleicht" id="d7_vielleicht"> Vielleicht, wenn der Nutzen klar ist</label>
+              <label class="radio-option"><input type="radio" name="d7_zahlungsbereitschaft" value="nein" id="d7_nein"> Nein</label>
+            </div>
+          </div>
+
+          <div class="conditional" id="d7b_wrap">
+            <div class="form-group">
+              <label class="question">D7b. Welcher monatliche Betrag wäre für Sie realistisch?</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="d7_preis" value="bis_10"> Bis 10 € pro Monat</label>
+                <label class="radio-option"><input type="radio" name="d7_preis" value="10_25"> 10 – 25 € pro Monat</label>
+                <label class="radio-option"><input type="radio" name="d7_preis" value="26_50"> 26 – 50 € pro Monat</label>
+                <label class="radio-option"><input type="radio" name="d7_preis" value="ueber_50"> Über 50 € pro Monat</label>
+                <label class="radio-option"><input type="radio" name="d7_preis" value="keine_einschaetzung"> Kann ich nicht einschätzen</label>
+              </div>
             </div>
           </div>
         </fieldset>
@@ -539,7 +546,7 @@
           </div>
 
           <div class="form-group">
-            <label class="question">E3. Welche weiteren Funktionen einer B2B-Plattform wären für Sie hilfreich? <span class="hint">(Bitte wählen Sie maximal 3 Antworten)</span></label>
+            <label class="question">E3. Welche weiteren Funktionen einer B2B-Plattform wären für Sie hilfreich? <span class="hint">(Wählen Sie bitte die 3 wichtigsten Punkte aus)</span></label>
             <div class="checkbox-group">
               <label class="checkbox-option"><input type="checkbox" name="e3_b2b_funktionen" value="benachrichtigung"> Anfragen und Nachrichten direkt erhalten</label>
               <label class="checkbox-option"><input type="checkbox" name="e3_b2b_funktionen" value="mengen"> Verfügbare Mengen und saisonale Verfügbarkeiten anzeigen</label>
@@ -862,6 +869,22 @@
         });
       });
     });
+
+    // D7b nur anzeigen wenn Ja oder Vielleicht
+    (function() {
+      var wrap = document.getElementById('d7b_wrap');
+      var radios = document.querySelectorAll('input[name="d7_zahlungsbereitschaft"]');
+      function update() {
+        var val = document.querySelector('input[name="d7_zahlungsbereitschaft"]:checked');
+        if (val && val.value !== 'nein') {
+          wrap.classList.add('is-visible');
+        } else {
+          wrap.classList.remove('is-visible');
+          document.querySelectorAll('input[name="d7_preis"]').forEach(function(r) { r.checked = false; });
+        }
+      }
+      radios.forEach(function(r) { r.addEventListener('change', update); });
+    })();
 
     // Zeichenzähler
     initCharCounter('g1_anmerkungen', 'g1_counter', 600);
