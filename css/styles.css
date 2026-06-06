@@ -196,7 +196,7 @@ p:last-child { margin-bottom: 0; }
 .nav {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 200;
   height: var(--nav-height);
   background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
@@ -520,6 +520,9 @@ p:last-child { margin-bottom: 0; }
 
 /* progress bar on survey pages */
 .survey-progress {
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 100;
   background: var(--color-border);
   border-radius: 0;
   height: 5px;
@@ -531,6 +534,9 @@ p:last-child { margin-bottom: 0; }
   transition: width 0.5s ease;
 }
 .survey-step-label {
+  position: sticky;
+  top: calc(var(--nav-height) + 5px);
+  z-index: 100;
   background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
   text-align: center;
@@ -540,6 +546,7 @@ p:last-child { margin-bottom: 0; }
   text-transform: uppercase;
   color: var(--color-text-muted);
   padding: 0.45rem 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
 /* step navigation */
