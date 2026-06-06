@@ -799,43 +799,38 @@ legend {
    ============================================================ */
 .bipolar-group { display: flex; flex-direction: column; gap: 0; }
 
-/* Header with numbers – mirrors row structure for pixel-perfect alignment */
-.bipolar-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.15rem;
-}
-.bipolar-header__label-spacer { flex: 0 0 200px; }
-.bipolar-header__pole-spacer  { flex: 0 0 auto; min-width: 70px; }
-.bipolar-header__nums { flex: 1; display: flex; }
-.bipolar-header__num  { flex: 1; text-align: center; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.02em; color: var(--color-text-muted); }
+/* ── Mobile-first: label above, controls (poles + circles) in one line ── */
+.bipolar-header { display: none; } /* desktop only */
 
-/* Data rows */
 .bipolar-row {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0;
+  padding: 0.55rem 0;
   border-bottom: 1px solid var(--color-border);
 }
 .bipolar-row:last-child { border-bottom: none; }
 
 .bipolar-row__label {
+  display: block;
   font-size: 0.87rem;
   font-weight: 500;
   color: var(--color-text);
   line-height: 1.4;
+  margin-bottom: 0.35rem;
 }
 
+/* Controls: left-pole | circles | right-pole — always one line */
+.bipolar-row__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
 .bipolar-row__pole {
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   color: var(--color-text-muted);
   white-space: nowrap;
   flex: 0 0 auto;
 }
-.bipolar-row__pole--left  { min-width: 70px; text-align: right; }
-.bipolar-row__pole--right { min-width: 70px; text-align: left; }
+.bipolar-row__pole--left  { min-width: 58px; text-align: right; }
+.bipolar-row__pole--right { min-width: 58px; text-align: left; }
 
 .bipolar-row__scale { display: flex; flex: 1; }
 .bipolar-radio {
@@ -854,15 +849,29 @@ legend {
   flex-shrink: 0;
 }
 
-@media (max-width: 599px) {
-  .bipolar-header { display: none; }
-  .bipolar-row { flex-wrap: wrap; gap: 0.3rem; }
-  .bipolar-row__label { flex: 0 0 100%; margin-bottom: 0.15rem; }
-  .bipolar-row__pole--left  { min-width: 52px; font-size: 0.74rem; }
-  .bipolar-row__pole--right { min-width: 52px; font-size: 0.74rem; }
-}
+/* ── Desktop: label left column, controls right ── */
 @media (min-width: 600px) {
-  .bipolar-row__label       { flex: 0 0 200px; }
+  .bipolar-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.1rem;
+  }
+  .bipolar-header__label-spacer { flex: 0 0 200px; }
+  .bipolar-header__controls {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .bipolar-header__pole-spacer { flex: 0 0 58px; }
+  .bipolar-header__nums { flex: 1; display: flex; }
+  .bipolar-header__num  { flex: 1; text-align: center; font-size: 0.72rem; font-weight: 700; color: var(--color-text-muted); }
+
+  .bipolar-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.4rem 0; }
+  .bipolar-row__label { flex: 0 0 200px; margin-bottom: 0; }
+  .bipolar-row__controls { flex: 1; }
+  .bipolar-row__pole { font-size: 0.8rem; }
 }
 
 /* ============================================================
