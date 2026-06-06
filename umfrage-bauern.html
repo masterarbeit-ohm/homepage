@@ -52,25 +52,25 @@
   <div class="container">
     <div class="form-page">
 
-      <!-- Header -->
-      <div class="form-header">
-        <span class="section-label">Umfrage für Landwirte</span>
-        <h1 style="font-size: clamp(1.6rem, 4vw, 2.5rem);">Helfen Sie mit, Direktvermarktung für landwirtschaftliche Betriebe einfacher zu machen</h1>
-        <p style="font-size:1rem; color:var(--color-text-muted); margin-bottom:0.75rem;">
-          Die Umfrage dauert ca. 7–10 Minuten und hilft dabei, digitale Lösungen für regionale Betriebe praxisnah zu entwickeln.
-        </p>
-        <div class="privacy-note">
-          Diese Umfrage ist vollständig anonym. Die Daten werden ausschließlich für wissenschaftliche
-          Zwecke im Rahmen einer Masterarbeit verwendet.
-        </div>
-      </div>
-
       <!-- FORM -->
       <form id="bauern-form" novalidate data-script-url="https://script.google.com/macros/s/AKfycbwAtDHv2-eA5K2ZDZ-z5N1Zh4T0NC3UM_M6G3FPkgNTUh3zcCLMxv2lSbOcnrrId6un/exec">
 
         <!-- ===== SECTION A: Betrieb und aktuelle Vermarktung ===== -->
         <fieldset data-step="1">
           <legend>A – Betrieb und aktuelle Vermarktung</legend>
+
+          <!-- Header nur auf Schritt 1 -->
+          <div class="form-header" style="margin-bottom:1.5rem;">
+            <span class="section-label">Umfrage für Landwirte</span>
+            <h1 style="font-size: clamp(1.6rem, 4vw, 2.5rem);">Helfen Sie mit, Direktvermarktung für landwirtschaftliche Betriebe einfacher zu machen</h1>
+            <p style="font-size:1rem; color:var(--color-text-muted); margin-bottom:0.75rem;">
+              Die Umfrage dauert ca. 7–10 Minuten und hilft dabei, digitale Lösungen für regionale Betriebe praxisnah zu entwickeln.
+            </p>
+            <div class="privacy-note">
+              Diese Umfrage ist vollständig anonym. Die Daten werden ausschließlich für wissenschaftliche
+              Zwecke im Rahmen einer Masterarbeit verwendet.
+            </div>
+          </div>
 
           <div class="form-group">
             <label class="question">A1. Welche Produkte erzeugen Sie? <span class="hint">(Mehrfachauswahl möglich)</span></label>
@@ -680,7 +680,7 @@
 
 <!-- THANK-YOU MODAL -->
 <div class="modal-overlay" id="modal-bauern" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-  <div class="modal" style="max-width:480px;">
+  <div class="modal" style="max-width:480px; max-height:90vh; overflow-y:auto;">
     <div class="modal__icon">🎉</div>
     <h2 class="modal__title" id="modal-title">Vielen Dank!</h2>
     <p>Ihre Antworten wurden erfolgreich übermittelt.</p>
