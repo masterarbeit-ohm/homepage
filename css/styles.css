@@ -795,6 +795,77 @@ legend {
 }
 
 /* ============================================================
+   BIPOLAR SCALE (UEQ-style)
+   ============================================================ */
+.bipolar-group { display: flex; flex-direction: column; gap: 0; }
+
+/* Header with numbers – mirrors row structure for pixel-perfect alignment */
+.bipolar-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.15rem;
+}
+.bipolar-header__label-spacer { flex: 0 0 200px; }
+.bipolar-header__pole-spacer  { flex: 0 0 auto; min-width: 70px; }
+.bipolar-header__nums { flex: 1; display: flex; }
+.bipolar-header__num  { flex: 1; text-align: center; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.02em; color: var(--color-text-muted); }
+
+/* Data rows */
+.bipolar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.bipolar-row:last-child { border-bottom: none; }
+
+.bipolar-row__label {
+  font-size: 0.87rem;
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.bipolar-row__pole {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+.bipolar-row__pole--left  { min-width: 70px; text-align: right; }
+.bipolar-row__pole--right { min-width: 70px; text-align: left; }
+
+.bipolar-row__scale { display: flex; flex: 1; }
+.bipolar-radio {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.1rem 0;
+}
+.bipolar-radio input {
+  accent-color: var(--color-primary);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+@media (max-width: 599px) {
+  .bipolar-header { display: none; }
+  .bipolar-row { flex-wrap: wrap; gap: 0.3rem; }
+  .bipolar-row__label { flex: 0 0 100%; margin-bottom: 0.15rem; }
+  .bipolar-row__pole--left  { min-width: 52px; font-size: 0.74rem; }
+  .bipolar-row__pole--right { min-width: 52px; font-size: 0.74rem; }
+}
+@media (min-width: 600px) {
+  .bipolar-row__label       { flex: 0 0 200px; }
+}
+
+/* ============================================================
    SPONSORING TIERS
    ============================================================ */
 .tier-grid {
