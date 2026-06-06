@@ -326,56 +326,85 @@
 
           <div class="form-group">
             <label class="question">D3. Wie wichtig wären Ihnen folgende Eigenschaften einer digitalen Plattform?</label>
-            <div class="likert-group">
-              <div class="likert-scale-legend" aria-hidden="true"><span>1 = Gar nicht wichtig</span><span>5 = Sehr wichtig</span></div>
-              <div class="likert-item">
-                <span class="likert-item__label">Einfache Bedienung und wenig zusätzlicher Aufwand</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="d3_bedienung" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_bedienung" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_bedienung" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_bedienung" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_bedienung" value="5"><span>5</span></label>
+            <div class="bipolar-group">
+              <div class="bipolar-header" aria-hidden="true">
+                <span class="bipolar-header__label-spacer"></span>
+                <div class="bipolar-header__controls">
+                  <span class="bipolar-header__pole-spacer"></span>
+                  <div class="bipolar-header__nums">
+                    <span class="bipolar-header__num">1</span><span class="bipolar-header__num">2</span><span class="bipolar-header__num">3</span><span class="bipolar-header__num">4</span><span class="bipolar-header__num">5</span>
+                  </div>
+                  <span class="bipolar-header__pole-spacer"></span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Mehrere Funktionen in einer Anwendung</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="d3_buendelung" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_buendelung" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_buendelung" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_buendelung" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_buendelung" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Einfache Bedienung und wenig zusätzlicher Aufwand</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="d3_bedienung" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_bedienung" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_bedienung" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_bedienung" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_bedienung" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Datenschutz und Datensicherheit</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="d3_datenschutz" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_datenschutz" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_datenschutz" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_datenschutz" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_datenschutz" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Mehrere Funktionen in einer Anwendung</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="d3_buendelung" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_buendelung" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_buendelung" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_buendelung" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_buendelung" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Niedrige Kosten</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="d3_kosten" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_kosten" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_kosten" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_kosten" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_kosten" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Datenschutz und Datensicherheit</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="d3_datenschutz" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_datenschutz" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_datenschutz" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_datenschutz" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_datenschutz" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Erhalt des persönlichen Kundenkontakts</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="d3_kundenkontakt" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_kundenkontakt" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_kundenkontakt" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_kundenkontakt" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="d3_kundenkontakt" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Niedrige Kosten</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="d3_kosten" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_kosten" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_kosten" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_kosten" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_kosten" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
+                </div>
+              </div>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Erhalt des persönlichen Kundenkontakts</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="d3_kundenkontakt" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_kundenkontakt" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_kundenkontakt" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_kundenkontakt" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d3_kundenkontakt" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
             </div>
@@ -383,86 +412,127 @@
 
           <div class="form-group">
             <label class="question">D4. Wie wichtig wären Ihnen folgende Funktionen einer digitalen Plattform?</label>
-            <div class="likert-group">
-              <div class="likert-scale-legend" aria-hidden="true"><span>1 = Unwichtig</span><span>5 = Sehr wichtig</span></div>
-              <div class="likert-item">
-                <span class="likert-item__label">Direktbestellungen, Vorbestellungen oder Reservierungen erhalten</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="d4_direktbestellungen" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_direktbestellungen" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_direktbestellungen" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_direktbestellungen" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_direktbestellungen" value="5"><span>5</span></label>
+            <div class="bipolar-group">
+              <div class="bipolar-header" aria-hidden="true">
+                <span class="bipolar-header__label-spacer"></span>
+                <div class="bipolar-header__controls">
+                  <span class="bipolar-header__pole-spacer"></span>
+                  <div class="bipolar-header__nums">
+                    <span class="bipolar-header__num">1</span><span class="bipolar-header__num">2</span><span class="bipolar-header__num">3</span><span class="bipolar-header__num">4</span><span class="bipolar-header__num">5</span>
+                  </div>
+                  <span class="bipolar-header__pole-spacer"></span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Produktverfügbarkeit, Preise und Angebote einfach aktualisieren</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="d4_verfuegbarkeit" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_verfuegbarkeit" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_verfuegbarkeit" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_verfuegbarkeit" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_verfuegbarkeit" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Direktbestellungen, Vorbestellungen oder Reservierungen erhalten</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="d4_direktbestellungen" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_direktbestellungen" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_direktbestellungen" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_direktbestellungen" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_direktbestellungen" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Kundinnen und Kunden über Angebote, Märkte und Neuigkeiten informieren</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="d4_info" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_info" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_info" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_info" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_info" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Produktverfügbarkeit, Preise und Angebote einfach aktualisieren</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="d4_verfuegbarkeit" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_verfuegbarkeit" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_verfuegbarkeit" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_verfuegbarkeit" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_verfuegbarkeit" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Lieferungen, Abholungen oder Liefer-Abos organisieren</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="d4_logistik" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_logistik" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_logistik" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_logistik" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_logistik" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Kundinnen und Kunden über Angebote, Märkte und Neuigkeiten informieren</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="d4_info" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_info" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_info" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_info" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_info" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Rechnungen, Zahlungen oder Bestellungen verwalten</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="d4_rechnungen" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_rechnungen" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_rechnungen" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_rechnungen" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_rechnungen" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Lieferungen, Abholungen oder Liefer-Abos organisieren</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="d4_logistik" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_logistik" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_logistik" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_logistik" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_logistik" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Unterstützung bei Werbung und Sichtbarkeit</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="d4_marketing" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_marketing" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_marketing" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_marketing" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_marketing" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Rechnungen, Zahlungen oder Bestellungen verwalten</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="d4_rechnungen" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_rechnungen" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_rechnungen" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_rechnungen" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_rechnungen" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Restwaren oder überschüssige Produkte besser verkaufen</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="d4_restwaren" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_restwaren" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_restwaren" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_restwaren" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_restwaren" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Unterstützung bei Werbung und Sichtbarkeit</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="d4_marketing" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_marketing" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_marketing" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_marketing" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_marketing" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">B2B-Kontakte zu Restaurants, Hofläden, Einzelhandel oder anderen Betrieben herstellen</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="d4_b2b" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_b2b" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_b2b" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_b2b" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="d4_b2b" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Restwaren oder überschüssige Produkte besser verkaufen</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="d4_restwaren" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_restwaren" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_restwaren" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_restwaren" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_restwaren" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
+                </div>
+              </div>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">B2B-Kontakte zu Restaurants, Hofläden, Einzelhandel oder anderen Betrieben herstellen</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="d4_b2b" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_b2b" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_b2b" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_b2b" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="d4_b2b" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
             </div>

@@ -282,66 +282,99 @@
 
           <div class="form-group">
             <label class="question">B3. Wie wichtig wären Ihnen folgende Informationen vor dem Besuch eines Bauernhofs, Hofladens, Marktes oder Verkaufsautomaten?</label>
-            <div class="likert-group">
-              <div class="likert-scale-legend" aria-hidden="true"><span>1 = Unwichtig</span><span>5 = Sehr wichtig</span></div>
-              <div class="likert-item">
-                <span class="likert-item__label">Standort, Entfernung und Öffnungszeiten</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="b4_standort" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_standort" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_standort" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_standort" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_standort" value="5"><span>5</span></label>
+            <div class="bipolar-group">
+              <div class="bipolar-header" aria-hidden="true">
+                <span class="bipolar-header__label-spacer"></span>
+                <div class="bipolar-header__controls">
+                  <span class="bipolar-header__pole-spacer"></span>
+                  <div class="bipolar-header__nums">
+                    <span class="bipolar-header__num">1</span><span class="bipolar-header__num">2</span><span class="bipolar-header__num">3</span><span class="bipolar-header__num">4</span><span class="bipolar-header__num">5</span>
+                  </div>
+                  <span class="bipolar-header__pole-spacer"></span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Aktuell verfügbare Produkte und Preise</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="b4_verfuegbarkeit" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_verfuegbarkeit" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_verfuegbarkeit" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_verfuegbarkeit" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_verfuegbarkeit" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Standort, Entfernung und Öffnungszeiten</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="b4_standort" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_standort" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_standort" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_standort" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_standort" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Herkunft und Produktionsweise der Produkte</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="b4_herkunft" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_herkunft" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_herkunft" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_herkunft" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_herkunft" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Aktuell verfügbare Produkte und Preise</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="b4_verfuegbarkeit" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_verfuegbarkeit" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_verfuegbarkeit" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_verfuegbarkeit" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_verfuegbarkeit" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Hofprofil mit Fotos und Produktinformationen</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="b4_hofinfo" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_hofinfo" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_hofinfo" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_hofinfo" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_hofinfo" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Herkunft und Produktionsweise der Produkte</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="b4_herkunft" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_herkunft" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_herkunft" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_herkunft" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_herkunft" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Bewertungen anderer Kundinnen und Kunden</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="b4_bewertungen" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_bewertungen" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_bewertungen" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_bewertungen" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_bewertungen" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Hofprofil mit Fotos und Produktinformationen</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="b4_hofinfo" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_hofinfo" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_hofinfo" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_hofinfo" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_hofinfo" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Kontaktmöglichkeit zum Anbieter</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="b4_kontakt" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_kontakt" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_kontakt" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_kontakt" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="b4_kontakt" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Bewertungen anderer Kundinnen und Kunden</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="b4_bewertungen" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_bewertungen" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_bewertungen" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_bewertungen" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_bewertungen" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
+                </div>
+              </div>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Kontaktmöglichkeit zum Anbieter</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="b4_kontakt" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_kontakt" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_kontakt" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_kontakt" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="b4_kontakt" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
             </div>
@@ -380,96 +413,141 @@
 
           <div class="form-group">
             <label class="question">C3. Wie wichtig wären Ihnen folgende Funktionen einer Direktvermarktungs-App?</label>
-            <div class="likert-group">
-              <div class="likert-scale-legend" aria-hidden="true"><span>1 = Unwichtig</span><span>5 = Sehr wichtig</span></div>
-              <div class="likert-item">
-                <span class="likert-item__label">Karte mit regionalen Anbietern und Verkaufsstellen in der Nähe</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c4_karte" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_karte" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_karte" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_karte" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_karte" value="5"><span>5</span></label>
+            <div class="bipolar-group">
+              <div class="bipolar-header" aria-hidden="true">
+                <span class="bipolar-header__label-spacer"></span>
+                <div class="bipolar-header__controls">
+                  <span class="bipolar-header__pole-spacer"></span>
+                  <div class="bipolar-header__nums">
+                    <span class="bipolar-header__num">1</span><span class="bipolar-header__num">2</span><span class="bipolar-header__num">3</span><span class="bipolar-header__num">4</span><span class="bipolar-header__num">5</span>
+                  </div>
+                  <span class="bipolar-header__pole-spacer"></span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Öffnungszeiten, Produktverfügbarkeit und Preise anzeigen</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c4_oeffnungszeiten" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_oeffnungszeiten" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_oeffnungszeiten" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_oeffnungszeiten" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_oeffnungszeiten" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Karte mit regionalen Anbietern und Verkaufsstellen in der Nähe</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="c4_karte" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_karte" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_karte" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_karte" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_karte" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Informationen zu Herkunft, Produktionsweise und Bauernhof</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c4_herkunft" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_herkunft" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_herkunft" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_herkunft" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_herkunft" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Öffnungszeiten, Produktverfügbarkeit und Preise anzeigen</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="c4_oeffnungszeiten" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_oeffnungszeiten" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_oeffnungszeiten" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_oeffnungszeiten" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_oeffnungszeiten" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Produkte bestellen, reservieren oder zur Abholung vormerken</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c4_bestellung" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_bestellung" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_bestellung" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_bestellung" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_bestellung" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Informationen zu Herkunft, Produktionsweise und Bauernhof</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="c4_herkunft" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_herkunft" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_herkunft" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_herkunft" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_herkunft" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Flexible Abhol- oder Liefermöglichkeiten</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c4_abholung" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_abholung" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_abholung" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_abholung" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_abholung" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Produkte bestellen, reservieren oder zur Abholung vormerken</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="c4_bestellung" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bestellung" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bestellung" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bestellung" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bestellung" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Benachrichtigung über neue Produkte oder Angebote</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c4_benachrichtigung" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_benachrichtigung" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_benachrichtigung" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_benachrichtigung" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_benachrichtigung" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Flexible Abhol- oder Liefermöglichkeiten</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="c4_abholung" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_abholung" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_abholung" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_abholung" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_abholung" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Kontaktmöglichkeit zum Bauernhof</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c4_kontakt" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_kontakt" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_kontakt" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_kontakt" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_kontakt" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Benachrichtigung über neue Produkte oder Angebote</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="c4_benachrichtigung" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_benachrichtigung" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_benachrichtigung" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_benachrichtigung" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_benachrichtigung" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Bewertungen anderer Käuferinnen und Käufer</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c4_bewertungen" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_bewertungen" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_bewertungen" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_bewertungen" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_bewertungen" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Kontaktmöglichkeit zum Bauernhof</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="c4_kontakt" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_kontakt" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_kontakt" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_kontakt" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_kontakt" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-              <div class="likert-item">
-                <span class="likert-item__label">Rezeptvorschläge zum saisonalen Angebot</span>
-                <div class="likert-item__scale">
-                  <label class="likert-btn"><input type="radio" name="c4_rezepte" value="1" required><span>1</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_rezepte" value="2"><span>2</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_rezepte" value="3"><span>3</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_rezepte" value="4"><span>4</span></label>
-                  <label class="likert-btn"><input type="radio" name="c4_rezepte" value="5"><span>5</span></label>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Bewertungen anderer Käuferinnen und Käufer</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="c4_bewertungen" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bewertungen" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bewertungen" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bewertungen" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bewertungen" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
+                </div>
+              </div>
+              <div class="bipolar-row">
+                <span class="bipolar-row__label">Rezeptvorschläge zum saisonalen Angebot</span>
+                <div class="bipolar-row__controls">
+                  <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
+                  <div class="bipolar-row__scale">
+                    <label class="bipolar-radio"><input type="radio" name="c4_rezepte" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_rezepte" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_rezepte" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_rezepte" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_rezepte" value="5"></label>
+                  </div>
+                  <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
             </div>
