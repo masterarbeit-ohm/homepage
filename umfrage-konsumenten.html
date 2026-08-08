@@ -914,10 +914,14 @@
       ['d3_qualitaet',             'd3_qualitaet_sonstiges_cb'],
       ['d6_vertrauen_verringern',  'd6_vertrauen_verringern_sonstiges_cb']
     ].forEach(function(pair) {
-      var queue = [];
       var boxes = Array.from(document.querySelectorAll(
         'input[name="' + pair[0] + '"], input[name="' + pair[1] + '"]'
       ));
+      // Queue mit bereits angehakten Boxen vorbefüllen (z. B. wenn der Browser
+      // nach einer Pause/Reload den Formularzustand automatisch wiederherstellt,
+      // ohne dass 'change'-Events feuern – sonst verliert die Max-3-Begrenzung
+      // den Überblick und lässt mehr als 3 Auswahlen zu)
+      var queue = boxes.filter(function(cb) { return cb.checked; });
       boxes.forEach(function(cb) {
         cb.addEventListener('change', function() {
           var self = this;
