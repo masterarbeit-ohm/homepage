@@ -7,6 +7,58 @@ var SHEET_TESTER      = 'Prototyp-Tester';
 
 var MAX_PER_HOUR = 120; // max. Einreichungen pro Stunde (global)
 
+// Alias-Map: alte Feldnamen (vor Umnummerierung der Formularfragen) →
+// aktuelle kanonische Feldnamen. Verhindert doppelte Spalten im Sheet,
+// falls z.B. ein gecachtes/altes Formular noch alte Feldnamen sendet.
+var FIELD_ALIASES = {
+  b3_mehr_kaufen: 'b2_mehr_kaufen',
+  b4_standort: 'b3_standort',
+  b4_verfuegbarkeit: 'b3_verfuegbarkeit',
+  b4_herkunft: 'b3_herkunft',
+  b4_hofinfo: 'b3_hofinfo',
+  b4_bewertungen: 'b3_bewertungen',
+  b4_kontakt: 'b3_kontakt',
+
+  c3_kontakt_erleichtert: 'c2_kontakt_erleichtert',
+
+  // C3 (Modelle-Checkbox) und C4 (Funktionen-Bipolar) wurden getauscht.
+  // Zwischenzeitliche Feldnamen aus der ursprünglichen Umnummerierung
+  // zeigen jetzt direkt auf die finalen, aktuellen Feldnamen.
+  c3_karte: 'c4_karte',
+  c3_oeffnungszeiten: 'c4_oeffnungszeiten',
+  c3_herkunft: 'c4_herkunft',
+  c3_bestellung: 'c4_bestellung',
+  c3_abholung: 'c4_abholung',
+  c3_benachrichtigung: 'c4_benachrichtigung',
+  c3_kontakt: 'c4_kontakt',
+  c3_bewertungen: 'c4_bewertungen',
+  c3_rezepte: 'c4_rezepte',
+
+  c5_modell: 'c3_modell',
+  c5_modell_sonstiges: 'c3_modell_sonstiges',
+  c5_modell_sonstiges_cb: 'c3_modell_sonstiges_cb',
+  c4_modell: 'c3_modell',
+  c4_modell_sonstiges: 'c3_modell_sonstiges',
+  c4_modell_sonstiges_cb: 'c3_modell_sonstiges_cb',
+
+  c6_plattform_wahrscheinlich: 'c5_plattform_wahrscheinlich',
+  c7_nutzung: 'c6_nutzung',
+
+  d3_mehr_zahlen: 'd4_mehr_zahlen',
+  d4_mehrpreis: 'd5_mehrpreis',
+  d5_vertrauen_verringern: 'd6_vertrauen_verringern',
+  d5_vertrauen_verringern_sonstiges: 'd6_vertrauen_verringern_sonstiges'
+};
+
+function normalizeKeys(response) {
+  var normalized = {};
+  Object.keys(response).forEach(function(k) {
+    var canonical = FIELD_ALIASES[k] || k;
+    normalized[canonical] = response[k];
+  });
+  return normalized;
+}
+
 function errorResponse(msg) {
   return ContentService
     .createTextOutput(JSON.stringify({ success: false, error: msg }))
@@ -43,6 +95,9 @@ function doPost(e) {
     // Interne Felder vor dem Speichern entfernen
     delete response._hp;
     delete response._t;
+
+    // Alte Feldnamen auf aktuelles Schema mappen
+    response = normalizeKeys(response);
 
     var ss        = SpreadsheetApp.getActiveSpreadsheet();
     var sheetName = surveyId === 'bauern'           ? SHEET_BAUERN

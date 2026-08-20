@@ -399,7 +399,7 @@
 
           <div class="form-group">
             <label class="question">C2. Inwiefern stimmen Sie folgender Aussage zu?<br>
-              <span style="font-weight:400; font-style:italic;">„Eine digitale Plattform würde den Kontakt zu regionalen Erzeugerbetrieben verbessern."</span>
+              <span style="font-weight:400; font-style:italic;">„Eine digitale Plattform würde mir helfen, bei Fragen direkt mit regionalen Erzeugerbetrieben zu kommunizieren, z. B. per Nachricht oder Chat."</span>
             </label>
             <div class="radio-group">
               <label class="radio-option"><input type="radio" name="c2_kontakt_erleichtert" value="voll_zu" required> Stimme voll zu</label>
@@ -411,7 +411,24 @@
           </div>
 
           <div class="form-group">
-            <label class="question">C3. Wie wichtig wären Ihnen folgende Funktionen einer Direktvermarktungs-App?</label>
+            <label class="question">C3. Welche Modelle zum Kauf regionaler Produkte würden Sie bevorzugen? <span class="hint">(Wählen Sie bis zu 3 Punkte aus)</span></label>
+            <div class="checkbox-group">
+              <label class="checkbox-option"><input type="checkbox" name="c3_modell" value="direktkauf_abholung" required> Produkte auf dem Bauernhof selbst auswählen oder pflücken</label>
+              <label class="checkbox-option"><input type="checkbox" name="c3_modell" value="hofladen"> Einkauf im Hofladen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c3_modell" value="wochenmarkt"> Einkauf auf dem Wochenmarkt</label>
+              <label class="checkbox-option"><input type="checkbox" name="c3_modell" value="online_reservieren"> Produkte online reservieren und später abholen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c3_modell" value="lieferung"> Lieferung nach Hause</label>
+              <label class="checkbox-option"><input type="checkbox" name="c3_modell" value="abo_lieferung"> Regelmäßige Lieferung im Abo, z. B. wöchentlich</label>
+              <label class="checkbox-option"><input type="checkbox" name="c3_modell" value="sammelbestellung"> Gemeinsame Lieferung mit Nachbarn oder Sammelbestellungen</label>
+              <label class="checkbox-option"><input type="checkbox" name="c3_modell_sonstiges_cb" id="c3_sonstiges_cb"> Sonstiges</label>
+            </div>
+            <div class="conditional" id="c3_sonstiges_wrap">
+              <input type="text" name="c3_modell_sonstiges" id="c3_modell_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstiges Modell – bitte beschreiben">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="question">C4. Wie wichtig wären Ihnen folgende Funktionen einer Direktvermarktungs-App?</label>
             <div class="bipolar-group">
               <div class="bipolar-header" aria-hidden="true">
                 <span class="bipolar-header__label-spacer"></span>
@@ -428,11 +445,11 @@
                 <div class="bipolar-row__controls">
                   <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
                   <div class="bipolar-row__scale">
-                    <label class="bipolar-radio"><input type="radio" name="c3_karte" value="1" required></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_karte" value="2"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_karte" value="3"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_karte" value="4"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_karte" value="5"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_karte" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_karte" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_karte" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_karte" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_karte" value="5"></label>
                   </div>
                   <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
@@ -442,11 +459,11 @@
                 <div class="bipolar-row__controls">
                   <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
                   <div class="bipolar-row__scale">
-                    <label class="bipolar-radio"><input type="radio" name="c3_oeffnungszeiten" value="1" required></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_oeffnungszeiten" value="2"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_oeffnungszeiten" value="3"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_oeffnungszeiten" value="4"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_oeffnungszeiten" value="5"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_oeffnungszeiten" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_oeffnungszeiten" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_oeffnungszeiten" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_oeffnungszeiten" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_oeffnungszeiten" value="5"></label>
                   </div>
                   <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
@@ -456,11 +473,11 @@
                 <div class="bipolar-row__controls">
                   <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
                   <div class="bipolar-row__scale">
-                    <label class="bipolar-radio"><input type="radio" name="c3_herkunft" value="1" required></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_herkunft" value="2"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_herkunft" value="3"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_herkunft" value="4"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_herkunft" value="5"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_herkunft" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_herkunft" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_herkunft" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_herkunft" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_herkunft" value="5"></label>
                   </div>
                   <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
@@ -470,11 +487,11 @@
                 <div class="bipolar-row__controls">
                   <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
                   <div class="bipolar-row__scale">
-                    <label class="bipolar-radio"><input type="radio" name="c3_bestellung" value="1" required></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_bestellung" value="2"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_bestellung" value="3"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_bestellung" value="4"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_bestellung" value="5"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bestellung" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bestellung" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bestellung" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bestellung" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bestellung" value="5"></label>
                   </div>
                   <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
@@ -484,11 +501,11 @@
                 <div class="bipolar-row__controls">
                   <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
                   <div class="bipolar-row__scale">
-                    <label class="bipolar-radio"><input type="radio" name="c3_abholung" value="1" required></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_abholung" value="2"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_abholung" value="3"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_abholung" value="4"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_abholung" value="5"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_abholung" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_abholung" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_abholung" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_abholung" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_abholung" value="5"></label>
                   </div>
                   <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
@@ -498,11 +515,11 @@
                 <div class="bipolar-row__controls">
                   <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
                   <div class="bipolar-row__scale">
-                    <label class="bipolar-radio"><input type="radio" name="c3_benachrichtigung" value="1" required></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_benachrichtigung" value="2"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_benachrichtigung" value="3"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_benachrichtigung" value="4"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_benachrichtigung" value="5"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_benachrichtigung" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_benachrichtigung" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_benachrichtigung" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_benachrichtigung" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_benachrichtigung" value="5"></label>
                   </div>
                   <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
@@ -512,11 +529,11 @@
                 <div class="bipolar-row__controls">
                   <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
                   <div class="bipolar-row__scale">
-                    <label class="bipolar-radio"><input type="radio" name="c3_kontakt" value="1" required></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_kontakt" value="2"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_kontakt" value="3"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_kontakt" value="4"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_kontakt" value="5"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_kontakt" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_kontakt" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_kontakt" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_kontakt" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_kontakt" value="5"></label>
                   </div>
                   <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
@@ -526,11 +543,11 @@
                 <div class="bipolar-row__controls">
                   <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
                   <div class="bipolar-row__scale">
-                    <label class="bipolar-radio"><input type="radio" name="c3_bewertungen" value="1" required></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_bewertungen" value="2"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_bewertungen" value="3"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_bewertungen" value="4"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_bewertungen" value="5"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bewertungen" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bewertungen" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bewertungen" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bewertungen" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_bewertungen" value="5"></label>
                   </div>
                   <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
@@ -540,32 +557,15 @@
                 <div class="bipolar-row__controls">
                   <span class="bipolar-row__pole bipolar-row__pole--left">unwichtig</span>
                   <div class="bipolar-row__scale">
-                    <label class="bipolar-radio"><input type="radio" name="c3_rezepte" value="1" required></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_rezepte" value="2"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_rezepte" value="3"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_rezepte" value="4"></label>
-                    <label class="bipolar-radio"><input type="radio" name="c3_rezepte" value="5"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_rezepte" value="1" required></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_rezepte" value="2"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_rezepte" value="3"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_rezepte" value="4"></label>
+                    <label class="bipolar-radio"><input type="radio" name="c4_rezepte" value="5"></label>
                   </div>
                   <span class="bipolar-row__pole bipolar-row__pole--right">wichtig</span>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="question">C4. Welche Modelle zum Kauf regionaler Produkte würden Sie bevorzugen? <span class="hint">(Wählen Sie bis zu 3 Punkte aus)</span></label>
-            <div class="checkbox-group">
-              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="direktkauf_abholung" required> Produkte auf dem Bauernhof selbst auswählen oder pflücken</label>
-              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="hofladen"> Einkauf im Hofladen</label>
-              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="wochenmarkt"> Einkauf auf dem Wochenmarkt</label>
-              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="online_reservieren"> Produkte online reservieren und später abholen</label>
-              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="lieferung"> Lieferung nach Hause</label>
-              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="abo_lieferung"> Regelmäßige Lieferung im Abo, z. B. wöchentlich</label>
-              <label class="checkbox-option"><input type="checkbox" name="c4_modell" value="sammelbestellung"> Gemeinsame Lieferung mit Nachbarn oder Sammelbestellungen</label>
-              <label class="checkbox-option"><input type="checkbox" name="c4_modell_sonstiges_cb" id="c4_sonstiges_cb"> Sonstiges</label>
-            </div>
-            <div class="conditional" id="c4_sonstiges_wrap">
-              <input type="text" name="c4_modell_sonstiges" id="c4_modell_sonstiges" placeholder="Bitte beschreiben …" maxlength="200" aria-label="Sonstiges Modell – bitte beschreiben">
             </div>
           </div>
 
@@ -895,7 +895,7 @@
     // Sonstiges-Felder
     initConditional('#a1_sonstiges_cb', '#a1_sonstiges_wrap');
     initConditional('#b1_sonstiges_cb', '#b1_sonstiges_wrap');
-    initConditional('#c4_sonstiges_cb', '#c4_sonstiges_wrap');
+    initConditional('#c3_sonstiges_cb', '#c3_sonstiges_wrap');
     initConditional('#d2_sonstiges_cb', '#d2_sonstiges_wrap');
     initConditional('#d3_qualitaet_sonstiges_cb', '#d3_qualitaet_sonstiges_wrap');
     initConditional('#d6_sonstiges_cb', '#d6_sonstiges_wrap');
@@ -909,7 +909,7 @@
     // Max-3-Auswahl für B1, C4, D2, D3, D7 – beim 4. Klick wird die vorletzte Auswahl entfernt
     [
       ['b1_kaufgruende',           'b1_kaufgruende_sonstiges_cb'],
-      ['c4_modell',                'c4_modell_sonstiges_cb'],
+      ['c3_modell',                'c3_modell_sonstiges_cb'],
       ['d2_vertrauen',             'd2_vertrauen_sonstiges_cb'],
       ['d3_qualitaet',             'd3_qualitaet_sonstiges_cb'],
       ['d6_vertrauen_verringern',  'd6_vertrauen_verringern_sonstiges_cb']
